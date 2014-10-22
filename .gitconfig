@@ -1,0 +1,35 @@
+[include]
+	# For username, credentials, etc. inspired by http://stackoverflow.com/questions/8505335/hiding-github-token-in-gitconfig
+	path = ~/.gitconfig.local
+[core]
+	excludesfile = ~/.gitignore_global_osx
+	editor = mate -w
+[color]
+	ui = auto
+[alias]
+	st = status
+	ci = commit
+	co = checkout
+	cp = cherry-pick
+	credit = blame
+	mustash = stash
+	unstage = reset HEAD
+	l = log --graph --pretty='%h  %ad%Cgreen%d%Creset %Cred%an%Creset %s' --decorate=short --date=relative
+	lall = log --graph --pretty='%h  %ad%Cgreen%d%Creset %Cred%an%Creset %s' --decorate=short --date=relative --all
+	b = for-each-ref --sort='-committerdate' refs/heads/ --format='%(committerdate:short) %(refname:short)'
+	rb = for-each-ref --sort='committerdate' refs/remotes/ --format='%(committerdate:short) %(refname:short) (%(authorname))'
+	pushm = push origin master
+	pullm = !git fetch origin && git rebase -p origin/master
+	pullall = !git pull && git submodule update --init --recursive
+[mergetool]
+	keepBackup = false
+[push]
+	default = upstream
+[difftool "Kaleidoscope"]
+	cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
+[difftool]
+	prompt = false
+[diff]
+	tool = Kaleidoscope
+[credential]
+	helper = osxkeychain
