@@ -34,3 +34,6 @@
 	tool = Kaleidoscope
 [credential]
 	helper = osxkeychain
+[init]
+	# Pre-commit hook that catches attempted force pushes to master, see: http://blog.bigbinary.com/2013/09/19/do-not-allow-force-pusht-to-master.html
+	templatedir = ~/bin/git-hooks
