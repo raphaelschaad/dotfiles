@@ -24,7 +24,7 @@
 [mergetool]
 	keepBackup = false
 [push]
-	default = upstream
+	default = nothing
 [difftool "Kaleidoscope"]
 	cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
 [difftool]
