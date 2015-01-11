@@ -49,6 +49,9 @@ CLICOLOR=1 # Use ANSI color sequences to distinguish file types.
 export LSCOLORS
 export CLICOLOR
 
+# So ffmpeg finds fonts to render subtitles
+export FONTCONFIG_FILE=/usr/local/etc/fonts/fonts.conf
+
 # aliases
 ## Xcode
 alias xcp="open *.xcodeproj"
