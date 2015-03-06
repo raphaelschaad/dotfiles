@@ -2,6 +2,7 @@
 # When a "login shell" starts up, it reads the file "/etc/profile" and then "~/.bash_profile" or "~/.bash_login" or "~/.profile" (whichever one exists - it only reads one of these, checking for them in the order mentioned).
 
 # adding paths to the PATH variable
+export PATH="~/bin:$PATH" # e.g. mate
 export PATH="$(brew --prefix)/bin:$(brew --prefix)/sbin:$PATH" # Prioritize Homebrew's Git over Xcode4's Git, Homebrew's PHP over OS X's PHP etc..
 export PATH="$(brew --prefix)/opt/ruby/bin:$PATH" # Homebrew Ruby gem installed binaries' default path.
 export PATH="$PATH:/opt/local/bin:/opt/local/sbin" # MacPorts
