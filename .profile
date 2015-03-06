@@ -5,12 +5,12 @@
 export PATH="~/bin:$PATH" # e.g. mate
 export PATH="$(brew --prefix)/bin:$(brew --prefix)/sbin:$PATH" # Prioritize Homebrew's Git over Xcode4's Git, Homebrew's PHP over OS X's PHP etc..
 export PATH="$(brew --prefix)/opt/ruby/bin:$PATH" # Homebrew Ruby gem installed binaries' default path.
-export PATH="$PATH:/opt/local/bin:/opt/local/sbin" # MacPorts
-export PATH="$PATH:~/Development/android-sdk-macosx/platform-tools:~/Development/android-sdk-macosx/tools" # Android development
-export PATH="$PATH:~/Code/GitHub/arcanist/bin" # 'arc' (Arcanist; Phabricator CLI)
+#export PATH="$PATH:/opt/local/bin:/opt/local/sbin" # MacPorts
+#export PATH="$PATH:~/Development/android-sdk-macosx/platform-tools:~/Development/android-sdk-macosx/tools" # Android development
+#export PATH="$PATH:~/Code/GitHub/arcanist/bin" # 'arc' (Arcanist; Phabricator CLI)
 
 # Arcanist Bash Tab Completion
-source ~/Code/GitHub/other/arcanist/resources/shell/bash-completion
+#source ~/Code/GitHub/other/arcanist/resources/shell/bash-completion
 
 # Homebrew Git Completion, Prompt, etc. (also see /Applications/Xcode.app/Contents/Developer/usr/share/git-core/)
 source `brew --prefix`/etc/bash_completion
@@ -36,7 +36,7 @@ export GIT_PS1_SHOWUNTRACKEDFILES=1 # untracked files (%)
 export PS1
 
 # Point uncrustify to default config used, when none specified with -c
-export UNCRUSTIFY_CONFIG='/usr/local/share/uncrustify/defaults.cfg'
+#export UNCRUSTIFY_CONFIG='/usr/local/share/uncrustify/defaults.cfg'
 
 # Use TextMate as standard editor
 export EDITOR='mate -w'
