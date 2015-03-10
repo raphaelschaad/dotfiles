@@ -39,7 +39,9 @@ export PS1
 #export UNCRUSTIFY_CONFIG='/usr/local/share/uncrustify/defaults.cfg'
 
 # Use TextMate as standard editor
-export EDITOR='mate -w'
+# Setting both standard variables, see: https://unix.stackexchange.com/questions/4859/visual-vs-editor-whats-the-difference
+export VISUAL='mate -w'
+export EDITOR="$VISUAL"
 
 # customize the color of ls
 #LSCOLORS=exfxcxdxbxegedabagacad # default from ls man page
