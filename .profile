@@ -66,11 +66,6 @@ alias git=hub
 
 # open files with /Applications
 # Note the importance of the whitespace in the function definition to avoid syntax errors with bash.
-## fw (Fireworks)
-fw() {
-	open $1 -a /Applications/Adobe\ Fireworks\ CS5/Adobe\ Fireworks\ CS5.app/
-}
-
 ## writer (iA Writer)
 writer() {
 	open $1 -a /Applications/iA\ Writer.app/
