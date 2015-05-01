@@ -66,6 +66,11 @@ alias git=hub
 
 # open files with /Applications
 # Note the importance of the whitespace in the function definition to avoid syntax errors with bash.
+## sl (Sublime Text 2)
+sl() {
+	open $1 -a /Applications/Sublime\ Text\ 2.app/
+}
+
 ## writer (iA Writer)
 writer() {
 	open $1 -a /Applications/iA\ Writer.app/
