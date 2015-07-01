@@ -5,9 +5,6 @@
 export PATH="~/bin:$PATH" # e.g. subl
 export PATH="$(brew --prefix)/bin:$(brew --prefix)/sbin:$PATH" # Prioritize Homebrew's Git over Xcode4's Git, Homebrew's PHP over OS X's PHP etc..
 export PATH="$(brew --prefix)/opt/ruby/bin:$PATH" # Homebrew Ruby gem installed binaries' default path.
-#export PATH="$PATH:/opt/local/bin:/opt/local/sbin" # MacPorts
-#export PATH="$PATH:~/Development/android-sdk-macosx/platform-tools:~/Development/android-sdk-macosx/tools" # Android development
-#export PATH="$PATH:~/Code/GitHub/arcanist/bin" # 'arc' (Arcanist; Phabricator CLI)
 
 # Arcanist Bash Tab Completion
 #source ~/Code/GitHub/other/arcanist/resources/shell/bash-completion
