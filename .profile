@@ -2,7 +2,7 @@
 # When a "login shell" starts up, it reads the file "/etc/profile" and then "~/.bash_profile" or "~/.bash_login" or "~/.profile" (whichever one exists - it only reads one of these, checking for them in the order mentioned).
 
 # adding paths to the PATH variable
-export PATH="~/bin:$PATH" # e.g. mate
+export PATH="~/bin:$PATH" # e.g. subl
 export PATH="$(brew --prefix)/bin:$(brew --prefix)/sbin:$PATH" # Prioritize Homebrew's Git over Xcode4's Git, Homebrew's PHP over OS X's PHP etc..
 export PATH="$(brew --prefix)/opt/ruby/bin:$PATH" # Homebrew Ruby gem installed binaries' default path.
 #export PATH="$PATH:/opt/local/bin:/opt/local/sbin" # MacPorts
@@ -11,6 +11,10 @@ export PATH="$(brew --prefix)/opt/ruby/bin:$PATH" # Homebrew Ruby gem installed 
 
 # Arcanist Bash Tab Completion
 #source ~/Code/GitHub/other/arcanist/resources/shell/bash-completion
+# Use Sublime Text as standard editor
+# Setting both standard variables, see: https://unix.stackexchange.com/questions/4859/visual-vs-editor-whats-the-difference
+export VISUAL='subl -w'
+export EDITOR="$VISUAL"
 
 # Homebrew Git Completion, Prompt, etc. (also see /Applications/Xcode.app/Contents/Developer/usr/share/git-core/)
 source `brew --prefix`/etc/bash_completion
@@ -37,12 +41,6 @@ export PS1
 
 # Point uncrustify to default config used, when none specified with -c
 #export UNCRUSTIFY_CONFIG='/usr/local/share/uncrustify/defaults.cfg'
-
-# Use TextMate as standard editor
-# Setting both standard variables, see: https://unix.stackexchange.com/questions/4859/visual-vs-editor-whats-the-difference
-export VISUAL='mate -w'
-export EDITOR="$VISUAL"
-
 # customize the color of ls
 #LSCOLORS=exfxcxdxbxegedabagacad # default from ls man page
 #LSCOLORS=dxfxcxdxbxegedabagacad # yellow for directories
@@ -66,10 +64,6 @@ alias git=hub
 
 # open files with /Applications
 # Note the importance of the whitespace in the function definition to avoid syntax errors with bash.
-## sl (Sublime Text 2)
-sl() {
-	open $1 -a /Applications/Sublime\ Text\ 2.app/
-}
 
 ## writer (iA Writer)
 writer() {
