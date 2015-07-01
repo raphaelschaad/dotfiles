@@ -47,6 +47,9 @@ export CLICOLOR
 # So ffmpeg finds libass' fonts to render subtitles
 export FONTCONFIG_FILE=/usr/local/etc/fonts/fonts.conf
 
+# Setting GitHub API token for Homebrew to avoid error "GitHub API rate limit exceeded" when `$ brew search`ing
+export HOMEBREW_GITHUB_API_TOKEN=$(git config github.token)
+
 # aliases
 ## Xcode
 alias xcp="open *.xcodeproj"
