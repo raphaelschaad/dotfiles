@@ -6,15 +6,17 @@ export PATH="~/bin:$PATH" # e.g. subl
 export PATH="$(brew --prefix)/bin:$(brew --prefix)/sbin:$PATH" # Prioritize Homebrew's Git over Xcode4's Git, Homebrew's PHP over OS X's PHP etc..
 export PATH="$(brew --prefix)/opt/ruby/bin:$PATH" # Homebrew Ruby gem installed binaries' default path.
 
-# Arcanist Bash Tab Completion
-#source ~/Code/GitHub/other/arcanist/resources/shell/bash-completion
 # Use Sublime Text as standard editor
 # Setting both standard variables, see: https://unix.stackexchange.com/questions/4859/visual-vs-editor-whats-the-difference
 export VISUAL='subl -w'
 export EDITOR="$VISUAL"
 
-# Homebrew Git Completion, Prompt, etc. (also see /Applications/Xcode.app/Contents/Developer/usr/share/git-core/)
-source `brew --prefix`/etc/bash_completion
+# Homebrew's own Git, bash, and hub completion
+# Not to be confused with the system bundled one /Applications/Xcode.app/Contents/Developer/usr/share/git-core/
+# Also no need to `$ brew install bash-completion`
+source $(brew --prefix)/etc/bash_completion.d/git-completion.bash
+source $(brew --prefix)/etc/bash_completion.d/git-prompt.sh
+source $(brew --prefix)/etc/bash_completion.d/hub.bash_completion.sh
 
 # customize the prompt via PS1 variable
 
