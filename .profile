@@ -35,8 +35,6 @@ export GIT_PS1_SHOWUNTRACKEDFILES=1 # untracked files (%)
 
 export PS1
 
-# Point uncrustify to default config used, when none specified with -c
-#export UNCRUSTIFY_CONFIG='/usr/local/share/uncrustify/defaults.cfg'
 # customize the color of ls
 #LSCOLORS=exfxcxdxbxegedabagacad # default from ls man page
 #LSCOLORS=dxfxcxdxbxegedabagacad # yellow for directories
