@@ -26,12 +26,10 @@
 [push]
 	# So I can't do a bare git push (must specify the origin branch)
 	default = nothing
-[difftool "Kaleidoscope"]
-	cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
 [difftool]
 	prompt = false
 [diff]
-	tool = Kaleidoscope
+	tool = opendiff
 [credential]
 	helper = osxkeychain
 [init]
