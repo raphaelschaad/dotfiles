@@ -18,7 +18,8 @@
 - The Unarchiver
 - Kindle
 - DaisyDisk
- 
+- iStat Mini
+
 ## From elsewhere
 - Dropbox
 - Homebrew: See `brew.md`
@@ -33,3 +34,4 @@
 - Skype
 - Messenger
 - Zotero
+- ThisService: See https://gist.github.com/raphaelschaad/1037296
