@@ -3,7 +3,7 @@
 	path = ~/.gitconfig.local
 [core]
 	excludesfile = ~/.gitignore_global_osx
-	editor = mate -w
+	editor = subl -w -n
 [color]
 	ui = auto
 [alias]
