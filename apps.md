@@ -29,7 +29,7 @@
 - Transmission
 - VLC
 - Fluid
-- Make Chrome SSB: See github.com/dmarmor/osx-chrome-ssb-gui
+- Make Chrome SSB: See https://github.com/dmarmor/osx-chrome-ssb-gui
 - Skype
 - Messenger
 - Zotero
