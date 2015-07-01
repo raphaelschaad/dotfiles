@@ -21,7 +21,7 @@
  
 ## From elsewhere
 - Dropbox
-- Homebrew: see [brew.md](../brew.md)
+- Homebrew: see `brew.md`
 - Bartender
 - TinkerTool
 - Sublime Text 2
