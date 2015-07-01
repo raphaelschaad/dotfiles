@@ -59,6 +59,9 @@ alias ddd='rm -rf ~/Library/Developer/Xcode/DerivedData/'
 ## http://hub.github.com
 alias git=hub
 
+## I'm a dummy
+alias brwe=brew
+
 # open files with /Applications
 # Note the importance of the whitespace in the function definition to avoid syntax errors with bash.
 
@@ -66,6 +69,3 @@ alias git=hub
 writer() {
 	open $1 -a /Applications/iA\ Writer.app/
 }
-
-# I'm a dummy
-alias brwe=brew
