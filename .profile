@@ -25,11 +25,8 @@ source $(brew --prefix)/etc/bash_completion.d/hub.bash_completion.sh
 #PS1='\[\e[31m\]\u\[\e[32m\]@\[\e[34m\]\H\[\e[32m\]:\[\e[33m\]\w\[\e[32m\]$\[\e[0m\] '
 #PS1='\u@\h:\[\e[;1m\]\w\[\e[0m\] $ '
 
-# Show current git branch name in git repositories
+# Show current git branch name in git repositories (avoid the legacy Ruby way)
 PS1='\u@\h:\[\e[;1m\]\w \[\e[32m\]$(__git_ps1 "(%s)")\[\e[0m\]$ '
-# The legacy Ruby way
-#PS1="\u@\h:\[\e[;1m\]\w \[\e[32m\]\`ruby -e \"print (%x{git branch 2> /dev/null}.grep(/^\*/).first || '').gsub(/^\* (.+)$/, '(\1) ')\"\`\[\e[0m\]$ "
-#PS1="\u@\h:\[\e[;1m\]\w \[\e[32m\]\`ruby -e \"print (%x{git branch 2> /dev/null}.split(/\r?\n/).grep(/^\*/).first || '').gsub(/^\* (.+)$/, '(\1) ')\"\`\[\e[0m\]$ " # Split on \r\n or just \n to avoid error with Ruby > 2.0.0.
 
 # Show changes next to branch
 export GIT_PS1_SHOWDIRTYSTATE=1 # unstaged (*), staged (+)
