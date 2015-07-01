@@ -1,0 +1,35 @@
+# Installed OS X Apps
+
+## From App Store
+- Amphetamine
+- iA Writer Pro
+- 1Password
+- Divvy
+- Chill
+- CHM Reader
+- Sketch
+- Pixelmator
+- Slack
+- Xcode
+- Clyppan
+- Spectrum
+- Transmit
+- Pixa
+- The Unarchiver
+- Kindle
+- DaisyDisk
+ 
+## From elsewhere
+- Dropbox
+- Homebrew: see `brew.md`
+- Bartender
+- TinkerTool
+- Sublime Text 2
+- Chrome
+- Transmission
+- VLC
+- Fluid
+- Make Chrome SSB: See github.com/dmarmor/osx-chrome-ssb-gui
+- Skype
+- Messenger
+- Zotero
