@@ -44,7 +44,7 @@ CLICOLOR=1 # Use ANSI color sequences to distinguish file types.
 export LSCOLORS
 export CLICOLOR
 
-# So ffmpeg finds fonts to render subtitles
+# So ffmpeg finds libass' fonts to render subtitles
 export FONTCONFIG_FILE=/usr/local/etc/fonts/fonts.conf
 
 # aliases
