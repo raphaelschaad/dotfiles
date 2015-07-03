@@ -25,7 +25,7 @@
 - Homebrew: See `brew.md`
 - Bartender
 - TinkerTool
-- Sublime Text 2
+- Sublime Text 2: Customize System Preferences > Keyboard > Shortcuts > App Shortcuts > "Special Characters…" ^⌘Space
 - Chrome
 - Transmission
 - VLC
