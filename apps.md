@@ -36,3 +36,5 @@
 - Zotero
 - ThisService: See https://gist.github.com/raphaelschaad/1037296
 - Atom: Command `atom` works out of the box
+- CertAid: MIT Certificate
+Configuration Wizard
