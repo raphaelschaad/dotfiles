@@ -1,5 +1,7 @@
 # Installed OS X Apps
 
+This doesn't include Homebrew (see `brew.md`) or browser extensions/plug-in's.
+
 ## From App Store
 - Amphetamine
 - iA Writer Pro
@@ -22,7 +24,6 @@
 
 ## From elsewhere
 - Dropbox
-- Homebrew: See `brew.md`
 - Bartender
 - TinkerTool
 - Sublime Text 2: Customize System Preferences > Keyboard > Shortcuts > App Shortcuts > "Special Characters…" ^⌘Space
