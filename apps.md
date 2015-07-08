@@ -21,6 +21,7 @@ This doesn't include Homebrew (see `brew.md`) or browser extensions/plug-in's.
 - Kindle
 - DaisyDisk
 - iStat Mini
+- CloudApp
 
 ## From elsewhere
 - Dropbox
