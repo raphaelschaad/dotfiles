@@ -22,6 +22,7 @@ This doesn't include Homebrew (see `brew.md`) or browser extensions/plug-in's.
 - DaisyDisk
 - iStat Mini
 - CloudApp
+- Pomodoro Timer
 
 ## From elsewhere
 - Dropbox
