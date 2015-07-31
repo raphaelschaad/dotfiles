@@ -42,3 +42,4 @@ This doesn't include Homebrew (see `brew.md`) or browser extensions/plug-in's.
 - CertAid: MIT Certificate
 Configuration Wizard
 - f.lux
+- Compose Gmail Message: See http://www.kungfugrippe.com/post/45763194525/compose-gmail-message
