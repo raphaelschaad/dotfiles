@@ -41,3 +41,4 @@ This doesn't include Homebrew (see `brew.md`) or browser extensions/plug-in's.
 - Atom: Command `atom` works out of the box
 - CertAid: MIT Certificate
 Configuration Wizard
+- f.lux
