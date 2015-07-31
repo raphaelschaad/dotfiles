@@ -12,6 +12,7 @@
 	co = checkout
 	cp = cherry-pick
 	credit = blame
+	staged = diff --staged
 	unstage = reset HEAD
 	l = log --graph --pretty='%h  %ad%Cgreen%d%Creset %Cred%an%Creset %s' --decorate=short --date=relative
 	lall = log --graph --pretty='%h  %ad%Cgreen%d%Creset %Cred%an%Creset %s' --decorate=short --date=relative --all
