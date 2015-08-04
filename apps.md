@@ -43,3 +43,4 @@ This doesn't include Homebrew (see `brew.md`) or browser extensions/plug-in's.
 Configuration Wizard
 - f.lux
 - Compose Gmail Message: See http://www.kungfugrippe.com/post/45763194525/compose-gmail-message
+- GitX-dev: Switched from brotherbard/gitx, but development stalled at end of 2014 too. Evaluate GitUp when it's out of pre-release.
