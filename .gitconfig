@@ -32,3 +32,8 @@
 	tool = opendiff
 [credential]
 	helper = osxkeychain
+[filter "lfs"]
+	# This section was added automatically when installing GitHub Desktop
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
