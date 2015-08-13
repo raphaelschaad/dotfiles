@@ -47,3 +47,4 @@ Configuration Wizard
 - Microsoft Office 2016: Office 365 ProPlus activated for free with my @MIT.EDU email address.
 - Wake: Plus Sketch Plugin
 - Google Drive
+- GitHub Desktop
