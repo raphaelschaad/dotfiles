@@ -13,6 +13,7 @@ IMPORTANT: Ensure the presence of a `.gitignore` in this repo ignoring `.gitconf
 6. `$ git clone https://github.com/raphaelschaad/SystemConfig.git`
 7. Copy file “gitconfig.local” stored in 1Password into locally cloned SystemConfig folder as “.gitconfig.local” (note the dot prefix)
 8. `$ ln -s $(pwd)/SystemConfig/{.profile,.gitconfig,.gitignore_global_osx,.gitconfig.local} ~`
-9. Download and install latest [Inconsolata font](http://www.levien.com/type/myfonts/inconsolata.html)
-10. Import my Terminal.app [Profile](./Novel-Schaad.terminal)
-11. Restart Terminal.app
+9. Install Xcode from App Store and link to my [Font & Color Theme](./Default-Schaad.dvtcolortheme) `$ mkdir ~/Library/Developer/Xcode/UserData/FontAndColorThemes && ln -s $(pwd)/SystemConfig/Default-Schaad.dvtcolortheme $_`
+10. Download and install latest [Inconsolata font](http://www.levien.com/type/myfonts/inconsolata.html)
+11. Import my Terminal.app [Profile](./Novel-Schaad.terminal)
+12. Restart Terminal.app
