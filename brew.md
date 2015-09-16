@@ -9,6 +9,13 @@ Tools installed with `brew` -- for reference when I setup a new machine. Listing
 
 ## Development
 - carthage: FLAnimatedImage supports this
+- python3: OS X comes with 2.7.10, which is also the latest 2.x version in Homebrew.
+
+## Design
+- boost-python: For Antimony. Installed with `--with-python3`.
+- qt5: For Antimony.
+- lemon: For Antimony.
+- flex: For Antimony.
 
 ## Everything else
 - exiftool: Rename photos imported with Image Capture to “Dropbox filename format” http://ninedegreesbelow.com/photography/exiftool-commands.html#rename
