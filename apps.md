@@ -48,3 +48,4 @@ Configuration Wizard
 - Wake: Plus Sketch Plugin
 - Google Drive
 - GitHub Desktop
+- Firefox
