@@ -51,3 +51,4 @@ Configuration Wizard
 - Firefox
 - Rhinoceros 5: 3D Modeler. Download at smb://hub.media.mit.edu/machub and license with server license.media.mit.edu
 - Steam
+- Antimony: Node-based CAD https://github.com/mkeeter/antimony
