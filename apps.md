@@ -50,3 +50,4 @@ Configuration Wizard
 - GitHub Desktop
 - Firefox
 - Rhinoceros 5: 3D Modeler. Download at smb://hub.media.mit.edu/machub and license with server license.media.mit.edu
+- Steam
