@@ -33,7 +33,7 @@ This doesn't include Homebrew (see `brew.md`) or browser extensions/plug-in's.
 - Transmission
 - VLC
 - Fluid
-- Epichrome (formerly MakeChromeSSB): See https://github.com/dmarmor/osx-chrome-ssb-gui Keeping them in /Applications/Chrome SSBs with icons from Dropbox/Pixels/SBB Icons
+- Epichrome (formerly MakeChromeSSB): See https://github.com/dmarmor/osx-chrome-ssb-gui Keeping them in /Applications/Chrome SSBs with icons from Dropbox/Pixels/SSB Icons
 - Skype
 - Messenger
 - Zotero
