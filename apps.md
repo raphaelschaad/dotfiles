@@ -32,7 +32,7 @@ This doesn't include Homebrew (see `brew.md`) or browser extensions/plug-in's.
 - Chrome
 - Transmission
 - VLC
-- Fluid
+- Fluid: Keeping them in /Applications/Fluid Apps with icons from Dropbox/Pixels/SSB Icons
 - Epichrome (formerly MakeChromeSSB): See https://github.com/dmarmor/osx-chrome-ssb-gui Keeping them in /Applications/Chrome SSBs with icons from Dropbox/Pixels/SSB Icons
 - Skype
 - Messenger
