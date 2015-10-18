@@ -45,7 +45,6 @@ Configuration Wizard
 - Compose Gmail Message: See http://www.kungfugrippe.com/post/45763194525/compose-gmail-message
 - GitX-dev: Switched from brotherbard/gitx, but development stalled at end of 2014 too. Evaluate GitUp when it's out of pre-release.
 - Microsoft Office 2016: Office 365 ProPlus activated for free with my @MIT.EDU email address.
-- Wake: Plus Sketch Plugin
 - Google Drive: Causes battery drain on notebook and in general only adds little value
 - GitHub Desktop
 - Firefox
