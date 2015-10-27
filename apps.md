@@ -9,7 +9,7 @@ This doesn't include Homebrew (see `brew.md`) or browser extensions/plug-in's.
 - Divvy
 - Chill
 - CHM Reader
-- Sketch: To avoid Versions hogging the disk, run: $ defaults write -app 'sketch' ApplePersistence -bool no
+- Sketch: To avoid Versions hogging the disk, disable Preferences > General > Auto-Save (or pre 3.4 run $ defaults write -app 'sketch' ApplePersistence -bool no)
 - Pixelmator
 - Slack
 - Xcode
