@@ -52,3 +52,4 @@ Configuration Wizard
 - Steam
 - Antimony: Node-based CAD https://github.com/mkeeter/antimony
 - Meshmixer: Mesh viewer and editor
+- EAGLE: Electronic design. Downloading the full version and after installing clicking the “Run as freeware” button will give us all we need.
