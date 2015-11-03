@@ -62,6 +62,9 @@ alias git=hub
 ## I'm a dummy
 alias brwe=brew
 
+## lsusb
+alias lsusb='system_profiler SPUSBDataType'
+
 # open files with /Applications
 # Note the importance of the whitespace in the function definition to avoid syntax errors with bash.
 
