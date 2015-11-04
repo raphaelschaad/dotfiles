@@ -28,7 +28,7 @@ This doesn't include Homebrew (see `brew.md`) or browser extensions/plug-in's.
 - Dropbox
 - Bartender
 - TinkerTool
-- Sublime Text 2: Customize System Preferences > Keyboard > Shortcuts > App Shortcuts > "Special Characters…" ^⌘Space
+- Sublime Text 2: Customize System Preferences > Keyboard > Shortcuts > App Shortcuts > “Special Characters…” ^⌘Space
 - Chrome
 - Transmission
 - VLC
