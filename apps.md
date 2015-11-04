@@ -55,3 +55,4 @@ Configuration Wizard
 - EAGLE: Electronic design. Downloading the full version and after installing clicking the “Run as freeware” button will give us all we need.
 - CrossPack for AVR: Development toolchain for Atmel’s AVR microcontrollers
 - FTDI VCP Drivers: Driver for USB to 6pin header connector cable to communicate with Atmel’s AVR microcontrollers over serial
+- Arduino
