@@ -5,7 +5,7 @@ Dotfiles etc. for my machine.
 IMPORTANT: Ensure the presence of a `.gitignore` in this repo ignoring `.gitconfig.local` (stored in 1Password), which contains the GitHub username, token, etc.
 
 ## Setting up a new machine
-1. Install essential [Apps](./apps.md) like Dropbox, 1Password, and Sublime Text 2
+1. Install essential [Apps](./apps.md#essentials) like Dropbox, 1Password, and Sublime Text 2
 2. `$ mkdir ~/bin && ln -s /Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl $_/subl`
 3. Install [Homebrew](http://brew.sh)
 4. `brew` [essentials](./brew.md)
