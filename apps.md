@@ -38,7 +38,7 @@ This doesn't include Homebrew (see `brew.md`) or browser extensions/plug-in's.
 - Messenger
 - Zotero
 - ThisService: See https://gist.github.com/raphaelschaad/1037296
-- Atom: Command `atom` works out of the box
+- Atom: Atom > Install Shell Commands to install `atom` and `apm` (Atom Package Manager)
 - CertAid: MIT Certificate
 Configuration Wizard
 - f.lux
