@@ -173,6 +173,6 @@ If it doesn't print a line like this, then it doesn't specify a resolution.
 **Using the bundled webserver (OS X El Capitan 10.11)**
 
     $ sudo apachectl start
-    $ sudo ln -s ~/dir-to-be-served/ /Library/WebServer/Documents/<dir to be served>
+    $ sudo ln -s ~/dir-to-be-served/ /Library/WebServer/Documents/dir-to-be-served
 
 Now browse to http://localhost/dir-to-be-served/
