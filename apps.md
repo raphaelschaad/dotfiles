@@ -57,3 +57,4 @@ Configuration Wizard
 - FTDI VCP Drivers: Driver for USB to 6pin header connector cable to communicate with Atmel’s AVR microcontrollers over serial
 - Arduino
 - Cura: Ultimaker2 3D printing
+- Tunnelblick + Certs: Media Lab VPN from Wiki
