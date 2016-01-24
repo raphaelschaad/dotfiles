@@ -25,8 +25,8 @@ IMPORTANT: Ensure the presence of a `.gitignore` in this repo ignoring `.gitconf
 `$ mkdir ~/Library/Developer/Xcode/UserData/FontAndColorThemes && ln -s $(pwd)/Default-Schaad.dvtcolortheme $_`
 
 ### Processing + Sublime Text 2 + HYPE
-[⌘(⇧)R to run Processing from Sublime](./Default (OSX).sublime-keymap) `ln -s $(pwd)/Default\ \(OSX\).sublime-keymap ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User/Default\ \(OSX\).sublime-keymap`
+`$ ln -s $(pwd)/Default\ \(OSX\).sublime-keymap ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User/Default\ \(OSX\).sublime-keymap` for [⌘(⇧)R to run Processing from Sublime](./Default (OSX).sublime-keymap)
 
-[2 spaces instead of tabs for Processing in Sublime](./Processing.sublime-settings) `ln -s $(pwd)/Processing.sublime-settings ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User/Processing.sublime-settings`
+`$ ln -s $(pwd)/Processing.sublime-settings ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User/Processing.sublime-settings` for [2 spaces instead of tabs for Processing in Sublime](./Processing.sublime-settings)
 
-[Joshua Davis' Sublime HYPE setup snippet](./hype_setup.sublime-snippet) `ln -s $(pwd)/hype_setup.sublime-snippet ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/Processing/Snippets/hype_setup.sublime-snippet`
+`$ ln -s $(pwd)/hype_setup.sublime-snippet ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/Processing/Snippets/hype_setup.sublime-snippet` for [Joshua Davis' Sublime HYPE setup snippet](./hype_setup.sublime-snippet)
