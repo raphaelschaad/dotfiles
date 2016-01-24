@@ -1,0 +1,20 @@
+<snippet><content><![CDATA[
+void setup(){
+	size(${1:640},${2:640}${3:,P3D});
+	H.init(this).background(#${4:202020})${5:.use3D(true)}${6:.autoClear(${7:true})};
+	smooth();
+
+	
+}
+ 
+void draw(){
+	H.drawStage();${8:
+
+	${9:// }saveFrame("frames/#########.tif"); if (frameCount == 900) exit();}
+}
+]]></content>
+        <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+        <tabTrigger>hype_setup</tabTrigger>
+        <!-- Optional: Set a scope to limit where the snippet will trigger -->
+        <scope>source.pde</scope>
+</snippet>

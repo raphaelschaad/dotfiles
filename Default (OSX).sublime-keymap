@@ -1,0 +1,11 @@
+[
+	{
+		"keys": ["super+r"], "command": "build",
+		"context": [{ "key": "selector", "operator": "equal", "operand": "source.pde" }]
+	},
+	{
+		"keys": ["super+shift+r"], "command": "build",
+		"args": {"variant": "Run sketch fullscreen"},
+		"context": [{ "key": "selector", "operator": "equal", "operand": "source.pde" }]
+	}
+]
