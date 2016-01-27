@@ -9,8 +9,8 @@ Tools installed with `brew` – for reference when I setup a new machine. Listin
 
 ## Development
 - carthage: FLAnimatedImage supports this
-- python: Currently the latest 2.x Homebrew python is 2.7.10, which is also the OS X El Cap stock python in /usr/bin, but the Homebrew one comes with pip. To get pip on stock Python: $ sudo easy_install pip
-- python3: OS X comes with 2.7.10, which is also the latest 2.x version in Homebrew.
+- python: Currently the latest 2.x Homebrew python is 2.7.11. OS X El Cap's stock python in /usr/bin is 2.7.10. Only the Homebrew one comes with pip. To get pip on stock Python without the Homebrew installation: $ sudo easy_install pip
+- python3: OS X El Cap only comes with 2.x stock. Python3 comes with pip by default.
 
 ## Design
 - boost-python: For Antimony. Installed with `--with-python3`.
