@@ -181,3 +181,8 @@ Now browse to http://localhost/dir-to-be-served/
 **Download a set of images from incrementing URLs**
 
     $ for i in $(seq -f "%03g" 00 181); do wget http://thestandardsmanual.com/images/large/nycta_gsm_$i.jpg; done
+
+
+**Validate JSON**
+
+    $ cat inputfile.json | python -mjson.tool
