@@ -175,6 +175,7 @@ If it doesn't print a line like this, then it doesn't specify a resolution.
     $ sudo apachectl start
     $ sudo ln -s ~/dir-to-be-served/ /Library/WebServer/Documents/dir-to-be-served
 
+Ensure parent directory is drwxr-xr-x (if needed, change: # chmod 755 parent-directory)
 Now browse to http://localhost/dir-to-be-served/
 
 
