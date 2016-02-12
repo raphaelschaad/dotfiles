@@ -12,6 +12,7 @@ Tools installed with `brew` – for reference when I setup a new machine. Listin
 - python: Currently the latest 2.x Homebrew python is 2.7.11. OS X El Cap's stock python in /usr/bin is 2.7.10. Only the Homebrew one comes with pip. To get pip on stock Python without the Homebrew installation: $ sudo easy_install pip
 - python3: OS X El Cap only comes with 2.x stock. Python3 comes with pip by default.
 - opencv: first tap homebrew/science
+- opencv3: also from homebrew/science; installed `--with-python3`; used `brew unlink opencv` + `brew link --force opencv3` (can be reverted by `brew unlink opencv3` + `brew link opencv` + `brew link --overwrite numpy`)
 
 ## Design
 - boost-python: For Antimony. Installed with `--with-python3`.
