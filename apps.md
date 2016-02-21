@@ -60,3 +60,5 @@ Configuration Wizard
 - Sketch: To avoid Versions hogging the disk, disable Preferences > General > Auto-Save (or pre 3.4 run $ defaults write -app 'sketch' ApplePersistence -bool no) Note that the latest version moved away from the App Store and is now registered to the email address.
 - Processing: With lib HYPE
 - p5.js editor (beta)
+- Google Earth Web Plugin
+- Google Earth Pro: username is email and key is "GEPFREE"
