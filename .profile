@@ -50,6 +50,10 @@ export FONTCONFIG_FILE=/usr/local/etc/fonts/fonts.conf
 # Setting GitHub API token for Homebrew to avoid error "GitHub API rate limit exceeded" when `$ brew search`ing
 export HOMEBREW_GITHUB_API_TOKEN=$(git config github.token)
 
+# node.js nvm
+export NVM_DIR=~/.nvm
+. $(brew --prefix nvm)/nvm.sh
+
 # aliases
 ## Xcode
 alias xcp="open *.xcodeproj"
