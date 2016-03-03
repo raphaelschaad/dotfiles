@@ -14,9 +14,9 @@ export EDITOR="$VISUAL"
 # Homebrew's own Git, bash, and hub completion
 # Not to be confused with the system bundled one /Applications/Xcode.app/Contents/Developer/usr/share/git-core/
 # Also no need to `$ brew install bash-completion`
-source $(brew --prefix)/etc/bash_completion.d/git-completion.bash
-source $(brew --prefix)/etc/bash_completion.d/git-prompt.sh
-source $(brew --prefix)/etc/bash_completion.d/hub.bash_completion.sh
+. $(brew --prefix)/etc/bash_completion.d/git-completion.bash
+. $(brew --prefix)/etc/bash_completion.d/git-prompt.sh
+. $(brew --prefix)/etc/bash_completion.d/hub.bash_completion.sh
 
 # customize the prompt via PS1 variable
 
