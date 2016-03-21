@@ -62,3 +62,4 @@ Configuration Wizard
 - p5.js editor (beta)
 - Google Earth Web Plugin
 - Google Earth Pro: username is email and key is "GEPFREE"
+- CocoaPods: $ sudo gem install cocoapods
