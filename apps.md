@@ -12,7 +12,6 @@ This doesn't include Homebrew (see `brew.md`) or browser extensions/plug-in's.
 - Pixelmator
 - Slack
 - Xcode
-- Clyppan
 - Spectrum
 - Transmit
 - Pixa
@@ -22,6 +21,7 @@ This doesn't include Homebrew (see `brew.md`) or browser extensions/plug-in's.
 - iStat Mini
 - CloudApp
 - Pomodoro Timer
+- Paste (replaces discontinued Clyppan)
 
 ## From elsewhere
 - Dropbox
