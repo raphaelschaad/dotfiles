@@ -27,3 +27,4 @@ Tools installed with `brew` – for reference when I setup a new machine. Listin
 - imagemagick: Included CLI tools I use most: `convert`, `identify`. Installed with `--with-ghostscript` for PDF to image conversion.
 - ffmpeg
 - libass: Fonts to add subtitles with ffmpeg, see `.profile`.
+- gdal: convert shapefiles to JSON
