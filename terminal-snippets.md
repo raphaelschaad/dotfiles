@@ -175,8 +175,8 @@ If it doesn't print a line like this, then it doesn't specify a resolution.
     $ sudo apachectl start
     $ sudo ln -s ~/dir-to-be-served/ /Library/WebServer/Documents/dir-to-be-served
 
-Ensure parent directory is drwxr-xr-x (if needed, change: # chmod 755 parent-directory)
-Now browse to http://localhost/dir-to-be-served/
+Ensure parent directory is drwxr-xr-x (if needed, change: # chmod 755 parent-directory)  
+Now browse to http://localhost/dir-to-be-served/  
 
 
 **Download a set of images from incrementing URLs**
@@ -187,3 +187,11 @@ Now browse to http://localhost/dir-to-be-served/
 **Validate JSON**
 
     $ cat inputfile.json | python -mjson.tool
+
+
+**Hide desktop icons (`true` to reverse)**
+
+    $ defaults write com.apple.finder CreateDesktop false
+    $ killall Finder
+
+Show again with `CreateDesktop true` and restarting Finder  
