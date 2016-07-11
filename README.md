@@ -25,6 +25,8 @@ IMPORTANT: Ensure the presence of a `.gitignore` in this repo ignoring `.gitconf
 `$ mkdir ~/Library/Developer/Xcode/UserData/FontAndColorThemes && ln -s $(pwd)/Default-Schaad.dvtcolortheme $_`
 
 ### Processing + Sublime Text 2 + HYPE
+Note that this is outdated and [Processing 3 + Sublime Text 3 + HYPE](https://vimeo.com/174246472) as proper processing library is now the way to go.
+
 `$ ln -s $(pwd)/Default\ \(OSX\).sublime-keymap ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User/Default\ \(OSX\).sublime-keymap` for [⌘(⇧)R to run Processing from Sublime](./Default (OSX).sublime-keymap)
 
 `$ ln -s $(pwd)/Processing.sublime-settings ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User/Processing.sublime-settings` for [2 spaces instead of tabs for Processing in Sublime](./Processing.sublime-settings)
