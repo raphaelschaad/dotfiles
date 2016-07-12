@@ -85,7 +85,7 @@ Don’t forget to reset!
 
 **HTTP GET and show response with headers**
 
-    $ wget -S -O - http://example.com/webservice 2>1
+    $ wget -S -O - http://example.com/webservice 2>&1
 
 `-S` print headers  
 `-O -` concatenate all together and print to standard output  
