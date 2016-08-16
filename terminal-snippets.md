@@ -114,6 +114,8 @@ Don’t forget to reset!
 
     $ unzip archive.zip -d new_dir
 
+If unzip and The Unarchiver.app fail, try `tar` or `jar` (same options as `tar`).  
+
 
 **Create tarball of folder**
 
