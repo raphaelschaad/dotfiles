@@ -14,6 +14,7 @@ Tools installed with `brew` – for reference when I setup a new machine. Listin
 - opencv: first tap homebrew/science
 - opencv3: also from homebrew/science; installed `--with-python3`; used `brew unlink opencv` + `brew link --force opencv3` (can be reverted by `brew unlink opencv3` + `brew link opencv` + `brew link --overwrite numpy`)
 - nvm: only brew nvm, not node; use nvm to install node: http://stackoverflow.com/a/28025834/251440
+- ruby: for jekyll
 
 ## Design
 - boost-python: For Antimony. Installed with `--with-python3`.
