@@ -197,3 +197,7 @@ Now browse to http://localhost/dir-to-be-served/
     $ killall Finder
 
 Show again with `CreateDesktop true` and restarting Finder  
+
+
+**Copy terminal output to system clipboard**
+    $ echo hello | pbcopy
