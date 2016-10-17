@@ -154,6 +154,13 @@ FFmpeg direct GIF export is dithered as hell, so go via PNG
     $ gifsicle *.gif --loop > animated.gif
 
 
+**Export a single still frame from mp4 (e.g. for poster image)**
+
+    $ ffmpeg -i input.mp4 -ss 00:01:02 -vframes 1 -qscale:v 2 output.jpg
+
+`-qscale:v` for JPG output quality (2-31, 31 being the worst)
+
+
 **Convert any image into a 1-bit black/white PNG**
 
     $ convert -monochrome -colors 2 in.jpg out.png
