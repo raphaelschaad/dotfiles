@@ -144,11 +144,11 @@ If unzip and The Unarchiver.app fail, try `tar` or `jar` (same options as `tar`)
 
 **Convert mp4 into animated GIF**
 
-    $ ffmpeg -i ScreenFlow.mp4 -r 10 %04d.png
+    $ ffmpeg -i ScreenFlow.mp4 -r 10 %4d.png
 
 FFmpeg direct GIF export is dithered as hell, so go via PNG  
 `-r` for lower FPS  
-`%04d` for leading zeros because Gifsicle needs that  
+`%4d` for leading zeros because Gifsicle needs that  
 
     $ for i in *.png; do convert $i $i.gif; done
     $ gifsicle *.gif --loop > animated.gif
