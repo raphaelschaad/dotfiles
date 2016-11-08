@@ -25,7 +25,7 @@ This doesn't include Homebrew (see `brew.md`) or browser extensions/plug-in's.
 
 ## From elsewhere
 - Dropbox
-- Bartender
+- Bartender 2
 - TinkerTool
 - Sublime Text 2: With packagecontrol.io (JSFormat, Processing). Customize System Preferences > Keyboard > Shortcuts > App Shortcuts > + > Sublime Text 2.app / “Special Characters…” / ^⌘Space
 - Chrome
