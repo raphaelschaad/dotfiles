@@ -5,6 +5,7 @@ Tools installed with `pip` – for reference when I setup a new machine. Listing
 The proper way to do it would be to use virtualenv and feed this list as requirements.txt to install all the dependencies. One day …
 
 To avoid confusion which Python version I install a module for, use:
+
     $ python<2|3> -m pip install <module name>
 
 ## Python2
