@@ -4,7 +4,7 @@ Some personal guidelines for writing iOS Objective-C code. They result from my d
 
 The practices are usually in the format "do X *because of* Y". Everything should be challenged over time. Not too much significant and new seems to have been adopted in recent years (i.e. IB, storyboards, asset catalogs, PDF assets, size classes, trait collections, auto layout, etc. can still be ignored in many cases).[2] Exceptions with no trade-offs are modern language features (i.e. [nullability annotations](https://developer.apple.com/swift/blog/?id=25) and [lightweight generics](https://developer.apple.com/library/content/documentation/Swift/Conceptual/BuildingCocoaApps/InteractingWithObjective-CAPIs.html#//apple_ref/doc/uid/TP40014216-CH4-ID35) e.g. for typed collections).
 
-## 1. [Writing good, clear code(http://www.quora.com/Computer-Programming/What-are-some-of-your-personal-guidelines-for-writing-good-clear-code/answer/Raphael-Schaad)
+## 1. [Writing good, clear code](http://www.quora.com/Computer-Programming/What-are-some-of-your-personal-guidelines-for-writing-good-clear-code/answer/Raphael-Schaad)
 
 ## 2. Best practices for implementation details
 ### Designated Initializers
@@ -84,7 +84,7 @@ It's consequent to have spaces around the '*' because there's a space between cl
 In general, constants should be defined in the smallest scope possible (block over method, method over file, file over global).
 
 ### @property declaration modifiers
-- Modifier order: @property (<class, >atomicity, storage<, mutation><, nullability><, getter = isAwesome>) BOOL awesome;
+- Modifier order: `@property (<class, >atomicity, storage<, mutation><, nullability><, getter = isAwesome>) BOOL awesome`;
 - Be explicit about atomicity modifier `nonatomic`/`atomic`, because `atomic` is rarely intended but the default.
 - Be explicit about storage modifier `assign`/`weak`/`strong`/`copy`, even when it's `readonly`, because when overriding `readwrite` internally the signatures match. Use `assign` only for primitive data types and structs. In the rare case a class doesn't support `weak` references or unretained is intended, use `unsafe_unretained`.
 - Don't be explicit about mutation modifier `readwrite` because it's usually intended and the default. When using `readonly` in the header, optionally override in the implementation file to `readwrite`.
@@ -445,7 +445,7 @@ When using [weakly linked classes, methods, functions, or symbols](https://devel
         canTweet = [TWTweetComposeViewController canSendTweet];
     }
 
-## 3. Format the code conventionally, consistently, and don't worry about formatting too much.
+## 3. Format the code conventionally, consistently, and don't worry about formatting too much
 - Tabs vs. spaces? Press the tab key by any means, but probably just go with spaces under the hood, like most modern editors default to. In any case, stay consistent with what's already there. (Pro-tab arguments: [Coding Horror](https://blog.codinghorror.com/death-to-the-space-infidels/), [Jarrod Overson](http://jarrodoverson.com/blog/spaces-vs-tabs/), [Jamie Zawinski](https://www.jwz.org/doc/tabs-vs-spaces.html) Pro-spaces: [Lea Verou](http://lea.verou.me/2012/01/why-tabs-are-clearly-superior/))
 - Definitely indent code, but don't obsessively [horizontally align code in other ways](http://www.cocoawithlove.com/blog/2016/04/01/neither-tabs-nor-spaces.html)
 - Generally don't commit commented-out code because it clutters up the codebase and feels like a pre-Git practice. If there's a good reason to do it, use `//` at the very beginning of the line (no indentation) to not confuse it with an actual comment explaining something with a code snippet.
