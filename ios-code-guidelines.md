@@ -4,7 +4,7 @@ Some personal guidelines for writing iOS Objective-C code. They result from my d
 
 The practices are usually in the format "do X *because of* Y". Everything should be challenged over time. Not too much significant and new seems to have been adopted in recent years (i.e. IB, storyboards, asset catalogs, PDF assets, size classes, trait collections, auto layout, etc. can still be ignored in many cases).[2] Exceptions with no trade-offs are modern language features (i.e. [nullability annotations](https://developer.apple.com/swift/blog/?id=25) and [lightweight generics](https://developer.apple.com/library/content/documentation/Swift/Conceptual/BuildingCocoaApps/InteractingWithObjective-CAPIs.html#//apple_ref/doc/uid/TP40014216-CH4-ID35) e.g. for typed collections).
 
-## 1. (Writing good, clear code)[http://www.quora.com/Computer-Programming/What-are-some-of-your-personal-guidelines-for-writing-good-clear-code/answer/Raphael-Schaad]
+## 1. [Writing good, clear code(http://www.quora.com/Computer-Programming/What-are-some-of-your-personal-guidelines-for-writing-good-clear-code/answer/Raphael-Schaad)
 
 ## 2. Best practices for implementation details
 ### Designated Initializers
@@ -14,7 +14,9 @@ The practices are usually in the format "do X *because of* Y". Everything should
 - The designated initializer of your class must call its superclass' designated initializer.
 - Decorate the designated initializer for semantic compiler warnings about violation of these rules:
 
+```
     - (instancetype)init NS_DESIGNATED_INITIALIZER;
+```
 
 - If your class must, must, must have an argument supplied, override the superclass' designated initializer to throw an exception and return nil.
 
@@ -23,12 +25,15 @@ From Aaron Hillegass, Cocoa Programming for OS X, Creating Your Own Classes, Con
 ### BOOL
 - Don't compare explicitly to `YES` because a "loaded `BOOL`" (non-one lower byte address object) could result in false, when true was intended:
 
+```
     if ([kitteh haz:cheezburger]) { // good
 
     if ([kitteh haz:cheezburger] == YES) { // bad
+```
 
 - Use a logical expression when assigning a `BOOL` because otherwise you can create such a "loaded `BOOL`":
 
+```
     return obj != nil; // good logical expression
 
     return (BOOL)obj; // bad cast
@@ -38,6 +43,7 @@ From Aaron Hillegass, Cocoa Programming for OS X, Creating Your Own Classes, Con
 
     BOOL isX = [self isX];
     isX &= isY; // bad bitwise operation
+```
 
 There is unfortunately no logical and assignment operator in C for a convenient syntax.
 
@@ -100,7 +106,7 @@ Note that the [`__kindof` type specifier](https://developer.apple.com/library/pr
 
     __kindof ClassName *variableName;
 
-    NSArray<__kindof NSString*> names;
+    NSArray<__kindof NSString*> *names;
 
 ### `#import` and `#include`
 Use `#import` for own C/Objective-C headers because it avoids double inclusion. Also use `#import` for C headers from the Cocoa framework or extensions to stay consistent.
@@ -229,24 +235,24 @@ This is not as relevant anymore because by now all headers are cleaned up and al
 ### Expose class variables as @property
 Declare them as static and implement getter/setter because class properties are not synthesized:
 
-@property (class, nonatomic, copy) NSUUID *identifier;
+    @property (class, nonatomic, copy) NSUUID *identifier;
 
-+ (NSUUID *)identifier {
-    static NSUUID *_identifier = nil;
-    if (!_identifier) {
-        static dispatch_once_t onceToken = 0;
-        dispatch_once(&onceToken, ^{
-            _identifier = [[NSUUID alloc] init];
-        });
+    + (NSUUID *)identifier {
+        static NSUUID *_identifier = nil;
+        if (!_identifier) {
+            static dispatch_once_t onceToken = 0;
+            dispatch_once(&onceToken, ^{
+                _identifier = [[NSUUID alloc] init];
+            });
+        }
+        return _identifier;
     }
-    return _identifier;
-}
 
-+ (void)setIdentifier:(NSUUID *)identifier {
-    if (![_identifier isEqual:identifier]) {
-        _identifier = [identifier copy];
+    + (void)setIdentifier:(NSUUID *)identifier {
+        if (![_identifier isEqual:identifier]) {
+            _identifier = [identifier copy];
+        }
     }
-}
 
 ### Initializing a static variable once (e.g. for singleton)
 Wrap all `dispatch_once` calls to initialize a static variable once into a nil-check to avoid potential deadlocking: `dispatch_once` waits synchronously until the block has completed and assures to only execute once. The first call is blocking, holding a normal lock on the block (not a recursive lock/reentrant mutex), waiting for it to return. When we happen to call the same method recursively in the block, e.g. indirectly as a side effect in more complex codebases, the second call waits to get into the block when trying to acquire the same lock a second time, resulting in a deadlock. We can avoid that by returning the second call when the static variable already has a value. Note: This does not prevent from deadlocking on recursive calling before or during the static variable was initialized (race condition).
@@ -287,6 +293,7 @@ Also never use vanilla `-isEqual:` but rather a safer custom function* that *ret
 - Avoid overriding `-isEqual:` or `-hash` in a subclass of a class which already implements custom equality and hashing because predictable comparing becomes very difficult.
 - When overriding `-isEqual:` always override `-hash` too, so that equal objects also have the same hash value. Example:
 
+```
     #pragma mark NSObject Method Overrides
 
     - (BOOL)isEqual:(id)object
@@ -321,6 +328,7 @@ Also never use vanilla `-isEqual:` but rather a safer custom function* that *ret
         hash ^= [@(self.age) hash];
         return hash;
     }
+```
 
 Mike Ash has a great [Friday Q&A 2010-06-18: Implementing Equality and Hashing](https://www.mikeash.com/pyblog/friday-qa-2010-06-18-implementing-equality-and-hashing.html)
 
@@ -358,13 +366,17 @@ Conform to the protocol in the header so subclasses know:
 The implementation has three possibilities:
 - A) For a subclass of a class that doesn't already conform to the NSCopying protocol (e.g. `NSObject`), initialize the object first:
 
+```
     Person *copy = [[[self class] alloc] init];
+```
 
 Note the use of `[self class]` to return the right object if we get subclassed. Also note that we keep it simple by using `+alloc` instead of `+allocWithZone:` since the `zone` parameter is legacy and unused.
 
 - B) For a subclass of a class that already conform to the `NSCopying` protocol, call super first:
 
+```
     Person *copy = [super copyWithZone:zone];
+```
 
 - C) For a subclass that is immutable (e.g. has exclusively readonly properties), just return self (Foundation does the same):
 
@@ -372,11 +384,11 @@ Note the use of `[self class]` to return the right object if we get subclassed. 
 
 Note that it still might make sense to conform to `NSCopying`, e.g. in case the object is used in an `NSDictionary` as a key.
 
-For A) and B), the exact nature of how to copy the ivars, is determined by the class. Here some guidelines:
+For (A) and (B), the exact nature of how to copy the ivars, is determined by the class. Here some guidelines:
 - Judge whether to copy member objects or just assign the pointer (could make sense for an immutable object).
 - When copying member objects, keep it simple by using `-copy` instead of `-copyWithZone:` since the `zone` parameter is legacy and unused. Sometimes you'll have to use a CF function to copy the member object.
 - Follow the Foundation collections pattern of performing a shallow copy unless you provide an additional method with a deep copy flag as illustrated at the beginning.
-- For A), judge whether it makes sense to use the designated initializer to create the copy.
+- For (A), judge whether it makes sense to use the designated initializer to create the copy.
 - Judge whether it makes sense to set the ivars on the copy directly like so: `copy->object` in case the setter triggers undesired logic.
 - If your class has a clear immutable and mutable variant, also conform to the `NSMutableCopying` protocol and implement `-mutableCopyWithZone:` in the same fashion.
 
@@ -438,9 +450,10 @@ When using [weakly linked classes, methods, functions, or symbols](https://devel
 - Definitely indent code, but don't obsessively [horizontally align code in other ways](http://www.cocoawithlove.com/blog/2016/04/01/neither-tabs-nor-spaces.html)
 - Generally don't commit commented-out code because it clutters up the codebase and feels like a pre-Git practice. If there's a good reason to do it, use `//` at the very beginning of the line (no indentation) to not confuse it with an actual comment explaining something with a code snippet.
 - Don't expect to ever address that `// TODO:`. If you have to push a checkpoint of clearly unfinished code, add something stronger like a `#warning` that can be configured to break a production build.
-- To group entire sections of a file, use something that stands out more than just a comment like a `#pragma mark -`.
+- To group entire sections of a file, use something like `#pragma mark -` that stands out more than a comment.
 - At a glance, the [NYTimes Objective-C Style Guide](https://github.com/NYTimes/objective-c-style-guide) elaborates on a reasonable style.
 
 —
+
 [1]: I wrote my first app in 2009, a year after the initial release of the "iPhone OS" SDK, built the original iA Writer in 2010, and worked at Flipboard from 2011-2015. During these years, I was fortunate to learn from some of the best, to open source the widely used animated GIF library FLAnimatedImage, and to attend WWDC 2011-2014.
 [2]: Although I've worked mostly on product design since 2014 and am currently in academia at MIT, I try to keep up with the iOS dev community and in touch with friends in leading iOS engineering positions at top tech companies.
