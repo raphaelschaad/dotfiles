@@ -445,7 +445,7 @@ When using [weakly linked classes, methods, functions, or symbols](https://devel
         canTweet = [TWTweetComposeViewController canSendTweet];
     }
 
-## 3. Format the code conventionally, consistently, and don't worry about formatting too much
+## 3. Format the code conventionally, consistently, and don't worry about it too much
 - Tabs vs. spaces? Press the tab key by any means, but probably just go with spaces under the hood, like most modern editors default to. In any case, stay consistent with what's already there. (Pro-tab arguments: [Coding Horror](https://blog.codinghorror.com/death-to-the-space-infidels/), [Jarrod Overson](http://jarrodoverson.com/blog/spaces-vs-tabs/), [Jamie Zawinski](https://www.jwz.org/doc/tabs-vs-spaces.html) Pro-spaces: [Lea Verou](http://lea.verou.me/2012/01/why-tabs-are-clearly-superior/))
 - Definitely indent code, but don't obsessively [horizontally align code in other ways](http://www.cocoawithlove.com/blog/2016/04/01/neither-tabs-nor-spaces.html)
 - Generally don't commit commented-out code because it clutters up the codebase and feels like a pre-Git practice. If there's a good reason to do it, use `//` at the very beginning of the line (no indentation) to not confuse it with an actual comment explaining something with a code snippet.
@@ -455,5 +455,5 @@ When using [weakly linked classes, methods, functions, or symbols](https://devel
 
 —
 
-[1]: I wrote my first app in 2009, a year after the initial release of the "iPhone OS" SDK, built the original iA Writer in 2010, and worked at Flipboard from 2011-2015. During these years, I was fortunate to learn from some of the best, to open source the widely used animated GIF library FLAnimatedImage, and to attend WWDC 2011-2014.
-[2]: Although I've worked mostly on product design since 2014 and am currently in academia at MIT, I try to keep up with the iOS dev community and in touch with friends in leading iOS engineering positions at top tech companies.
+- [1]: I wrote my first app in 2009, a year after the initial release of the "iPhone OS" SDK, built the original iA Writer in 2010, and worked at Flipboard from 2011-2015. During these years, I was fortunate to learn from some of the best, to open source the widely used animated GIF library FLAnimatedImage, and to attend WWDC 2011-2014.
+- [2]: Although I've worked mostly on product design since 2014 and am currently in academia at MIT, I try to keep up with the iOS dev community and in touch with friends in leading iOS engineering positions at top tech companies.
