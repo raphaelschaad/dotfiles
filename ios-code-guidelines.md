@@ -9,7 +9,7 @@ The practices are usually in the format "do X *because of* Y". Everything should
 ## 2. Best practices for implementation details
 ### Designated Initializers
 - Don't create initializers in your class if the superclass' initializers are sufficient.
-- If you create an initializer in your class, you must override the superclass' designated initializer.
+- If you create an initializer in your class, you must override the superclass' designated initializer to call through to your designated initializer.
 - If you create convenience initializers, only the designated initializer initializes the variables, and all other initializers eventually call through to the designated initializer.
 - The designated initializer of your class must call its superclass' designated initializer.
 - Decorate the designated initializer for semantic compiler warnings about violation of these rules:
@@ -18,7 +18,11 @@ The practices are usually in the format "do X *because of* Y". Everything should
     - (instancetype)init NS_DESIGNATED_INITIALIZER;
 ```
 
-- If your class must, must, must have an argument supplied, override the superclass' designated initializer to throw an exception and return nil.
+- If your class must, must, must have an argument supplied, add a runtime assertion at the beginning of your designated initializer:
+
+```
+    NSAssert(households != nil, @"Has to be initialized with a list of households.");
+```
 
 From Aaron Hillegass, Cocoa Programming for OS X, Creating Your Own Classes, Conventions for Creating Initializers; Apple, Adopting Modern Objective-C, Object Initialization; and own notes.
 
@@ -88,7 +92,7 @@ In general, constants should be defined in the smallest scope possible (block ov
 - Be explicit about atomicity modifier `nonatomic`/`atomic`, because `atomic` is rarely intended but the default.
 - Be explicit about storage modifier `assign`/`weak`/`strong`/`copy`, even when it's `readonly`, because when overriding `readwrite` internally the signatures match. Use `assign` only for primitive data types and structs. In the rare case a class doesn't support `weak` references or unretained is intended, use `unsafe_unretained`.
 - Don't be explicit about mutation modifier `readwrite` because it's usually intended and the default. When using `readonly` in the header, optionally override in the implementation file to `readwrite`.
-- Change the default nullability behavior from `null_unspecified` to `nonnull` (with [a few exceptions](https://developer.apple.com/swift/blog/?id=25)) by enclosing the interface with `NS_ASSUME_NONNULL_BEGIN/END`. Then only be explicit when using `nullable`. Note that for method declarations these non-underscored forms come immediately after an open parenthesis before the type.
+- Change the default nullability behavior from `null_unspecified` to `nonnull` (with [a few exceptions](https://developer.apple.com/swift/blog/?id=25)) by enclosing the interface and implementation in both .h and .m with `NS_ASSUME_NONNULL_BEGIN/END`. Then only be explicit when using `nullable`. Note that for method declarations these non-underscored forms come immediately after an open parenthesis before the type.
 - Use spaces around '=' for custom getter name to follow general convention. There should never be the necessity to use a custom setter name.
 
 ### Variable declaration qualifiers
