@@ -457,6 +457,11 @@ When using [weakly linked classes, methods, functions, or symbols](https://devel
 - To group entire sections of a file, use something like `#pragma mark -` that stands out more than a comment.
 - At a glance, the [NYTimes Objective-C Style Guide](https://github.com/NYTimes/objective-c-style-guide) elaborates on a reasonable style.
 
+## 4. Debugging
+Not guidelines per se, but code snippets that are useful for iOS development:
+- Print view hierarchy: `(lldb) po [someView recursiveDescription]`
+- Print method name using implicit method selector parameter: `NSLog(@"%@", NSStringFromSelector(_cmd));`
+
 —
 
 - [1]: I wrote my first app in 2009, a year after the initial release of the "iPhone OS" SDK, built the original iA Writer in 2010, and worked at Flipboard from 2011-2015. During these years, I was fortunate to learn from some of the best, to open source the widely used animated GIF library FLAnimatedImage, and to attend WWDC 2011-2014.
