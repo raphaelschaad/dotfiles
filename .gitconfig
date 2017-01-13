@@ -1,5 +1,5 @@
 [include]
-	# Contains GitHub username, token, etc., inspired by http://stackoverflow.com/questions/8505335/hiding-github-token-in-gitconfig
+	# Kept in 1Password. Contains GitHub username, token, etc., inspired by http://stackoverflow.com/questions/8505335/hiding-github-token-in-gitconfig
 	path = ~/.gitconfig.local
 [core]
 	excludesfile = ~/.gitignore_global_osx
@@ -37,3 +37,6 @@
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
 	required = true
+[http]
+	# Kept in 1Password.
+	cookiefile = ~/.gitcookies
