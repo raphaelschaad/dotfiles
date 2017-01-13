@@ -216,10 +216,14 @@ To represent an object in UI it makes more sense to add lazy properties like `.d
     }
 
 ### Always use `instancetype` over `id` for return types
-That way the compiler checks that the returned object is of the expected sub(class) type. `instancetype` is already inferred for [instance methods that begin with "init" or "copy"](http://clang.llvm.org/docs/LanguageExtensions.html#objective-c-features), but it's clearer to be explicit and  consistent. Apple's [Adopting Modern Objective-C](https://developer.apple.com/library/ios/releasenotes/ObjectiveC/ModernizationObjC/AdoptingModernObjective-C/AdoptingModernObjective-C.html) clarifies that it's for return values only "Unlike id, the instancetype keyword can be used only as the result type in a method declaration."
+That way the compiler checks that the returned object is of the expected sub(class) type. `instancetype` is already inferred for [instance methods that begin with "init" or "copy"](http://clang.llvm.org/docs/LanguageExtensions.html#objective-c-features), but it's clearer to be explicit and consistent. Apple's [Adopting Modern Objective-C](https://developer.apple.com/library/ios/releasenotes/ObjectiveC/ModernizationObjC/AdoptingModernObjective-C/AdoptingModernObjective-C.html) clarifies that it's for return values only "Unlike id, the instancetype keyword can be used only as the result type in a method declaration."
 
-### Returning immutable copies
-When possible, avoid returning pointers to mutable objects. If two different callers request it and one changes it the other one will be surprised.
+### Immutable copies
+When *setting* a seemingly immutable object such as an `NSString`, if you rely on the value not changing once it's set, make a copy instead, because one could cast and pass an `NSMutableString` and change it afterwards.
+
+    @property (nonatomic, copy) NSString *name;
+
+When *returning* a mutable object, if you rely on the value not changing without notice, return a copy instead of a pointer, because other any caller could change it.
 
     @property (nonatomic, strong, readonly) NSMutableArray<NSString *> *names; // names are not really "readonly"
 
