@@ -151,8 +151,9 @@ FFmpeg direct GIF export is dithered as hell, so go via PNG
 `%4d` for leading zeros because Gifsicle needs that  
 
     $ for i in *.png; do convert $i $i.gif; done
-    $ gifsicle *.gif --loop > animated.gif
+    $ gifsicle --delay=100 *.gif --loop > animated.gif
 
+`--delay=100` for 1 second delay between frames. Default is "none", commonly played as 0.2 centiseconds.
 
 **Export a single still frame from mp4 (e.g. for poster image)**
 
