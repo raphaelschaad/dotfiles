@@ -167,7 +167,7 @@ Apple String Programming Guide, [String Format Specifiers](https://developer.app
 
 ### Randomness
 
-    (Double(arc4random_uniform(314)) / 100) // random value up to PI
+    (double)arc4random_uniform(314) / 100; // random value up to PI
 
 Generally use the `arc4random()`-family for ints and the `rand48()`-family for floats. [NSHipster has snippets](http://nshipster.com/random/) them including picking random elements from arrays, randomly shuffling arrays, etc.
 
