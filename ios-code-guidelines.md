@@ -150,9 +150,9 @@ Use this math function to test a float for its sign (positive or negative):
 ### Prefixes
 According to Apple's [Coding Guidelines for Cocoa](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/CodingGuidelines/Articles/NamingBasics.html#//apple_ref/doc/uid/20001281-1002226-BBCJECED) "Use prefixes when naming classes, protocols, functions, constants, and typedef structures. Do not use prefixes when naming methods; methods exist in a name space created by the class that defines them." When *extending* other objects functionality by either adding a category or subclassing, however, a prefix can be a nice reminder:
 
-    [NSObject rs_doSomething] // "ah, my method!"
+    [NSObject rs_doSomething]; // "ah, my method!"
 
-    [NSObject doSomething] // "Apple's foundation classes are so buggy!"
+    [NSObject doSomething]; // "Apple's foundation classes are so buggy!"
 
 ### Unsigned integers
 Use `NSUInteger` instead of `NSInteger` for counts and zero-based indexes to avoid bad surprises with negative numbers.
