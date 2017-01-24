@@ -68,8 +68,10 @@ This is also true for objects. (To indicate the constant in the example above, i
 If the constant is used in other files it should still be defined in the implementation file, but declared with the `extern` keyword in the header:
 
     extern const NSUInteger kProjectClassSize; // in .h file
-
     const NSUInteger kProjectClassSize = 12; // in .m file
+
+    extern NSString * _Nonnull const kUserArchiveName; // in .h file
+    NSString * const kUserArchiveName = @"user.archive"; // in .m file
 
 In this case, add the class name as prefix to create a name space.
 
