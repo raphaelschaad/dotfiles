@@ -74,6 +74,7 @@ Also see my [.gitconfig](./.gitconfig) and my [.gitignore_global_osx](./.gitigno
     $ git tag # list tags
     $ git show-ref --tags # list tags with commit hash (lightweight) or tag hash (annotated)
     $ git tag -ln tagname # show tag with commit message (lightweight) or tag message (annotated)
+    $ git push origin --tags # push tags to remote
     $ git tag -d tagname # delete local tag
     $ git push origin :refs/tags/tagname # delete remote tag
 
