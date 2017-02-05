@@ -1,6 +1,6 @@
 # Installed Python modules
 
-Tools installed with `pip` – for reference when I setup a new machine. Listing only top level formulas, not including all dependencies (unlike `$ pip list`).
+Tools installed with `pip` – for reference when I setup a new machine. Listing only top level modules, not including all dependencies (unlike `$ pip list`).
 
 The proper way to do it would be to use virtualenv and feed this list as requirements.txt to install all the dependencies. One day …
 
