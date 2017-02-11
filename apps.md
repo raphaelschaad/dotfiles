@@ -61,5 +61,5 @@ Configuration Wizard
 - Processing: With lib HYPE
 - Google Earth Web Plugin
 - Google Earth Pro: username is email and key is "GEPFREE"
-- CocoaPods: $ sudo gem install cocoapods
+- CocoaPods: `$ sudo gem install cocoapods`
 - iExplorer 3: Current version is 4 but my license only works for 3.x. Download 3.8.6.0 https://www.macroplant.com/iexplorer/download-ie3-mac-10-6 and upgrade to latest 3.9.14.0
