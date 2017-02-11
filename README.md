@@ -17,14 +17,15 @@ IMPORTANT: Ensure the presence of a `.gitignore` in this repo ignoring `.gitconf
 10. Import my Terminal.app [Profile](./Novel-Schaad.terminal)
 11. Restart Terminal.app
 
-## Link app-specific config files
+## Link/Import app-specific config file
+### From `SystemConfig`
 `$ cd /Code/GitHub/raphaelschaad/SystemConfig/`
 
-### Xcode
+#### Xcode
 [My Font & Color Theme](./Default-Schaad.dvtcolortheme)
 `$ mkdir ~/Library/Developer/Xcode/UserData/FontAndColorThemes && ln -s $(pwd)/Default-Schaad.dvtcolortheme $_`
 
-### Processing + Sublime Text 2 + HYPE
+#### Processing + Sublime Text 2 + HYPE
 Note that this is outdated and [Processing 3 + Sublime Text 3 + HYPE](https://vimeo.com/174246472) as proper processing library is now the way to go.
 
 `$ ln -s $(pwd)/Default\ \(OSX\).sublime-keymap ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User/Default\ \(OSX\).sublime-keymap` for [⌘(⇧)R to run Processing from Sublime](./Default (OSX).sublime-keymap)
@@ -32,3 +33,16 @@ Note that this is outdated and [Processing 3 + Sublime Text 3 + HYPE](https://vi
 `$ ln -s $(pwd)/Processing.sublime-settings ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User/Processing.sublime-settings` for [2 spaces instead of tabs for Processing in Sublime](./Processing.sublime-settings)
 
 `$ ln -s $(pwd)/hype_setup.sublime-snippet ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/Processing/Snippets/hype_setup.sublime-snippet` for [Joshua Davis' Sublime HYPE setup snippet](./hype_setup.sublime-snippet)
+
+### From `Dropbox/Synced\ App\ Files`
+#### macOS Spelling Dictionary
+`$ ln -s /Users/schaad/Dropbox/Synced\ App\ Files/LocalDictionary ~/Library/Spelling`
+
+#### Google Earth Pro
+1. File > Open… (CMD+O) > Sync.kmz
+2. My Places > right click > Delete Contents
+3. Drag folder “Sync” to My Places
+4. Temporary Places > right click > Delete Contents
+
+### Chrome Extension Auto Text Expander
+Paste contents of `Chrome Extension Auto Text Expander Shortcuts.json` into Options > Import / Export Shortcuts
