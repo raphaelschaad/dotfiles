@@ -69,6 +69,9 @@ alias brwe=brew
 ## lsusb
 alias lsusb='system_profiler SPUSBDataType'
 
+## VLC
+alias vlc='/Applications/VLC.app/Contents/MacOS/VLC'
+
 # open files with /Applications
 # Note the importance of the whitespace in the function definition to avoid syntax errors with bash.
 
