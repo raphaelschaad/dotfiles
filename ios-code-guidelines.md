@@ -455,6 +455,33 @@ When using [weakly linked classes, methods, functions, or symbols](https://devel
         canTweet = [TWTweetComposeViewController canSendTweet];
     }
 
+### AppDelegate template
+Minimal AppDelegate that plays nicely with the default project setup/storyboards.
+
+    #import "AppDelegate.h"
+
+    NS_ASSUME_NONNULL_BEGIN
+    @interface AppDelegate () <UIApplicationDelegate>
+
+    @end
+
+    @implementation AppDelegate
+
+    // Intended for Storyboarding, we can reuse the `window` property declared on the super class.
+    // It needs to be explicitly synthesized though otherwise we crash on `-setWindow:` during runtime.
+    @synthesize window = _window;
+
+    #pragma mark Life Cycle
+
+    - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(nullable NSDictionary *)launchOptions
+    {
+        return YES;
+    }
+
+    @end
+    NS_ASSUME_NONNULL_END
+
+
 ## 3. Format the code conventionally, consistently, and don't worry about it too much
 - Tabs vs. spaces? Press the tab key by any means, but probably just go with spaces under the hood, like most modern editors default to. In any case, stay consistent with what's already there. (Pro-tab arguments: [Coding Horror](https://blog.codinghorror.com/death-to-the-space-infidels/), [Jarrod Overson](http://jarrodoverson.com/blog/spaces-vs-tabs/), [Jamie Zawinski](https://www.jwz.org/doc/tabs-vs-spaces.html) Pro-spaces: [Lea Verou](http://lea.verou.me/2012/01/why-tabs-are-clearly-superior/))
 - Definitely indent code, but don't obsessively [horizontally align code in other ways](http://www.cocoawithlove.com/blog/2016/04/01/neither-tabs-nor-spaces.html).
