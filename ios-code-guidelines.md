@@ -496,6 +496,35 @@ Not guidelines per se, but snippets that are useful for iOS development:
 - Print view hierarchy: `(lldb) po [someView recursiveDescription]`
 - Print method name using implicit method selector parameter: `NSLog(@"%@", NSStringFromSelector(_cmd));`
 
+### CocoaPods
+Install on a new machine with `$ sudo gem install cocoapods` (see `apps.md`) and update with `$ sudo gem update cocoapods` (e.g. when trying to `pod install` and getting the cryptic error "Abort trap: 6").
+
+To add a pod to a project, in its root, create the file `Podfile` and put in it (example):
+
+```
+target 'Yego' do
+  pod 'iOS-KML-Framework', '~> 0.0'
+  pod 'MBProgressHUD', '~> 1.0'
+  pod 'AFNetworking', '~> 3.0'
+end
+```
+
+Then run `$ pod install`. From now on, open the `.xcworkspace` (not the `.xcodeproj` anymore).
+
+To not commit all the downloaded files from the pods, add following snippet to `.gitignore`:
+
+```
+# CocoaPods
+#
+# We recommend against adding the Pods directory to your .gitignore. However
+# you should judge for yourself, the pros and cons are mentioned at:
+# http://guides.cocoapods.org/using/using-cocoapods.html#should-i-ignore-the-pods-directory-in-source-control?
+#
+Pods/
+```
+
+As mentioned in the comment though, the main disadvantage is that now the project doesn't have all the sources anymore to build at any given time.
+
 —
 
 - [1]: I wrote my first app in 2009, a year after the initial release of the "iPhone OS" SDK, built the original iA Writer in 2010, and worked at Flipboard from 2011-2015. During these years, I was fortunate to learn from some of the best, to open source the widely used animated GIF library FLAnimatedImage, and to attend WWDC 2011-2014.
