@@ -491,13 +491,37 @@ Minimal AppDelegate that plays nicely with the default project setup/storyboards
 - At a glance, the [NYTimes Objective-C Style Guide](https://github.com/NYTimes/objective-c-style-guide) elaborates on a reasonable style.
 
 ## 4. Misc.
-Not guidelines per se, but snippets that are useful for iOS development:
+Not guidelines per se, but snippets that are useful for iOS development.
 ### Debugging
 - Print view hierarchy: `(lldb) po [someView recursiveDescription]`
 - Print method name using implicit method selector parameter: `NSLog(@"%@", NSStringFromSelector(_cmd));`
 
+### .gitignore
+Default `.gitignore` for Xcode projects (place in root):
+
+```
+# Global .gitignore
+# Files such as .DS_Store on OS X should be excluded system-wide: $ git config --global core.excludesfile "~/.gitignore_global_osx"
+
+# Xcode
+build/*
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+*.xcworkspace
+!default.xcworkspace
+xcuserdata
+profile
+*.moved-aside
+```
+
 ### CocoaPods
-Install on a new machine with `$ sudo gem install cocoapods` (see `apps.md`) and update with `$ sudo gem update cocoapods` (e.g. when trying to `pod install` and getting the cryptic error "Abort trap: 6").
+Install on a new machine with `$ sudo gem install cocoapods` (see `apps.md`) and update with `$ sudo gem update cocoapods` (e.g. when trying to "pod install" and getting the cryptic error "Abort trap: 6").
 
 To add a pod to a project, in its root, create the file `Podfile` and put in it (example):
 
@@ -524,6 +548,14 @@ Pods/
 ```
 
 As mentioned in the comment though, the main disadvantage is that now the project doesn't have all the sources anymore to build at any given time.
+
+### Dealing with large files
+Add a folder `tmp_data` to the root of the project, create a folder reference in Xcode (drag & drop), and add following snippet to `.gitignore`:
+
+```
+# Temp Data (usually large files to tinker with)
+tmp_data
+```
 
 —
 
