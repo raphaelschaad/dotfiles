@@ -527,5 +527,5 @@ As mentioned in the comment though, the main disadvantage is that now the projec
 
 —
 
-- [1]: I wrote my first app in 2009, a year after the initial release of the "iPhone OS" SDK, built the original iA Writer in 2010, and worked at Flipboard from 2011-2015. During these years, I was fortunate to learn from some of the best, to open source the widely used animated GIF library FLAnimatedImage, and to attend WWDC 2011-2014.
-- [2]: Although I've worked mostly on product design since 2014 and am currently in academia at MIT, I try to keep up with the iOS dev community and in touch with friends in leading iOS engineering positions at top tech companies.
+- [1]: I wrote my first app in 2009, a year after the initial release of the "iPhone OS" SDK, built [the original iA Writer in 2010](https://raphaelschaad.github.io/portfolio/ia-writer), and worked at [Flipboard from 2011-2015](https://raphaelschaad.github.io/portfolio/flipboard). During these years, I was fortunate to learn from and with some of the best, to open source the widely used [animated GIF library FLAnimatedImage](https://raphaelschaad.github.io/portfolio/flanimatedimage), and to attend WWDC 2011-2014 (glad to have experienced you, Steve, you remain one of my heros).
+- [2]: Although I've worked mostly on product design since 2014 and [am currently in academia at MIT](https://media.mit.edu/~schaad), I try to keep up with the iOS dev community and in touch with friends in leading iOS engineering positions at top tech companies (thanks guys for keeping me in the loop).
