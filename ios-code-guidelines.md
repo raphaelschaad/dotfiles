@@ -490,8 +490,9 @@ Minimal AppDelegate that plays nicely with the default project setup/storyboards
 - To group entire sections of a file, use something like `#pragma mark -` that stands out more than a comment.
 - At a glance, the [NYTimes Objective-C Style Guide](https://github.com/NYTimes/objective-c-style-guide) elaborates on a reasonable style.
 
-## 4. Debugging
-Not guidelines per se, but code snippets that are useful for iOS development:
+## 4. Misc.
+Not guidelines per se, but snippets that are useful for iOS development:
+### Debugging
 - Print view hierarchy: `(lldb) po [someView recursiveDescription]`
 - Print method name using implicit method selector parameter: `NSLog(@"%@", NSStringFromSelector(_cmd));`
 
