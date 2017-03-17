@@ -496,6 +496,8 @@ Not guidelines per se, but snippets that are useful for iOS development.
 - Print view hierarchy: `(lldb) po [someView recursiveDescription]`
 - Print method name using implicit method selector parameter: `NSLog(@"%@", NSStringFromSelector(_cmd));`
 
+### [Which Clang Warning Is Generating This Message?](http://fuckingclangwarnings.com)
+
 ### .gitignore
 Default `.gitignore` for Xcode projects (place in root):
 
