@@ -457,7 +457,7 @@ When using [weakly linked classes, methods, functions, or symbols](https://devel
 
 ## 3. Format the code conventionally, consistently, and don't worry about it too much
 - Tabs vs. spaces? Press the tab key by any means, but probably just go with spaces under the hood, like most modern editors default to. In any case, stay consistent with what's already there. (Pro-tab arguments: [Coding Horror](https://blog.codinghorror.com/death-to-the-space-infidels/), [Jarrod Overson](http://jarrodoverson.com/blog/spaces-vs-tabs/), [Jamie Zawinski](https://www.jwz.org/doc/tabs-vs-spaces.html) Pro-spaces: [Lea Verou](http://lea.verou.me/2012/01/why-tabs-are-clearly-superior/))
-- Definitely indent code, but don't obsessively [horizontally align code in other ways](http://www.cocoawithlove.com/blog/2016/04/01/neither-tabs-nor-spaces.html)
+- Definitely indent code, but don't obsessively [horizontally align code in other ways](http://www.cocoawithlove.com/blog/2016/04/01/neither-tabs-nor-spaces.html).
 - Generally don't commit commented-out code because it clutters up the codebase and feels like a pre-Git practice. If there's a good reason to do it, use `//` at the very beginning of the line (no indentation) to not confuse it with an actual comment explaining something with a code snippet.
 - Don't expect to ever address that `// TODO:`. If you have to push a checkpoint of clearly unfinished code, add something stronger like a `#warning` that can be configured to break a production build.
 - To group entire sections of a file, use something like `#pragma mark -` that stands out more than a comment.
