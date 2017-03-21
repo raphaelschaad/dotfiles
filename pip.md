@@ -8,7 +8,16 @@ To avoid confusion which Python version I install a module for, use:
 
     $ python<2|3> -m pip install <module name>
 
+Upgrade pip to the latest version:
+
+    $ python<2|3> -m pip install --upgrade pip
+
+Install setuptools (or upgrade, if not installed yet):
+
+    $ python<2|3> -m pip install -U pip setuptools
+
 ## Python2
 - gsutil: Copy folders recursively from Google Cloud Storage. Authentication guide: https://cloud.google.com/storage/docs/gsutil_install#creds-gsutil
+- networkx: Create, manipulate, and analyze graph networks.
 
 ## Python3
