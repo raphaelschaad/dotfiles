@@ -19,5 +19,6 @@ Install setuptools (or upgrade, if not installed yet):
 ## Python2
 - gsutil: Copy folders recursively from Google Cloud Storage. Authentication guide: https://cloud.google.com/storage/docs/gsutil_install#creds-gsutil
 - networkx: Create, manipulate, and analyze graph networks.
+- matplotlib: Required by NetworkX.
 
 ## Python3
