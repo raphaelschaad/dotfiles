@@ -1,5 +1,4 @@
 # Installed OS X Apps
-
 This doesn't include Homebrew (see `brew.md`) or browser extensions/plug-in's.
 
 ## From App Store
