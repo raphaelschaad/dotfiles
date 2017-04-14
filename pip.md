@@ -12,7 +12,7 @@ Upgrade pip to the latest version:
 
     $ python<2|3> -m pip install --upgrade pip
 
-Install setuptools (or upgrade, if not installed yet):
+Install setuptools (or upgrade, if already installed):
 
     $ python<2|3> -m pip install -U pip setuptools
 
