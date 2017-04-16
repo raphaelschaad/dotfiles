@@ -67,3 +67,4 @@ Configuration Wizard
 - Hex Fiend: Hex Editor
 - Kap: Screenrecorder more powerful than QuickTime Player (click highlight, GIF export) and opensource.
 - Gephi: Graph network visualization
+- MacTeX
