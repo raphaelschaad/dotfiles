@@ -50,7 +50,7 @@ A collection of useful terminal snippets.
     $ find . -type d -exec rm -r {} \;
 
 
-**Search for „foo“ in contents of any files**
+**Search for "foo" in contents of any files**
 
     $ grep -r -i foo *
 
