@@ -68,3 +68,4 @@ Configuration Wizard
 - Kap: Screenrecorder more powerful than QuickTime Player (click highlight, GIF export) and opensource.
 - Gephi: Graph network visualization
 - MacTeX
+- Grammarly
