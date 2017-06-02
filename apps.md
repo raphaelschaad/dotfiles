@@ -69,3 +69,4 @@ Configuration Wizard
 - Gephi: Graph network visualization
 - MacTeX
 - Grammarly
+- DjView: To view .djvu files, requires DjVuLibre.
