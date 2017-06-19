@@ -70,3 +70,4 @@ Configuration Wizard
 - MacTeX
 - Grammarly
 - DjView: To view .djvu files, requires DjVuLibre.
+- Send to Kindle: Send documents from Mac to Kindle (Drag & Drop, Finder rightclick, or Printer)
