@@ -11,7 +11,7 @@ IMPORTANT: Ensure the presence of a `.gitignore` in this repo ignoring `.gitconf
 4. `brew` [essentials](./brew.md)
 5. `$ mkdir -p ~/Code/GitHub/raphaelschaad && cd $_`
 6. `$ git clone https://github.com/raphaelschaad/SystemConfig.git`
-7. Copy files “gitconfig.local” and “gitcookies” stored in 1Password into locally cloned SystemConfig folder as with a dot prefix.
+7. Copy files “gitconfig.local” and “gitcookies” stored in 1Password into locally cloned SystemConfig folder with a dot prefix.
 8. `$ ln -s $(pwd)/SystemConfig/{.profile,.gitconfig,.gitignore_global_osx,.gitconfig.local,.gitcookies} ~`
 9. Download and install latest [Inconsolata font](http://www.levien.com/type/myfonts/inconsolata.html)
 10. Import my Terminal.app [Profile](./Novel-Schaad.terminal)
