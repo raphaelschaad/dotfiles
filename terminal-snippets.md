@@ -208,8 +208,10 @@ Show again with `CreateDesktop true` and restarting Finder
 
 
 **Copy terminal output to system clipboard**
+
     $ echo hello | pbcopy
 
 
 **Unpause "not responding" macOS app**
+
     $ kill -CONT <pid>
