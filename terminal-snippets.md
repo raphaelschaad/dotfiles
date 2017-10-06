@@ -88,8 +88,10 @@ Don’t forget to reset!
     $ wget -S -O - http://example.com/webservice 2>&1
 
 `-S` print headers  
-`-O -` concatenate all together and print to standard output  
-`2>&1` wget prints the headers to stderr, redirect to stdout  
+`-O -` concatenate results together and print to standard output  
+`2>&1` wget prints the headers to stderr, redirect to stdout instead  
+
+Enclose the URL with quotes if it contains ampersands.
 
 
 **Split file**
