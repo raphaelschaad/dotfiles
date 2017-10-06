@@ -40,7 +40,7 @@ A collection of useful terminal snippets.
     $ find . -name ".*" -exec rm {} \;
 
 
-**Find Mac folder aliases recursively (Spotlight needs to be enabled)**
+**Find Mac folder aliases recursively (Spotlight has to be enabled)**
 
     $ mdfind "kMDItemKind == 'Alias'" -onlyin .
 
