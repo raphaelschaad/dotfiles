@@ -214,6 +214,10 @@ Show again with `CreateDesktop true` and restarting Finder
     $ echo hello | pbcopy
 
 
+**Copy file contents to system clipboard**
+    $ cat file | pbcopy
+
+
 **Unpause "not responding" macOS app**
 
     $ kill -CONT <pid>
