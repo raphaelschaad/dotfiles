@@ -28,7 +28,7 @@ I should look into using HomeBrew Cask and go through this list (e.g. `$ brew ca
 - Dropbox
 - Bartender 2
 - TinkerTool
-- Sublime Text 2 and 3 Beta: Customize System Preferences > Keyboard > Shortcuts > App Shortcuts > + > Sublime Text 2.app / “Special Characters…” / ^⌘Space. See `sublime-text-cheat-sheet.md`.
+- Sublime Text 3: See `sublime-text-cheat-sheet.md`.
 - Chrome
 - Transmission
 - VLC
