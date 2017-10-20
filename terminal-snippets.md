@@ -73,7 +73,7 @@ A collection of useful terminal snippets.
     $ sysctl -a | grep hw.memsize:
 
 
-**Simulate network latency (good for mobile app testing on desktop; there’s now an easier to use "Network Link Conditioner" for OS X or a "Throttling" option in "Charles Web Debugging Proxy")**
+**Simulate network latency (good for mobile app testing on desktop; there’s now an easier to use "Network Link Conditioner" for macOS or a "Throttling" option in "Charles Web Debugging Proxy")**
 
     # ipfw add pipe 1 src-port http
     # ipfw pipe 1 config delay 200 bw 700kbit/s
