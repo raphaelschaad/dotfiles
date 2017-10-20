@@ -224,10 +224,11 @@ Show again with `CreateDesktop true` and restarting Finder
     $ kill -CONT <pid>
 
 
-**Schedule and test user background process ("user agents") with launchd**
+**Schedule and test user background process ("user agent") with launchd**
 
     $ launchctl load com.raphaelschaad.test.plist
     $ launchctl start com.raphaelschaad.test
+    $ launchctl list | grep com.raphaelschaad
     $ launchctl stop com.raphaelschaad.test
     $ launchctl unload com.raphaelschaad.test.plist
 
