@@ -215,6 +215,7 @@ Show again with `CreateDesktop true` and restarting Finder
 
 
 **Copy file contents to system clipboard**
+
     $ cat file | pbcopy
 
 
