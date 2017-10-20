@@ -222,3 +222,14 @@ Show again with `CreateDesktop true` and restarting Finder
 **Unpause "not responding" macOS app**
 
     $ kill -CONT <pid>
+
+
+**Schedule and test user background process ("user agents") with launchd**
+
+    $ launchctl load com.raphaelschaad.test.plist
+    $ launchctl start com.raphaelschaad.test
+    $ launchctl stop com.raphaelschaad.test
+    $ launchctl unload com.raphaelschaad.test.plist
+
+launchd PList files go in ~/Library/LaunchAgents.  
+launchd is the preferred way of scheduling such processes on macOS. User agents are similar to daemons but user-specific and execute only when the user is logged in and the computer is not asleep.  
