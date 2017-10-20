@@ -58,7 +58,7 @@ A collection of useful terminal snippets.
 `-i` ignore case (default is case sensitive)  
 
 
-**Search for „foo“ in contents of .txt-files only (ignore „Permission denied“ output)**
+**Search for "foo" in contents of .txt-files only (ignore "Permission denied" output)**
 
     $ find . -type f -name "*.txt" -exec grep -i foo /dev/null {} \; 2> /dev/null
 
@@ -73,7 +73,7 @@ A collection of useful terminal snippets.
     $ sysctl -a | grep hw.memsize:
 
 
-**Simulate network latency (good for mobile app testing on desktop; there’s now an easier to use „Network Link Conditioner“ for OS X or a „Throttling“ option in „Charles Web Debugging Proxy“)**
+**Simulate network latency (good for mobile app testing on desktop; there’s now an easier to use "Network Link Conditioner" for OS X or a "Throttling" option in "Charles Web Debugging Proxy")**
 
     # ipfw add pipe 1 src-port http
     # ipfw pipe 1 config delay 200 bw 700kbit/s
