@@ -421,7 +421,7 @@ When inheriting from a class that declares a delegate protocol and the subclass 
     @end
 
 
-    // Sub.h
+    // Sub.h:
     @protocol SubDelegate;
 
     @interface Sub : Super
@@ -458,6 +458,7 @@ When using [weakly linked classes, methods, functions, or symbols](https://devel
 ### AppDelegate template
 Minimal AppDelegate that plays nicely with the default project setup/storyboards.
 
+    // AppDelegate.h:
     #import <UIKit/UIKit.h>
 
     NS_ASSUME_NONNULL_BEGIN
@@ -467,7 +468,7 @@ Minimal AppDelegate that plays nicely with the default project setup/storyboards
     NS_ASSUME_NONNULL_END
 
 
-
+    // AppDelegate.m:
     #import "AppDelegate.h"
 
     NS_ASSUME_NONNULL_BEGIN
