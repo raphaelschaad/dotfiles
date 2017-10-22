@@ -1,6 +1,8 @@
 # iOS Code Guidelines
 
-Some personal guidelines for writing iOS Objective-C code. They result from my development experience in past years[1], where I've always tried to dig up robust solutions to everyday situations, and write them down as small building blocks for later lookup. Although Swift seems like the future, I currently (2017) still use Objective-C effectively and don't seem to be alone.
+[Raphael Schaad](https://twitter.com/raphaelschaad)
+
+Some personal guidelines for writing iOS Objective-C code. They result from my development experience in past years[1], where I've always tried to dig up robust solutions to everyday situations, and write them down as small building blocks for later lookup. Although Swift seems like the future, I currently (2017) still use Objective-C effectively, and don't seem to be alone.
 
 The practices are usually in the format "do X *because of* Y". Everything should be challenged over time. Not too much significant and new seems to have been adopted in recent years (i.e. IB, storyboards, asset catalogs, PDF assets, size classes, trait collections, auto layout, etc. can still be ignored in many cases).[2] Exceptions with no trade-offs are modern language features (i.e. [nullability annotations](https://developer.apple.com/swift/blog/?id=25) and [lightweight generics](https://developer.apple.com/library/content/documentation/Swift/Conceptual/BuildingCocoaApps/InteractingWithObjective-CAPIs.html#//apple_ref/doc/uid/TP40014216-CH4-ID35) e.g. for typed collections).
 
