@@ -1,6 +1,6 @@
 # iOS Code Guidelines
 
-Some personal guidelines for writing iOS Objective-C code. They result from my development experience in past years[1], where I've always tried to dig up robust solutions to everyday situations, and write them down as small building blocks for later lookup. Although Swift is the future, I currently still use Objective-C.
+Some personal guidelines for writing iOS Objective-C code. They result from my development experience in past years[1], where I've always tried to dig up robust solutions to everyday situations, and write them down as small building blocks for later lookup. Although Swift seems like the future, I currently (2017) still use Objective-C effectively and don't seem to be alone.
 
 The practices are usually in the format "do X *because of* Y". Everything should be challenged over time. Not too much significant and new seems to have been adopted in recent years (i.e. IB, storyboards, asset catalogs, PDF assets, size classes, trait collections, auto layout, etc. can still be ignored in many cases).[2] Exceptions with no trade-offs are modern language features (i.e. [nullability annotations](https://developer.apple.com/swift/blog/?id=25) and [lightweight generics](https://developer.apple.com/library/content/documentation/Swift/Conceptual/BuildingCocoaApps/InteractingWithObjective-CAPIs.html#//apple_ref/doc/uid/TP40014216-CH4-ID35) e.g. for typed collections).
 
@@ -57,13 +57,13 @@ More info from [Big Nerd Ranch](http://blog.bignerdranch.com/564-bools-sharp-cor
 When declaring a pointer variable, the asterisk goes with the variable name: `UIColor *myColor`. This makes sense because if you declared multiple variables on a single line, each one gets an asterisk: `UIColor *firstColor, *secondColor`. If declared like this `UIColor* firstColor, secondColor`, only `firstColor` is actually a pointer.
 
 ### Constants
-When declaring a "container" to store a value, it's generally a good idea to default to a constant and only switching to a variable when the value actually needs to change during runtime. This strategy leads to a surprising high constants over variables ratio, which is a good thing. With Swift constants (`let keyword`), it's possible to defer assigning the value from compile-time to runtime (exactly once), making them even more useful.
+When declaring a "container" to store a value, it's generally a good idea to default to a constant and only switching to a variable when the value actually needs to change during runtime. This strategy leads to a surprising high constants-to-variables-ratio, which is a good thing. With Swift constants (`let keyword`. Note that in JavaScript ECMAScript6, “ES6” for short, `let` is a variable and `const` is a constant), it's possible to defer assigning the value from compile-time to runtime (exactly once), making them even more useful.
 
 A constant that is scoped to the entire file (not a method), but only used within that file, should be made `static` to limit its scope, because otherwise it can clash with other constants in the global namespace (e.g. from 3rd party code):
 
     static const NSUInteger kSize = 12;
 
-This is also true for objects. (To indicate the constant in the example above, it's prefixed with "k" after the Hungarian notation. Cocoa frameworks use that naming convention. However, better compiler warnings seem to reduce the need to include that information in the name.
+This is also true for objects. (To indicate the constant in the example above, it's prefixed with "k" after the Hungarian notation. Cocoa frameworks use that naming convention. However, better compiler warnings seem to reduce the need to include that information in the name.)
 
 If the constant is used in other files it should still be defined in the implementation file, but declared with the `extern` keyword in the header:
 
@@ -445,10 +445,10 @@ Initialize the NSError variable to nil, check against the returned "successful v
     }
 
 ### Using SDK-based development
-When using [weakly linked classes, methods, functions, or symbols](https://developer.apple.com/library/content/documentation/DeveloperTools/Conceptual/cross_development/Using/using.html), always add a comment in the format "... iOS <version number> ..." so when dropping support for a version, those code paths can easily be identified and cleaned up.
+When using [weakly linked classes, methods, functions, or symbols](https://developer.apple.com/library/content/documentation/DeveloperTools/Conceptual/cross_development/Using/using.html), always add a comment in the format "... iOS <version number> ..." so when dropping support for a version, those code paths can easily be searched for and cleaned up.
 
-    // If we have the Social Framework available (iOS 6 and newer), use it to determine whether we can tweet or not.
-    // Otherwise, try to use the Twitter Framework (iOS 5, deprecated in iOS 6).
+    // If we have the Social Framework available (iOS 6.0+), use it to determine whether we can tweet or not.
+    // Otherwise, try to use the Twitter Framework (iOS 5.0+, deprecated in iOS 6.0).
     if ([SLComposeViewController class]) {
         canTweet = [SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter];
     } else if ([TWTweetComposeViewController class]) {
@@ -457,6 +457,15 @@ When using [weakly linked classes, methods, functions, or symbols](https://devel
 
 ### AppDelegate template
 Minimal AppDelegate that plays nicely with the default project setup/storyboards.
+
+    #import <UIKit/UIKit.h>
+
+    NS_ASSUME_NONNULL_BEGIN
+    @interface AppDelegate : UIResponder
+
+    @end
+    NS_ASSUME_NONNULL_END
+
 
     #import "AppDelegate.h"
 
@@ -483,12 +492,12 @@ Minimal AppDelegate that plays nicely with the default project setup/storyboards
 
 
 ## 3. Format the code conventionally, consistently, and don't worry about it too much
-- Tabs vs. spaces? Press the tab key by any means, but probably just go with spaces under the hood, like most modern editors default to. In any case, stay consistent with what's already there. (Pro-tab arguments: [Coding Horror](https://blog.codinghorror.com/death-to-the-space-infidels/), [Jarrod Overson](http://jarrodoverson.com/blog/spaces-vs-tabs/), [Jamie Zawinski](https://www.jwz.org/doc/tabs-vs-spaces.html) Pro-spaces: [Lea Verou](http://lea.verou.me/2012/01/why-tabs-are-clearly-superior/))
+- Tabs vs. spaces? Press the tab key by any means, but probably just go with spaces under the hood, like most modern editors default to. In any case, stay consistent with what's already there. (Pro-spaces arguments: [Coding Horror](https://blog.codinghorror.com/death-to-the-space-infidels/), [Jarrod Overson](http://jarrodoverson.com/blog/spaces-vs-tabs/), [Jamie Zawinski](https://www.jwz.org/doc/tabs-vs-spaces.html) Pro-tabs: [Lea Verou](http://lea.verou.me/2012/01/why-tabs-are-clearly-superior/))
 - Definitely indent code, but don't obsessively [horizontally align code in other ways](http://www.cocoawithlove.com/blog/2016/04/01/neither-tabs-nor-spaces.html).
 - Generally don't commit commented-out code because it clutters up the codebase and feels like a pre-Git practice. If there's a good reason to do it, use `//` at the very beginning of the line (no indentation) to not confuse it with an actual comment explaining something with a code snippet.
 - Don't expect to ever address that `// TODO:`. If you have to push a checkpoint of clearly unfinished code, add something stronger like a `#warning` that can be configured to break a production build.
 - To group entire sections of a file, use something like `#pragma mark -` that stands out more than a comment.
-- At a glance, the [NYTimes Objective-C Style Guide](https://github.com/NYTimes/objective-c-style-guide) elaborates on a reasonable style.
+- At a glance, the [NYTimes Objective-C Style Guide](https://github.com/NYTimes/objective-c-style-guide) describes a reasonable style.
 
 ## 4. Misc.
 Not guidelines per se, but snippets that are useful for iOS development.
