@@ -233,4 +233,4 @@ Show again with `CreateDesktop true` and restarting Finder
     $ launchctl unload com.raphaelschaad.test.plist
 
 launchd PList files go in ~/Library/LaunchAgents.  
-launchd is the preferred way of scheduling such processes on macOS. User agents are similar to daemons but user-specific and execute only when the user is logged in and the computer is not asleep.  
+launchd is the preferred way of scheduling such processes on macOS (not cron jobs). User agents are similar to daemons but user-specific and execute only when the user is logged in and the computer is not asleep.  
