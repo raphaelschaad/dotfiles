@@ -34,10 +34,10 @@
 	helper = osxkeychain
 [filter "lfs"]
 	# This section was added automatically when installing GitHub Desktop
+	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-	clean = git-lfs clean -- %f
 [http]
 	# Kept in 1Password.
 	cookiefile = ~/.gitcookies
