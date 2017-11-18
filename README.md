@@ -19,7 +19,7 @@ IMPORTANT: Ensure the presence of a `.gitignore` in this repo ignoring `.gitconf
 
 ## Link/Import app-specific config file
 ### From `SystemConfig`
-`$ cd /Code/GitHub/raphaelschaad/SystemConfig/`
+`$ cd ~/Code/GitHub/raphaelschaad/SystemConfig/`
 
 #### Xcode
 [My Font & Color Theme](./Default-Schaad.dvtcolortheme)
