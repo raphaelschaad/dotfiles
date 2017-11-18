@@ -25,6 +25,9 @@ IMPORTANT: Ensure the presence of a `.gitignore` in this repo ignoring `.gitconf
 [My Font & Color Theme](./Default-Schaad.dvtcolortheme)
 `$ mkdir ~/Library/Developer/Xcode/UserData/FontAndColorThemes && ln -s $(pwd)/Default-Schaad.dvtcolortheme $_`
 
+#### Sublime Text
+`$ ln -s $(pwd)/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Preferences.sublime-settings` for [user preferences](./Preferences.sublime-settings) (easily accessible with ⌘, from within Sublime Text [left view = default preferences; right view = user preferences])
+
 ### From `Dropbox/Synced\ App\ Files`
 #### macOS Spelling Dictionary
 If linking (hard or soft) `~/Library/Spelling/LocalDictionary` to Dropbox, the links eventually get overwritten. Instead, manually copy/sync/merge (opendiff) the file periodically.

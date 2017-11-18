@@ -1,0 +1,15 @@
+{
+  "ignored_packages":
+  [
+    // Vintage is a vi mode editing package and disabled by default: https://www.sublimetext.com/docs/3/vintage.html
+    "Vintage"
+  ],
+
+  // Indentation Settings: https://www.sublimetext.com/docs/3/indentation.html
+
+  // Default is 4
+  "tab_size": 2,
+
+  // Default is false
+  "translate_tabs_to_spaces": true
+}
