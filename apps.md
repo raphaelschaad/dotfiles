@@ -69,3 +69,4 @@ I should look into using HomeBrew Cask and go through this list (e.g. `$ brew ca
 - Grammarly
 - DjView: To view .djvu files, requires DjVuLibre.
 - Send to Kindle: Send documents from Mac to Kindle (Drag & Drop, Finder right click, or Printer)
+- Advanced REST Client
