@@ -191,6 +191,14 @@ Ensure parent directory is drwxr-xr-x (if needed, change: # chmod 755 parent-dir
 Now browse to http://localhost/dir-to-be-served/  
 
 
+**Use the Python webserver**
+
+    $ python -m SimpleHTTPServer
+
+The working directory becomes the document root.  
+Now browse to http://localhost:8000
+
+
 **Download a set of images from incrementing URLs**
 
     $ for i in $(seq -f "%03g" 00 181); do wget http://thestandardsmanual.com/images/large/nycta_gsm_$i.jpg; done
