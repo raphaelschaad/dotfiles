@@ -7,4 +7,3 @@
 
 ## Installed Packages (packagecontrol.io)
 - Pretty JSON
-- Processing

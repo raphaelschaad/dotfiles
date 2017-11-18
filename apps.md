@@ -57,7 +57,7 @@ I should look into using HomeBrew Cask and go through this list (e.g. `$ brew ca
 - Cura: Ultimaker2 3D printing
 - Tunnelblick + Certs: Media Lab VPN from Wiki
 - Sketch: To avoid Versions hogging the disk, disable Preferences > General > Auto-Save (or pre 3.4 run $ defaults write -app 'sketch' ApplePersistence -bool no) Note that the latest version moved away from the App Store and is now registered to the email address.
-- Processing: With lib HYPE
+- Processing 3: Install HYPE as proper library by extracting [HYPE.zip](https://github.com/hype/HYPE_Processing/blob/master/distribution/HYPE.zip) to `<Processing dir>/libraries/` (shows up under Sketch > Import Library… > Contributed).
 - Google Earth Web Plugin
 - Google Earth Pro: username is email and key is "GEPFREE"
 - CocoaPods: `$ sudo gem install cocoapods` (see `ios-code-guidelines.md`)
