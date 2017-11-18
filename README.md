@@ -36,7 +36,7 @@ Note that this is outdated and [Processing 3 + Sublime Text 3 + HYPE](https://vi
 
 ### From `Dropbox/Synced\ App\ Files`
 #### macOS Spelling Dictionary
-If linking (hard or soft) ~/Library/Spelling/LocalDictionary to Dropbox, the links eventually get overwritten. Instead, manually copy/sync/merge (opendiff) the file periodically.
+If linking (hard or soft) `~/Library/Spelling/LocalDictionary` to Dropbox, the links eventually get overwritten. Instead, manually copy/sync/merge (opendiff) the file periodically.
 
 #### Google Earth Pro
 1. File > Open… (CMD+O) > Sync.kmz
