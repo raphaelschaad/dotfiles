@@ -2,7 +2,7 @@
 
 [Raphael Schaad](https://twitter.com/raphaelschaad)
 
-Some personal guidelines for writing iOS Objective-C code. They result from my development experience in past years[1], where I've always tried to dig up robust solutions to everyday situations, and write them down as small building blocks for later lookup. Although Swift seems like the future, I currently (2017) still use Objective-C effectively, and don't seem to be alone.
+Some personal guidelines for writing iOS Objective-C code. They result from my development experience in past years[1], where I've always tried to dig up robust solutions to everyday situations and write them down as small building blocks for later lookup. Although Swift seems like the future, I currently (2017) still use Objective-C effectively, and don't seem to be alone.
 
 The practices are usually in the format "do X *because of* Y". Everything should be challenged over time. Not too much significant and new seems to have been adopted in recent years (i.e. IB, storyboards, asset catalogs, PDF assets, size classes, trait collections, auto layout, etc. can still be ignored in many cases).[2] Exceptions with no trade-offs are modern language features (i.e. [nullability annotations](https://developer.apple.com/swift/blog/?id=25) and [lightweight generics](https://developer.apple.com/library/content/documentation/Swift/Conceptual/BuildingCocoaApps/InteractingWithObjective-CAPIs.html#//apple_ref/doc/uid/TP40014216-CH4-ID35) e.g. for typed collections).
 
@@ -29,7 +29,7 @@ The practices are usually in the format "do X *because of* Y". Everything should
 From Aaron Hillegass, Cocoa Programming for OS X, Creating Your Own Classes, Conventions for Creating Initializers; Apple, Adopting Modern Objective-C, Object Initialization; and own notes.
 
 ### BOOL
-- Don't compare explicitly to `YES` because a "loaded `BOOL`" (non-one lower byte address object) could result in false, when true was intended:
+- Don't compare explicitly to `YES` because a "loaded `BOOL`" (non-one lower byte address object) could result in false when true was intended:
 
 ```
     if ([kitteh haz:cheezburger]) { // good
@@ -53,15 +53,15 @@ From Aaron Hillegass, Cocoa Programming for OS X, Creating Your Own Classes, Con
 
 There is unfortunately no logical and assignment operator in C for a convenient syntax.
 
-More info from [Big Nerd Ranch](http://blog.bignerdranch.com/564-bools-sharp-corners/) and [Mike Ash](https://www.mikeash.com/pyblog/friday-qa-2012-12-14-objective-c-pitfalls.html). Note that ARM 64-bit seems to have fix this, where `BOOL` is an actual 1-bit boolean type and everything that is non-zero is `YES`.
+More info from [Big Nerd Ranch](http://blog.bignerdranch.com/564-bools-sharp-corners/) and [Mike Ash](https://www.mikeash.com/pyblog/friday-qa-2012-12-14-objective-c-pitfalls.html). Note that ARM 64-bit seems to have fixed this, where `BOOL` is an actual 1-bit boolean type, and everything that is non-zero is `YES`.
 
 ### Variable declaration
-When declaring a pointer variable, the asterisk goes with the variable name: `UIColor *myColor`. This makes sense because if you declared multiple variables on a single line, each one gets an asterisk: `UIColor *firstColor, *secondColor`. If declared like this `UIColor* firstColor, secondColor`, only `firstColor` is actually a pointer.
+When declaring a pointer variable, the asterisk goes with the variable name: `UIColor *myColor`. This makes sense because if you declare multiple variables on a single line, each one gets an asterisk: `UIColor *firstColor, *secondColor`. If declared like this `UIColor* firstColor, secondColor`, only `firstColor` is a pointer.
 
 ### Constants
-When declaring a "container" to store a value, it's generally a good idea to default to a constant and only switching to a variable when the value actually needs to change during runtime. This strategy leads to a surprising high constants-to-variables-ratio, which is a good thing. With Swift constants (`let keyword`. Note that in JavaScript ECMAScript6, “ES6” for short, `let` is a variable and `const` is a constant), it's possible to defer assigning the value from compile-time to runtime (exactly once), making them even more useful.
+When declaring a "container" to store a value, it's a good idea to default to a constant and only switching to a variable when the value needs to change during runtime. This strategy leads to a surprising high constants-to-variables-ratio, which is a good thing. With Swift constants (`let keyword`. Note that in JavaScript ECMAScript6, “ES6” for short, `let` is a variable and `const` is a constant), it's possible to defer assigning the value from compile-time to runtime (exactly once), making them even more useful.
 
-A constant that is scoped to the entire file (not a method), but only used within that file, should be made `static` to limit its scope, because otherwise it can clash with other constants in the global namespace (e.g. from 3rd party code):
+A constant that is scoped to the entire file (not a method), but only used within that file, should be made `static` to limit its scope, because otherwise, it can clash with other constants in the global namespace (e.g. from 3rd party code):
 
     static const NSUInteger kSize = 12;
 
@@ -77,7 +77,7 @@ If the constant is used in other files it should still be defined in the impleme
 
 In this case, add the class name as prefix to create a name space.
 
-The benefit of `extern`ing in the header is that the build will break if the definition gets removed from the .m file. Without the `extern`, the build will not break and the constant will implicitly be `0`.
+The benefit of `extern`ing in the header is that the build will break if the definition gets removed from the .m file. Without the `extern`, the build will not break, and the constant will implicitly be `0`.
 
 For objects, the syntax should be a constant pointer, so it can't be reassigned:
 
@@ -85,7 +85,7 @@ For objects, the syntax should be a constant pointer, so it can't be reassigned:
     \________/ \___/ \______/ = \_____/;
        type   keyword  name      value
 
-`const NSString *` or `NSString const *` would both be a normal pointer to a constant `NSString`, which is nonsensical because `NSString`s are already immutable and other classes' mutability can't be enforced this way.
+`const NSString *` or `NSString const *` would both be a regular pointer to a constant `NSString`, which is nonsensical because `NSString`s are already immutable and other classes' mutability can't be enforced this way.
 
 It's consequent to have spaces around the '*' because there's a space between class name and pointer operator (together making up the type, see Variable declaration) and a space between the type and the keyword.
 
@@ -94,9 +94,9 @@ In general, constants should be defined in the smallest scope possible (block ov
 ### @property declaration modifiers
 - Modifier order: `@property (<class, >atomicity, storage<, mutation><, nullability><, getter = isAwesome>) BOOL awesome`;
 - Be explicit about atomicity modifier `nonatomic`/`atomic`, because `atomic` is rarely intended but the default.
-- Be explicit about storage modifier `assign`/`weak`/`strong`/`copy`, even when it's `readonly`, because when overriding `readwrite` internally the signatures match. Use `assign` only for primitive data types and structs. In the rare case a class doesn't support `weak` references or unretained is intended, use `unsafe_unretained`.
+- Be explicit about storage modifier `assign`/`weak`/`strong`/`copy`, even when it's `readonly`, because when overriding `readwrite` internally the signatures match. Use `assign` only for primitive data types and structs. In the rare case that a class doesn't support `weak` references or unretained is intended, use `unsafe_unretained`.
 - Don't be explicit about mutation modifier `readwrite` because it's usually intended and the default. When using `readonly` in the header, optionally override in the implementation file to `readwrite`.
-- Change the default nullability behavior from `null_unspecified` to `nonnull` (with [a few exceptions](https://developer.apple.com/swift/blog/?id=25)) by enclosing the interface and implementation in both .h and .m with `NS_ASSUME_NONNULL_BEGIN/END`. Then only be explicit when using `nullable`. Note that for method declarations these non-underscored forms come immediately after an open parenthesis before the type.
+- Change the default nullability behavior from `null_unspecified` to `nonnull` (with [a few exceptions](https://developer.apple.com/swift/blog/?id=25)) by enclosing the interface and implementation in both .h and .m files with `NS_ASSUME_NONNULL_BEGIN/END`. Then only be explicit when using `nullable`. Note that for method declarations these non-underscored forms come immediately after an open parenthesis before the type.
 - Use spaces around '=' for custom getter name to follow general convention. There should never be the necessity to use a custom setter name.
 
 ### Variable declaration qualifiers
@@ -108,7 +108,7 @@ Possible qualifiers are: `__strong`, `__weak`, `__unsafe_unretained`, `__autorel
 
 According to Apple's [Transitioning to ARC Release Notes](https://developer.apple.com/library/content/releasenotes/ObjectiveC/RN-TransitioningToARC/Introduction/Introduction.html) "Other variants are technically incorrect but are 'forgiven' by the compiler."
 
-[Nullability annotations](https://developer.apple.com/swift/blog/?id=25): It is especially important to keep order in the case of multi-level pointers like `**values` where the outer pointer can be nullable but the inner pointer has to be nonnull. The double-underscored variants `__nullable` and `__nonnull` are deprecated.
+[Nullability annotations](https://developer.apple.com/swift/blog/?id=25): It is especially important to keep order in the case of multi-level pointers like `**values` where the outer pointer can be nullable, but the inner pointer has to be nonnull. The double-underscored variants `__nullable` and `__nonnull` are deprecated.
 
 Note that the [`__kindof` type specifier](https://developer.apple.com/library/prerelease/content/releasenotes/AppKit/RN-AppKitOlderNotes/) (indicating that subclasses of the specified type are also valid) must precede the type:
 
@@ -136,9 +136,9 @@ When creating C headers, add an include guard like this:
 Use `#import/include <header>` for system headers and `#import/include "header"` for user headers because that ensures the correct order of directories to look for the header.
 
 ### `#import`ing system frameworks
-Always #import the top most level frameworks that a class needs to allow omitting prefix header and enabling its usage as Swift module.
+Always #import the topmost level frameworks that a class needs to allow omitting prefix header and enabling its use as Swift module.
 
-Note that UIKit already imports Foundation, though it's a bit indirect: its umbrella header imports e.g. UIAccelerometer.h which in turn imports Foundation. So when importing UIKit, there's no need to explicitly import Foundation too.
+Note that UIKit already imports Foundation, though it's a bit indirect: its umbrella header imports e.g. UIAccelerometer.h which in turn imports Foundation. So when importing UIKit, there's no need to import Foundation too explicitly.
 
 ### Prefix Header
 Not needed anymore. Can still be added in build settings, e.g. for project-wide macros.
@@ -152,7 +152,7 @@ Use this math function to test a float for its sign (positive or negative):
     BOOL directionsMatch = signbit(velocity.x) == signbit(translation.x);
 
 ### Prefixes
-According to Apple's [Coding Guidelines for Cocoa](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/CodingGuidelines/Articles/NamingBasics.html#//apple_ref/doc/uid/20001281-1002226-BBCJECED) "Use prefixes when naming classes, protocols, functions, constants, and typedef structures. Do not use prefixes when naming methods; methods exist in a name space created by the class that defines them." When *extending* other objects functionality by either adding a category or subclassing, however, a prefix can be a nice reminder:
+According to Apple's [Coding Guidelines for Cocoa](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/CodingGuidelines/Articles/NamingBasics.html#//apple_ref/doc/uid/20001281-1002226-BBCJECED) "Use prefixes when naming classes, protocols, functions, constants, and typedef structures. Do not use prefixes when naming methods; methods exist in a namespace created by the class that defines them." When *extending* other objects functionality by either adding a category or subclassing, however, a prefix can be a nice reminder:
 
     [NSObject rs_doSomething]; // "ah, my method!"
 
@@ -173,12 +173,12 @@ Apple String Programming Guide, [String Format Specifiers](https://developer.app
 
     (double)arc4random_uniform(314) / 100; // random value up to PI
 
-Generally use the `arc4random()`-family for ints and the `rand48()`-family for floats. [NSHipster has snippets](http://nshipster.com/random/) them including picking random elements from arrays, randomly shuffling arrays, etc.
+Use the `arc4random()`-family for ints and the `rand48()`-family for floats. [NSHipster has snippets](http://nshipster.com/random/) them including picking random elements from arrays, randomly shuffling arrays, etc.
 
 ### Object description method
 `NSObject`'s `-description` returns the class name and object address (e.g. `<FLItem: 0x60800002a320>`). `(lldb) po` uses `-debugDescription`. According to Apple's Mac [OS X Debugging Magic](https://developer.apple.com/library/content/technotes/tn2124/_index.html#//apple_ref/doc/uid/DTS10003391-CH1-SECCOCOA), `NSObject`'s `-debugDescription` calls through to `-description`.
 
-Overriding `-description` such that the result can be used cleanly in UI doesn't make sense, because we want that default class name and object address at least in our `-debugDescription`, and if we override `-debugDescription` to call super and append additional internal state relevant to debugging, super will call through to our `-description` implementation and use the "clean UI value" instead of the class name and object address. So the simplest approach seems to just mirror that behavior and override `-description` to append the most relevant variable(s) to `super`'s implementation, and override `-debugDescription` to append some additional state to `self`'s `description` (don't go crazy here, otherwise logs become unreadable).
+Overriding `-description` such that the result can be used cleanly in UI doesn't make sense, because we want that default class name and object address at least in our `-debugDescription`, and if we override `-debugDescription` to call super and append additional internal state relevant to debugging, super will call through to our `-description` implementation and use the "clean UI value" instead of the class name and object address. So the simplest approach seems just to mirror that behavior and override `-description` to append the most relevant variable(s) to `super`'s implementation and override `-debugDescription` to append some additional state to `self`'s `description` (don't go crazy here, otherwise logs become unreadable).
 
     #pragma mark NSObject Method Overrides
 
@@ -208,7 +208,7 @@ Overriding `-description` such that the result can be used cleanly in UI doesn't
         return debugDescription;
     }
 
-To represent an object in UI it makes more sense to add lazy properties like `.displayText` (and in there either do the right thing for localization, or happily ignore it).
+To represent an object in UI, it makes more sense to add lazy properties like `.displayText` (and in there either do the right thing for localization or happily ignore it).
 
 ### Changing the status bar style
 
@@ -223,11 +223,11 @@ To represent an object in UI it makes more sense to add lazy properties like `.d
 That way the compiler checks that the returned object is of the expected sub(class) type. `instancetype` is already inferred for [instance methods that begin with "init" or "copy"](http://clang.llvm.org/docs/LanguageExtensions.html#objective-c-features), but it's clearer to be explicit and consistent. Apple's [Adopting Modern Objective-C](https://developer.apple.com/library/ios/releasenotes/ObjectiveC/ModernizationObjC/AdoptingModernObjective-C/AdoptingModernObjective-C.html) clarifies that it's for return values only "Unlike id, the instancetype keyword can be used only as the result type in a method declaration."
 
 ### Immutable copies
-When *setting* a seemingly immutable object such as an `NSString`, if you rely on the value not changing once it's set, make a copy instead, because one could cast and pass an `NSMutableString` and change it afterwards.
+When *setting* a seemingly immutable object such as an `NSString`, if you rely on the value not changing once it's set, make a copy instead, because one could cast and pass an `NSMutableString` and change it afterward.
 
     @property (nonatomic, copy) NSString *name;
 
-When *returning* a mutable object, if you rely on the value not changing without notice, return a copy instead of a pointer, because other any caller could change it.
+When *returning* a mutable object, if you rely on the value not changing without notice, return a copy instead of a pointer because any caller could change it.
 
     @property (nonatomic, strong, readonly) NSMutableArray<NSString *> *names; // names are not really "readonly"
 
@@ -242,7 +242,7 @@ When getting a reference to self to capture it explicitly weak or strong, call i
 ### Dot-syntax
 Call an API the way the header declares it because that makes it easier to search call-sites across the codebase.
 
-This is not as relevant anymore because by now all headers are cleaned up and all variables are exposed by properties (e.g. `UIColor.orangeColor`), but in the transitional years after the @property and dot-syntax got introduced, many frameworks still exposed property-like ivars through setters/getters (e.g. `-[NSArray count]`).
+This is not as relevant anymore because by now all headers are cleaned up, and all variables are exposed by properties (e.g. `UIColor.orangeColor`), but in the transitional years after the @property and dot-syntax got introduced, many frameworks still exposed property-like ivars through setters/getters (e.g. `-[NSArray count]`).
 
 ### Expose class variables as @property
 Declare them as static and implement getter/setter because class properties are not synthesized:
@@ -267,7 +267,7 @@ Declare them as static and implement getter/setter because class properties are 
     }
 
 ### Initializing a static variable once (e.g. for singleton)
-Wrap all `dispatch_once` calls to initialize a static variable once into a nil-check to avoid potential deadlocking: `dispatch_once` waits synchronously until the block has completed and assures to only execute once. The first call is blocking, holding a normal lock on the block (not a recursive lock/reentrant mutex), waiting for it to return. When we happen to call the same method recursively in the block, e.g. indirectly as a side effect in more complex codebases, the second call waits to get into the block when trying to acquire the same lock a second time, resulting in a deadlock. We can avoid that by returning the second call when the static variable already has a value. Note: This does not prevent from deadlocking on recursive calling before or during the static variable was initialized (race condition).
+Wrap all `dispatch_once` calls to initialize a static variable once into a nil-check to avoid potential deadlocking: `dispatch_once` waits synchronously until the block has completed and assures only to execute once. The first call is blocking, holding a normal lock on the block (not a recursive lock/reentrant mutex), waiting for it to return. When we happen to call the same method recursively in the block, e.g. indirectly as a side effect in more complex codebases, the second call waits to get into the block when trying to acquire the same lock a second time, resulting in a deadlock. We can avoid that by returning the second call when the static variable already has a value. Note: This does not prevent from deadlocking on recursive calling before or during the static variable was initialized (race condition).
 
 Initialize `onceToken`s explicitly with 0 (that's what they need to be) even though static (long) variables get initialized with 0 by default; for consistency to always default initialize everything but ivars.
 
@@ -280,7 +280,7 @@ Initialize `onceToken`s explicitly with 0 (that's what they need to be) even tho
     }
 
 ### Class method vs. instance method
-Declare publicly exposed methods that don't require state as class methods. Generally declare private methods as instance methods, even if they don't require state. Since you always have an instance in this case anyway, it's more convenient, and when the method starts to require state, the signature doesn't change.
+Declare publicly exposed methods that don't require state as class methods. Declare private methods as instance methods, even if they don't require state. Since you always have an instance in this case anyway, it's more convenient, and when the method starts to require state, the signature doesn't change.
 
 ### `-isEqualToString:` vs. `-isEqual:`
 Never use `-isEqualToString:` because when a stray non-`NSString` object makes it through we'd rather return NO instead of crash. A nice addition to the debug build tooling could be to have a bear trap to crash and log on such occurrences.
@@ -370,7 +370,7 @@ Support copying in own object by implementing follow:
 
 Note that we need to override `-copyWithZone:` and not `-copy`, even though the `zone` parameter is legacy and unused.
 
-Conform to the protocol in the header so subclasses know:
+Conform to the protocol in the header, so subclasses know:
 
     @interface Sub : Super <NSCopying>
     @end
@@ -390,7 +390,7 @@ Note the use of `[self class]` to return the right object if we get subclassed. 
     Person *copy = [super copyWithZone:zone];
 ```
 
-- C) For a subclass that is immutable (e.g. has exclusively readonly properties), just return self (Foundation does the same):
+- C) For a subclass that is immutable (e.g. has readonly properties exclusively), just return self (Foundation does the same):
 
     return self;
 
@@ -495,11 +495,11 @@ Minimal AppDelegate that plays nicely with the default project setup/storyboards
     NS_ASSUME_NONNULL_END
 
 
-## 3. Format the code conventionally, consistently, and don't worry about it too much
-- Tabs vs. spaces? Press the tab key by any means, but probably just go with spaces under the hood, like most modern editors default to. In any case, stay consistent with what's already there. (Pro-spaces arguments: [Coding Horror](https://blog.codinghorror.com/death-to-the-space-infidels/), [Jarrod Overson](http://jarrodoverson.com/blog/spaces-vs-tabs/), [Jamie Zawinski](https://www.jwz.org/doc/tabs-vs-spaces.html) Pro-tabs: [Lea Verou](http://lea.verou.me/2012/01/why-tabs-are-clearly-superior/))
-- Definitely indent code, but don't obsessively [horizontally align code in other ways](http://www.cocoawithlove.com/blog/2016/04/01/neither-tabs-nor-spaces.html).
-- Generally don't commit commented-out code because it clutters up the codebase and feels like a pre-Git practice. If there's a good reason to do it, use `//` at the very beginning of the line (no indentation) to not confuse it with an actual comment explaining something with a code snippet.
-- Don't expect to ever address that `// TODO:`. If you have to push a checkpoint of clearly unfinished code, add something stronger like a `#warning` that can be configured to break a production build.
+## 3. Format the code conventionally, consistently, and don't worry too much about it
+- Tabs vs. spaces? Press the tab key by any means, but probably just go with spaces under the hood, as most modern editors default to. In any case, stay consistent with what's already there. (Pro-spaces arguments: [Coding Horror](https://blog.codinghorror.com/death-to-the-space-infidels/), [Jarrod Overson](http://jarrodoverson.com/blog/spaces-vs-tabs/), [Jamie Zawinski](https://www.jwz.org/doc/tabs-vs-spaces.html) Pro-tabs: [Lea Verou](http://lea.verou.me/2012/01/why-tabs-are-clearly-superior/))
+- Indent code, but don't obsessively [horizontally align code in other ways](http://www.cocoawithlove.com/blog/2016/04/01/neither-tabs-nor-spaces.html).
+- Don't commit commented-out code because it clutters up the codebase and feels like a pre-Git practice. If there's a good reason to do it, use `//` at the very beginning of the line (no indentation) to not confuse it with an actual comment explaining something with a code snippet.
+- Don't expect ever to address that `// TODO:`. If you have to push a checkpoint of clearly unfinished code, add something stronger like a `#warning` that can be configured to break a production build.
 - To group entire sections of a file, use something like `#pragma mark -` that stands out more than a comment.
 - At a glance, the [NYTimes Objective-C Style Guide](https://github.com/NYTimes/objective-c-style-guide) describes a reasonable style.
 
@@ -574,5 +574,5 @@ tmp_data
 
 —
 
-- [1]: I wrote my first app in 2009, a year after the initial release of the "iPhone OS" SDK, built [the original iA Writer in 2010](https://raphaelschaad.github.io/portfolio/ia-writer), and worked at [Flipboard from 2011-2015](https://raphaelschaad.github.io/portfolio/flipboard). During these years, I was fortunate to learn from and with some of the best, to open source the widely used [animated GIF library FLAnimatedImage](https://raphaelschaad.github.io/portfolio/flanimatedimage), and to attend WWDC 2011-2014 (glad to have experienced you, Steve, you remain one of my heros).
+- [1]: I wrote my first app in 2009, a year after the initial release of the "iPhone OS" SDK, built [the original iA Writer in 2010](https://raphaelschaad.github.io/portfolio/ia-writer), and worked at [Flipboard from 2011-2015](https://raphaelschaad.github.io/portfolio/flipboard). During these years, I was fortunate to learn from and with some of the best, to open source the widely used [animated GIF library FLAnimatedImage](https://raphaelschaad.github.io/portfolio/flanimatedimage), and to attend WWDC 2011-2014 (glad to have experienced you, Steve, you remain one of my heroes).
 - [2]: Although I've worked mostly on product design since 2014 and [am currently in academia at MIT](https://media.mit.edu/~schaad), I try to keep up with the iOS dev community and in touch with friends in leading iOS engineering positions at top tech companies (thanks guys for keeping me in the loop).
