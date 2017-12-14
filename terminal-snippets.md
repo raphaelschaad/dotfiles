@@ -242,3 +242,12 @@ Show again with `CreateDesktop true` and restarting Finder
 
 launchd PList files go in ~/Library/LaunchAgents.  
 launchd is the preferred way of scheduling such processes on macOS (not cron jobs). User agents are similar to daemons but user-specific and execute only when the user is logged in and the computer is not asleep.  
+
+
+**Send Mac to sleep if it stays infinitely**
+
+    $ pmset -g assertions | grep PreventUserIdleDisplaySleep
+    $ kill <pid>
+
+A common scenario is that AirPlayUIAgent disables user idle display sleep for AirPlay screen.   
+PreventUserIdleSystemSleep (Handoff etc.) does not have the same effect.
