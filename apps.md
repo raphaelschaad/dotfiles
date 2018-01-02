@@ -70,3 +70,4 @@ I should look into using HomeBrew Cask and go through this list (e.g. `$ brew ca
 - DjView: To view .djvu files, requires DjVuLibre.
 - Send to Kindle: Send documents from Mac to Kindle (Drag & Drop, Finder right click, or Printer)
 - Advanced REST Client
+- Inkscape: v0.91 for AxiDraw Extension, also requires XQuartz.
