@@ -72,3 +72,4 @@ I should look into using HomeBrew Cask and go through this list (e.g. `$ brew ca
 - Advanced REST Client
 - Inkscape: v0.91 for AxiDraw Extension, also requires XQuartz.
 - Spotify
+- BlueJeans: Video conferencing for Fab Academy
