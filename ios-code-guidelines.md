@@ -65,7 +65,7 @@ A constant that is scoped to the entire file (not a method), but only used withi
 
     static const NSUInteger kSize = 12;
 
-This is also true for objects. (To indicate the constant in the example above, it's prefixed with "k" after the Hungarian notation. Cocoa frameworks use that naming convention. However, better compiler warnings seem to reduce the need to include that information in the name.)
+This is also true for objects. (To indicate the constant in the example above, it's prefixed with "k" after the Hungarian notation. Cocoa frameworks use this naming convention. However, better compiler warnings seem to reduce the need to include that information in the name.)
 
 If the constant is used in other files it should still be defined in the implementation file, but declared with the `extern` keyword in the header:
 
@@ -89,7 +89,7 @@ For objects, the syntax should be a constant pointer, so it can't be reassigned:
 
 It's consequent to have spaces around the '*' because there's a space between class name and pointer operator (together making up the type, see Variable declaration) and a space between the type and the keyword.
 
-In general, constants should be defined in the smallest scope possible (block over method, method over file, file over global).
+In general, constants should be defined in the smallest scope possible (block over method, method over file, file over global). Within that scope, it makes sense to put them close to where they're used but generally group them towards the top.
 
 ### @property declaration modifiers
 - Modifier order: `@property (<class, >atomicity, storage<, mutation><, nullability><, getter = isAwesome>) BOOL awesome`;
