@@ -39,7 +39,6 @@ I should look into using HomeBrew Cask and go through this list (e.g. `$ brew ca
 - Zotero
 - ThisService: See https://gist.github.com/raphaelschaad/1037296
 - Atom: Atom > Install Shell Commands to install `atom` and `apm` (Atom Package Manager)
-- CertAid: MIT Certificate Configuration Wizard
 - Compose Gmail Message: See http://www.kungfugrippe.com/post/45763194525/compose-gmail-message
 - GitX-dev: Switched from brotherbard/gitx, but development stalled at end of 2014 too. Evaluate GitUp when it's out of pre-release.
 - Microsoft Office 2016: Office 365 ProPlus activated for free with my @MIT.EDU email address.
