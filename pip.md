@@ -22,3 +22,4 @@ Install setuptools (or upgrade, if already installed):
 - matplotlib: Required by NetworkX.
 
 ## Python3
+- lxml: Wrapper for libxml2 used by AxiDraw's axicli.py
