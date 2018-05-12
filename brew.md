@@ -15,6 +15,7 @@ Tools installed with `brew` – for reference when I setup a new machine. Listin
 - opencv3: also from homebrew/science; installed `--with-python3`; used `brew unlink opencv` + `brew link --force opencv3` (can be reverted by `brew unlink opencv3` + `brew link opencv` + `brew link --overwrite numpy`)
 - nvm: only brew nvm, not node; use nvm to install node (npm is bundled with node): http://stackoverflow.com/a/28025834/251440
 - ruby: for jekyll
+- hugo: static site generator alternative to jekyll
 - cloc: Count Lines of Code
 
 ## Design
