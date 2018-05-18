@@ -73,3 +73,4 @@ I should look into using HomeBrew Cask and go through this list (e.g. `$ brew ca
 - Spotify
 - BlueJeans: Video conferencing (used by e.g. Fab Academy)
 - Signal
+- Calibre: Ebook management
