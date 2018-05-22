@@ -144,7 +144,7 @@ If unzip and The Unarchiver.app fail, try `tar` or `jar` (same options as `tar`)
     $ man -t ls | open -fa preview
 
 
-**Convert mp4 into animated GIF**
+**Convert mp4 video into animated GIF**
 
     $ ffmpeg -i ScreenFlow.mp4 -r 10 %4d.png
 
@@ -157,7 +157,7 @@ FFmpeg direct GIF export is dithered as hell, so go via PNG
 
 `--delay=100` for 1 second delay between frames. Default is "none", commonly played as 0.2 centiseconds.
 
-**Export a single still frame from mp4 (e.g. for poster image)**
+**Export a single still frame from mp4 video (e.g. for poster image)**
 
     $ ffmpeg -i input.mp4 -ss 00:01:02.50 -vframes 1 -qscale:v 2 output.jpg
 
