@@ -157,11 +157,19 @@ FFmpeg direct GIF export is dithered as hell, so go via PNG
 
 `--delay=100` for 1 second delay between frames. Default is "none", commonly played as 0.2 centiseconds.
 
+
 **Export a single still frame from mp4 video (e.g. for poster image)**
 
     $ ffmpeg -i input.mp4 -ss 00:01:02.50 -vframes 1 -qscale:v 2 output.jpg
 
 `-qscale:v` for JPG output quality (2-31, 31 being the worst)
+
+
+**Speed up (/slow down) video**
+
+    $ ffmpeg -i input.mp4 -filter:v "setpts=0.5*PTS" output.mkv
+
+`PTS` to change the presentation timestamp for each video frame (<1.0=speed up, >1.0=slow down).
 
 
 **Convert any image into a 1-bit black/white PNG**
