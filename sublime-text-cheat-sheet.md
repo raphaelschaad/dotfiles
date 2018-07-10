@@ -5,6 +5,7 @@
 - ⇧⌘l: Edit selection over multiple lines (multiple lines have to be selected)
 - ⌃`: Bundled Python console
 - ⌘b: Build; using Python, Node, etc. as Build System (file has to be saved)
+- ⇧⌃k: Delete Line
 
 ## Installed Packages (packagecontrol.io)
 - Pretty JSON
