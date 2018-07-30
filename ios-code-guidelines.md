@@ -2,9 +2,9 @@
 
 [Raphael Schaad](https://twitter.com/raphaelschaad)
 
-Some personal guidelines for writing iOS Objective-C code. They result from my development experience in past years[1], where I've always tried to dig up robust solutions to everyday situations and write them down as small building blocks for later lookup. Although Swift seems like the future, I currently (2017) still use Objective-C effectively, and don't seem to be alone.
+Some personal guidelines for writing iOS Objective-C code. They result from my development experience in past years[1], where I've attempted to dig up robust solutions to everyday situations and write them down as small building blocks for lookup. Although Swift seems like the inevitable future, I currently (2018) still use Objective-C effectively, and don't seem to be alone.
 
-The practices are usually in the format "do X *because of* Y". Everything should be challenged over time. Not too much significant and new seems to have been adopted in recent years (i.e. IB, storyboards, asset catalogs, PDF assets, size classes, trait collections, auto layout, etc. can still be ignored in many cases).[2] Exceptions with no trade-offs are modern language features (i.e. [nullability annotations](https://developer.apple.com/swift/blog/?id=25) and [lightweight generics](https://developer.apple.com/library/content/documentation/Swift/Conceptual/BuildingCocoaApps/InteractingWithObjective-CAPIs.html#//apple_ref/doc/uid/TP40014216-CH4-ID35) e.g. for typed collections).
+The best practices are usually in the format "do X *because of* Y". Everything should be challenged over time. Not too much significant and new seems to have been adopted in recent years (i.e. IB, storyboards, asset catalogs, PDF assets, size classes, trait collections, auto layout, etc. can still be ignored in many cases).[2] Exceptions with no trade-offs are modern language features (i.e. [nullability annotations](https://developer.apple.com/swift/blog/?id=25) and [lightweight generics](https://developer.apple.com/library/content/documentation/Swift/Conceptual/BuildingCocoaApps/InteractingWithObjective-CAPIs.html#//apple_ref/doc/uid/TP40014216-CH4-ID35) e.g. for typed collections).
 
 ## 1. [Writing good, clear code](http://www.quora.com/Computer-Programming/What-are-some-of-your-personal-guidelines-for-writing-good-clear-code/answer/Raphael-Schaad)
 
@@ -59,7 +59,10 @@ More info from [Big Nerd Ranch](http://blog.bignerdranch.com/564-bools-sharp-cor
 When declaring a pointer variable, the asterisk goes with the variable name: `UIColor *myColor`. This makes sense because if you declare multiple variables on a single line, each one gets an asterisk: `UIColor *firstColor, *secondColor`. If declared like this `UIColor* firstColor, secondColor`, only `firstColor` is a pointer.
 
 ### Constants
-When declaring a "container" to store a value, it's a good idea to default to a constant and only switching to a variable when the value needs to change during runtime. This strategy leads to a surprising high constants-to-variables-ratio, which is a good thing. With Swift constants (`let keyword`. Note that in JavaScript ECMAScript6, “ES6” for short, `let` is a variable and `const` is a constant), it's possible to defer assigning the value from compile-time to runtime (exactly once), making them even more useful.
+When declaring a "container" to store a value, it's a good idea to default to a constant and only switching to a variable when the value needs to change during runtime. This strategy leads to a surprising high constants-to-variables-ratio, which is a good thing. With Swift constants (`let` keyword; note that in JavaScript ECMAScript6, “ES6” for short, `let` is a variable and `const` is a constant), it's possible to defer assigning the value from compile-time to runtime (exactly once), making them even more useful. Although style-wise, it doesn't seem very Cocoa-y to make local variables a constant, e.g.:
+
+    UIViewController * const viewController = [[UIViewController alloc] init];
+    [self addChildViewController:viewController];
 
 A constant that is scoped to the entire file (not a method), but only used within that file, should be made `static` to limit its scope, because otherwise, it can clash with other constants in the global namespace (e.g. from 3rd party code):
 
@@ -121,7 +124,7 @@ Use `#import` for own C/Objective-C headers because it avoids double inclusion. 
 
     #import <Foundation/Foundation.h>
 
-Use #include for standard C/C++ headers because traditionally it only includes parts of other include files.
+Use `#include` for standard C/C++ headers because traditionally it only includes parts of other include files.
 
     #import <sys/time.h> // includes only a part of <time.h> by using #defines
     #import <time.h> // Bad. Even though only part of <time.h> was already included, as far as #import is concerned, that file is now already completely included.
@@ -136,7 +139,7 @@ When creating C headers, add an include guard like this:
 Use `#import/include <header>` for system headers and `#import/include "header"` for user headers because that ensures the correct order of directories to look for the header.
 
 ### `#import`ing system frameworks
-Always #import the topmost level frameworks that a class needs to allow omitting prefix header and enabling its use as Swift module.
+Always `#import` the topmost level frameworks that a class needs to allow omitting prefix header and enabling its use as Swift module.
 
 Note that UIKit already imports Foundation, though it's a bit indirect: its umbrella header imports e.g. UIAccelerometer.h which in turn imports Foundation. So when importing UIKit, there's no need to import Foundation too explicitly.
 
@@ -208,7 +211,7 @@ Overriding `-description` such that the result can be used cleanly in UI doesn't
         return debugDescription;
     }
 
-To represent an object in UI, it makes more sense to add lazy properties like `.displayText` (and in there either do the right thing for localization or happily ignore it).
+To represent an object in UI, it makes more sense to add lazy properties like `.displayText` (and in there calculate the value, do localization, etc.).
 
 ### Changing the status bar style
 
@@ -245,24 +248,25 @@ Call an API the way the header declares it because that makes it easier to searc
 This is not as relevant anymore because by now all headers are cleaned up, and all variables are exposed by properties (e.g. `UIColor.orangeColor`), but in the transitional years after the @property and dot-syntax got introduced, many frameworks still exposed property-like ivars through setters/getters (e.g. `-[NSArray count]`).
 
 ### Expose class variables as @property
-Declare them as static and implement getter/setter because class properties are not synthesized:
+Declare them as static variables and implement getter/setter because class properties are not synthesized:
 
     @property (class, nonatomic, copy) NSUUID *identifier;
 
+    static NSUUID *_identifier = nil;
+
     + (NSUUID *)identifier {
-        static NSUUID *_identifier = nil;
-        if (!_identifier) {
+        if (!identifier) {
             static dispatch_once_t onceToken = 0;
             dispatch_once(&onceToken, ^{
-                _identifier = [[NSUUID alloc] init];
+                identifier = [[NSUUID alloc] init];
             });
         }
-        return _identifier;
+        return identifier;
     }
 
-    + (void)setIdentifier:(NSUUID *)identifier {
-        if (![_identifier isEqual:identifier]) {
-            _identifier = [identifier copy];
+    + (void)setIdentifier:(NSUUID *)newIdentifier {
+        if (![identifier isEqual:newIdentifier]) {
+            identifier = [newIdentifier copy];
         }
     }
 
@@ -271,12 +275,16 @@ Wrap all `dispatch_once` calls to initialize a static variable once into a nil-c
 
 Initialize `onceToken`s explicitly with 0 (that's what they need to be) even though static (long) variables get initialized with 0 by default; for consistency to always default initialize everything but ivars.
 
-    static ExamplePreferences *_sharedPreferences = nil;
-    if (!_sharedPreferences) {
-        static dispatch_once_t onceToken = 0;
-        dispatch_once(&onceToken, ^{
-            _sharedPreferences = [[ExamplePreferences alloc] init];
-        });
+    + (ExamplePreferences *)sharedPreferences
+    {
+        static ExamplePreferences *preferences = nil;
+        if (!preferences) {
+            static dispatch_once_t onceToken = 0;
+            dispatch_once(&onceToken, ^{
+                preferences = [[ExamplePreferences alloc] init];
+            });
+        }
+        return preferences;
     }
 
 ### Class method vs. instance method
@@ -364,8 +372,11 @@ When copying a Foundation collection, consider the depth and mutability of the c
 Support copying in own object by implementing follow:
 
     @implementation
+    
     #pragma mark NSCopying
-    - (instancetype)copyWithZone:(NSZone *)zone { ... }
+    
+    - (instancetype)copyWithZone:(nullable NSZone *)zone { ... }
+    
     @end
 
 Note that we need to override `-copyWithZone:` and not `-copy`, even though the `zone` parameter is legacy and unused.
@@ -574,5 +585,5 @@ tmp_data
 
 —
 
-- [1]: I wrote my first app in 2009, a year after the initial release of the "iPhone OS" SDK, built [the original iA Writer in 2010](https://raphaelschaad.github.io/portfolio/ia-writer), and worked at [Flipboard from 2011-2015](https://raphaelschaad.github.io/portfolio/flipboard). During these years, I was fortunate to learn from and with some of the best, to open source the widely used [animated GIF library FLAnimatedImage](https://raphaelschaad.github.io/portfolio/flanimatedimage), and to attend WWDC 2011-2014 (glad to have experienced you, Steve, you remain one of my heroes).
-- [2]: Although I've worked mostly on product design since 2014 and [am currently in academia at MIT](https://media.mit.edu/~schaad), I try to keep up with the iOS dev community and in touch with friends in leading iOS engineering positions at top tech companies (thanks guys for keeping me in the loop).
+- [1]: I wrote my first app in 2009, a year after the initial release of the "iPhone OS" SDK, built [the original iA Writer in 2010](https://raphaelschaad.github.io/portfolio/ia-writer), and worked at [Flipboard from 2011-2015](https://raphaelschaad.github.io/portfolio/flipboard). During these years, I was fortunate to learn from and with some of the best, to open source the widely used [animated GIF library FLAnimatedImage](https://raphaelschaad.github.io/portfolio/flanimatedimage), and to attend WWDC 2011-2014 (glad to have experienced SJ, he remain one of my heroes).
+- [2]: Although I've worked mostly in product design and academic research since 2014, I try to keep up with the iOS dev community and in touch with friends in leading iOS engineering positions at top tech companies (thanks guys for keeping me in the loop).
