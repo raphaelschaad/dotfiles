@@ -20,6 +20,7 @@ Install setuptools (or upgrade, if already installed):
 - gsutil: Copy folders recursively from Google Cloud Storage. Authentication guide: https://cloud.google.com/storage/docs/gsutil_install#creds-gsutil
 - networkx: Create, manipulate, and analyze graph networks.
 - matplotlib: Required by NetworkX.
+- selenium: Required by audible-activator.
 
 ## Python3
 - lxml: Wrapper for libxml2 used by AxiDraw's axicli.py
