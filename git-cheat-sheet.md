@@ -70,7 +70,7 @@ Also see my [.gitconfig](./.gitconfig) and my [.gitignore_global_osx](./.gitigno
 
 ## Tagging
 
-    $ git tag -a 1.0 -m 1.0
+    $ git tag -a 1.0 -m "1.0"
     $ git tag # list tags
     $ git show-ref --tags # list tags with commit hash (lightweight) or tag hash (annotated)
     $ git tag -ln tagname # show tag with commit message (lightweight) or tag message (annotated)
