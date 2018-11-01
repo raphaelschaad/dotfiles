@@ -13,7 +13,6 @@ This doesn't include Homebrew (see `brew.md`) or browser extensions/plug-in's.
 - Xcode
 - Spectrum
 - Transmit
-- Pixa
 - The Unarchiver
 - Kindle
 - DaisyDisk
