@@ -83,6 +83,14 @@ Also see my [.gitconfig](./.gitconfig) and my [.gitignore_global_osx](./.gitigno
     $ git mergetool # hit enter to start; on OS X defaults to FileMerge.app (pretty good); resolve conflict, save and exit
     $ git config --global mergetool.keepBackup false # no .orig files
 
+## Branch naming convention
+Use hierarchical branch names to group branches: `<type>/<name>`. Examples for `<type>`:
+- `bugfix` Addresse a known issue.
+- `feature` Add a new feature.
+- `experiment` Do not merged.
+
+For `<name>` be descriptive but keep it short. Use dashed-multi-words.
+
 ## Pull Requests
 Open pull requests with the GitHub web interface. There is the CLI tool `hub` but I think it's rare enough of an action and the web interface is clearer than it would justify to do it in any other way.
 
