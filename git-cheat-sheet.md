@@ -79,7 +79,7 @@ Also see my [.gitconfig](./.gitconfig) and my [.gitignore_global_osx](./.gitigno
     $ git config --global core.excludesfile "~/.gitignore_global_osx"
     $ git config branch.autosetuprebase always # Configure ‘pull --rebase’ as default for new branches
 
-## Visual Merge Conflict Resolving
+## Visual merge conflict resolving
     $ git mergetool # hit enter to start; on OS X defaults to FileMerge.app (pretty good); resolve conflict, save and exit
     $ git config --global mergetool.keepBackup false # no .orig files
 
