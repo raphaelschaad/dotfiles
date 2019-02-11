@@ -5,7 +5,6 @@ A collection of Git commands I regularly use.
 Also see my [.gitconfig](./.gitconfig) and my [.gitignore_global_osx](./.gitignore_global_osx).
 
 ## General
-
     $ git fetch origin # update origin remote branches
     $ git rebase -p origin/master # (on master) Pull in changes and preserve feature branch on master, when it could fast-forward
     $ git rebase origin/master # (on feature branch) Prevent feature branch from diverging from master significantly
@@ -49,7 +48,6 @@ Also see my [.gitconfig](./.gitconfig) and my [.gitignore_global_osx](./.gitigno
     $ git log --all --author="Raphael" # Show commits by author (across all branches)
 
 ## Moving local commits from master to feature branch
-
     ... local commits on master ...
     $ git checkout -b feature-branch
     $ git checkout master
@@ -57,7 +55,6 @@ Also see my [.gitconfig](./.gitconfig) and my [.gitignore_global_osx](./.gitigno
     $ git checkout feature-branch
 
 ## Stashing
-
     $ git stash
     $ git stash list
     $ git stash pop
@@ -69,7 +66,6 @@ Also see my [.gitconfig](./.gitconfig) and my [.gitignore_global_osx](./.gitigno
     $ git stash --patch # stash only specific files; 'd' for skipping 'a' for stashing
 
 ## Tagging
-
     $ git tag -a 1.0 -m "1.0"
     $ git tag # list tags
     $ git show-ref --tags # list tags with commit hash (lightweight) or tag hash (annotated)
@@ -79,13 +75,11 @@ Also see my [.gitconfig](./.gitconfig) and my [.gitignore_global_osx](./.gitigno
     $ git push origin :refs/tags/tagname # delete remote tag
 
 ## Config
-
     $ git config user.email "raphael@flipboard.com"
     $ git config --global core.excludesfile "~/.gitignore_global_osx"
     $ git config branch.autosetuprebase always # Configure ‘pull --rebase’ as default for new branches
 
 ## Visual Merge Conflict Resolving
-
     $ git mergetool # hit enter to start; on OS X defaults to FileMerge.app (pretty good); resolve conflict, save and exit
     $ git config --global mergetool.keepBackup false # no .orig files
 
@@ -94,7 +88,6 @@ Open pull requests with the GitHub web interface. There is the CLI tool `hub` bu
 
 ## Submodules
 ### Add submodule
-
     $ git submodule add https://github.com/Flipboard/JSONKit.git 3rdPartyUtils/JSONKit
     $ git remote add upstream git://github.com/johnezang/JSONKit.git # in submodule
     $ git commit -m "Added submodule 3rdPartyUtils/JSONKit"
@@ -102,7 +95,6 @@ Open pull requests with the GitHub web interface. There is the CLI tool `hub` bu
     $ git commit -m "Checkout JSONKit at v1.4"
 
 ### Fix/customize submodule
-
     $ git checkout -b fix # always on separate branch or master, some submodules are in detached HEAD mode (checked out at last stable release)
     ... fix ...
     $ git commit -a -m "fix"
@@ -112,7 +104,6 @@ Open pull requests with the GitHub web interface. There is the CLI tool `hub` bu
     $ git push origin master # to GitHub
 
 ### Update submodule (watch original repos on GitHub)
-
     $ git fetch upstream # fetch changes from original to our fork
     $ git merge upstream/master # merge changes in
     $ git push origin master # to GitHub
@@ -127,15 +118,12 @@ Open pull requests with the GitHub web interface. There is the CLI tool `hub` bu
 [Background on subtrees](http://log.pardus.de/2012/08/modular-git-with-git-subtree.html)
 
 ### Add subtree
-
     $ git subtree add --prefix=3rdParty/JSONKit --squash https://github.com/johnezang/JSONKit.git stable
 
 ### Update subtree
-
     $ git subtree pull --prefix=3rdParty/JSONKit --squash https://github.com/johnezang/JSONKit.git <some-newer-version>
 
 ### Update subtree up to a specific commit
-
     $ git subtree merge --prefix=Momo/3rdParty/GPUImage <commit> --squash
 
 I think git subtree merge doesn't automatically pull the latest, so I did a git subtree pull and cancelled the following merge first.
