@@ -39,6 +39,3 @@ If linking (hard or soft) `~/Library/Spelling/LocalDictionary` to Dropbox, the l
 2. My Places > right click > Delete Contents
 3. Drag folder “Sync” to My Places
 4. Temporary Places > right click > Delete Contents
-
-### Chrome Extension Auto Text Expander
-Paste contents of `Chrome Extension Auto Text Expander Shortcuts.json` into Options > Import / Export Shortcuts
