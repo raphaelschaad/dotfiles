@@ -24,7 +24,7 @@ A collection of useful terminal snippets.
 
 **Search and replace in streams**
 
-    $ ls | sed s/SEARCH/REPLACE/g
+    $ ls | sed s/REGEX/SUBSTITUTION/g
 
 `s` substitute  
 `g` all non-overlapping matches, not just first one  
