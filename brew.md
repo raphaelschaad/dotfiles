@@ -6,6 +6,7 @@ Tools installed with `brew` – for reference when I setup a new machine. Listin
 - wget
 - git: Newer version than the one that comes with the system
 - hub: See `.profile`
+- trash: safer than `rm` by moving files/folders to macOS' trash
 
 ## Development
 - carthage: FLAnimatedImage supports this
