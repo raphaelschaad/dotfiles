@@ -1,6 +1,5 @@
 # Installed Homebrew formulas
-
-Tools installed with `brew` – for reference when I setup a new machine. Listing only top level formulas, not including all dependencies (unlike `$ brew list`).
+Tools installed with `brew` – for reference when I setup a new machine. Listing only top level formulas, not including all dependencies (unlike `$ brew list`). I could automate the setup by [transitioning to a brew.sh](https://github.com/mathiasbynens/dotfiles/blob/master/brew.sh).
 
 ## Essentials
 - `wget`
