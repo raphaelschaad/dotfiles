@@ -87,7 +87,7 @@ Also see my [.gitconfig](./.gitconfig) and my [.gitignore_global_osx](./.gitigno
 Use hierarchical branch names to group branches: `<type>/<name>`. Examples for `<type>`:
 - `bugfix` Addresse a known issue.
 - `feature` Add a new feature.
-- `experiment` Do not merged.
+- `experiment` Do not merge.
 
 For `<name>` be descriptive but keep it short. Use dashed-multi-words.
 
