@@ -89,7 +89,7 @@ Use hierarchical branch names to group branches: `<type>/<name>`. Examples for `
 - `feature` Add a new feature.
 - `experiment` Do not merge.
 
-For `<name>` be descriptive but keep it short. Use dashed-multi-words.
+For `<name>` be descriptive but keep it short. Use dashed-multi-words (kebab case).
 
 ## Pull Requests
 Open pull requests with the GitHub web interface. There is the CLI tool `hub` but I think it's rare enough of an action and the web interface is clearer than it would justify to do it in any other way.
