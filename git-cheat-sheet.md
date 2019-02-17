@@ -85,9 +85,16 @@ Also see my [.gitconfig](./.gitconfig) and my [.gitignore_global_osx](./.gitigno
 
 ## Branch naming convention
 Use hierarchical branch names to group branches: `<type>/<name>`. Examples for `<type>`:
-- `bugfix` Addresse a known issue.
-- `feature` Add a new feature.
-- `experiment` Do not merge.
+1. `feature` Add a new feature.
+2. `bugfix` Address a known issue.
+3. `style` Format (e.g. whitespace), add missing semicolons, etc.
+4. `content` Change content (text, image, etc.).
+5. `documentation` Add comments or documentation.
+6. `test` Add tests.
+7. `performance` Improve performance without changing the function.
+8. `refactor` Restructure or rename code without changing the function.
+9. `chore` Maintain (new syntax, auxiliary tools, etc.)
+10. `experiment` Do not merge.
 
 For `<name>` be descriptive but keep it short. Use dashed-multi-words (kebab case).
 
