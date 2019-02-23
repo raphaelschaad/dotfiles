@@ -28,7 +28,7 @@ I should look into using HomeBrew Cask and go through this list (e.g. `$ brew ca
 - Bartender 2
 - TinkerTool
 - Sublime Text 3: See `sublime-text-cheat-sheet.md`.
-- Visual Studio Code (VS Code)
+- Visual Studio Code (VS Code): Extensions: Vetur for Vue tooling, ESLint, Vue VSCode Snippets from sarah.drasner
 - Chrome
 - Transmission
 - VLC
