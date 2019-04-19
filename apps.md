@@ -75,4 +75,4 @@ I should look into using HomeBrew Cask and go through this list (e.g. `$ brew ca
 - Signal
 - Calibre: Ebook management (Plug-Ins to read new Kindle format: KFX Conversion Input Plugin, DeDRM_tools)
 - TextExpander
-- Fing CLI: Network scanner (`$ sudo fing`) companion tool to iOS app
+- Fing CLI: Network scanner companion tool to iOS app (use `$ sudo fing`, good alternative would be "Angry IP Scanner")
