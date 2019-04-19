@@ -74,4 +74,4 @@ I should look into using HomeBrew Cask and go through this list (e.g. `$ brew ca
 - BlueJeans: Video conferencing (used by e.g. Fab Academy)
 - Signal
 - Calibre: Ebook management (Plug-Ins to read new Kindle format: KFX Conversion Input Plugin, DeDRM_tools)
--  TextExpander
+- TextExpander
