@@ -78,3 +78,4 @@ I should look into using HomeBrew Cask and go through this list (e.g. `$ brew ca
 - Fing CLI: Network scanner companion tool to iOS app (use `$ sudo fing`, good alternative would be "Angry IP Scanner")
 - Figma
 - Miro
+- TeamViewer
