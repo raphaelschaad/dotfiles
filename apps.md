@@ -80,3 +80,4 @@ I should look into using HomeBrew Cask and go through this list (e.g. `$ brew ca
 - Miro
 - TeamViewer
 - Superhuman
+- SketchUp Viewer 2019
