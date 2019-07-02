@@ -30,20 +30,17 @@ I should look into using HomeBrew Cask and go through this list (e.g. `$ brew ca
 - Bartender 2
 - TinkerTool
 - Sublime Text 3: See `sublime-text-cheat-sheet.md`.
-- Visual Studio Code (VS Code): Extensions: Vetur for Vue tooling, ESLint, Vue VSCode Snippets from sarah.drasner
+- Visual Studio Code (VS Code or VSC, Shell command: `> code`): Extensions: Vetur for Vue tooling, ESLint, Vue VSCode Snippets from sarah.drasner
 - Chrome
 - Transmission
 - VLC
-- Fluid: Keeping them in /Applications/Fluid Apps with icons from Dropbox/Pixels/SSB Icons
-- Epichrome (formerly MakeChromeSSB): See https://github.com/dmarmor/osx-chrome-ssb-gui Keeping them in /Applications/Chrome SSBs with icons from Dropbox/Pixels/SSB Icons
 - Skype
-- Messenger
+- Messenger (Facebook)
 - Zotero
 - Atom: Atom > Install Shell Commands to install `atom` and `apm` (Atom Package Manager)
-- Compose Gmail Message: See http://www.kungfugrippe.com/post/45763194525/compose-gmail-message
 - GitX-dev: Switched from brotherbard/gitx, but development stalled at end of 2014 too. Evaluate GitUp when it's out of pre-release.
 - Microsoft Office 2016: Office 365 ProPlus activated for free with my @MIT.EDU email address.
-- Google Drive: Causes battery drain on notebook and in general only adds little value
+- Backup and Sync from Google (Personal Google Drive app)
 - GitHub Desktop
 - Firefox
 - Rhinoceros 5: 3D Modeler. Download at smb://hub.media.mit.edu/machub and license with server license.media.mit.edu, also RhinoWIP (for Mac Grasshopper)

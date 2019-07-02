@@ -1,4 +1,6 @@
 # Sublime Text Cheat Sheet
+Shell command: `> subl`
+
 ## Commands
 - ⇧⌘p: Command Palette, commonly used for package control (e.g. `install package`), or to set the language syntax.
 - ⌘d: Multi-select next occurrences of current word, e.g. for quick variable renaming (press multiple times)
