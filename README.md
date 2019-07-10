@@ -31,7 +31,7 @@ IMPORTANT: Ensure the presence of a `.gitignore` in this repo ignoring `.gitconf
 `$ ln -s $(pwd)/Node.sublime-build ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Node.sublime-build` for [Node.js Build System](./Node.sublime-build)
 
 #### Visual Studio Code
-`$ ln -s $(pwd)/vscode-settings.json ~/Library/Application\ Support/Code/User/settings.json` for [user preferences](./Preferences.sublime-settings) (easily accessible with ⌘, from within VS Code)
+`$ ln -s $(pwd)/vscode-settings.json ~/Library/Application\ Support/Code/User/settings.json` for [user preferences](./vscode-settings.json) (easily accessible with ⌘, from within VS Code)
 
 ### From `Dropbox/Synced\ App\ Files`
 #### macOS Spelling Dictionary
