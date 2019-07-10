@@ -1,0 +1,16 @@
+// VS Code user settings (defaults are an empty file)
+{
+  // Disable usage data collection and crash reporting
+  "telemetry.enableTelemetry": false,
+  "telemetry.enableCrashReporter": false,
+  // Text editing
+  "editor.tabSize": 2,
+  "editor.renderWhitespace": "boundary",
+  "editor.wordWrap": "on",
+  "editor.formatOnSave": true,
+  "editor.minimap.enabled": false,
+  // Files
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.autoGuessEncoding": true
+}
