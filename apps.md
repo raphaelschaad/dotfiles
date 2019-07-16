@@ -22,7 +22,6 @@ This doesn't include Homebrew (see `brew.md`) or browser extensions/plug-in's.
 - Paste (replaces discontinued Clyppan)
 - WhatsApp Desktop
 - WeChat
-- Alfred
 
 ## From elsewhere
 I should look into using HomeBrew Cask and go through this list (e.g. `$ brew cask install google-chrome`).
@@ -82,3 +81,4 @@ I should look into using HomeBrew Cask and go through this list (e.g. `$ brew ca
 - SketchUp Viewer 2019
 - Notion
 - Cisco AnyConnect VPN Client: UniBe
+- Alfred ("In the Mac App Store, you'll find an older version of Alfred (1.2) which is no longer updated.")
