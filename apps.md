@@ -81,4 +81,4 @@ I should look into using HomeBrew Cask and go through this list (e.g. `$ brew ca
 - SketchUp Viewer 2019
 - Notion
 - Cisco AnyConnect VPN Client: UniBe
-- Alfred ("In the Mac App Store, you'll find an older version of Alfred (1.2) which is no longer updated.")
+- Alfred 4 ("In the Mac App Store, you'll find an older version of Alfred (1.2) which is no longer updated.")
