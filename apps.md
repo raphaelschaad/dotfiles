@@ -22,6 +22,7 @@ This doesn't include Homebrew (see `brew.md`) or browser extensions/plug-in's.
 - Paste (replaces discontinued Clyppan)
 - WhatsApp Desktop
 - WeChat
+- Alfred
 
 ## From elsewhere
 I should look into using HomeBrew Cask and go through this list (e.g. `$ brew cask install google-chrome`).
