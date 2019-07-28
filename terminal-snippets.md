@@ -28,6 +28,7 @@ A collection of useful terminal snippets.
 
 `s` substitute  
 `g` all non-overlapping matches, not just first one  
+Escape spaces in REGEX or SUBSTITUTION with backslash or wrapping pattern in single or double quotes.  
 
 
 **Count characters in a string**
