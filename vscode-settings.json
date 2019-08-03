@@ -12,5 +12,5 @@
   // Files
   "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": true,
-  "files.autoGuessEncoding": true
+  // Setting files.autoGuessEncoding to true (false by default) caused simple UTF-8 files to be opened as Windows-1252.
 }
