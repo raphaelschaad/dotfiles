@@ -26,19 +26,19 @@ IMPORTANT: Ensure the presence of a `.gitignore` in this repo ignoring `.gitconf
 `$ mkdir ~/Library/Developer/Xcode/UserData/FontAndColorThemes && ln -s $(pwd)/Default-Schaad.dvtcolortheme $_`
 
 #### Sublime Text
-`$ ln -s $(pwd)/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Preferences.sublime-settings` for [user preferences](./Preferences.sublime-settings) (easily accessible with ⌘, from within Sublime Text [left view = default preferences; right view = user preferences])
+`$ ln -s $(pwd)/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Preferences.sublime-settings` for [user preferences](./Preferences.sublime-settings) (easily accessible with `⌘,` from within Sublime Text [left view = default preferences; right view = user preferences])
 
 `$ ln -s $(pwd)/Node.sublime-build ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Node.sublime-build` for [Node.js Build System](./Node.sublime-build)
 
 #### Visual Studio Code
-`$ ln -s $(pwd)/vscode-settings.json ~/Library/Application\ Support/Code/User/settings.json` for [user preferences](./vscode-settings.json) (easily accessible with ⌘, from within VS Code)
+`$ ln -s $(pwd)/vscode-settings.json ~/Library/Application\ Support/Code/User/settings.json` for [user preferences](./vscode-settings.json) (easily accessible with `⌘,` from within VS Code)
 
 ### From `Dropbox/Synced\ App\ Files`
 #### macOS Spelling Dictionary
 If linking (hard or soft) `~/Library/Spelling/LocalDictionary` to Dropbox, the links eventually get overwritten. Instead, manually copy/sync/merge (opendiff) the file periodically.
 
 #### Google Earth Pro
-1. File > Open… (CMD+O) > Sync.kmz
+1. File > Open… (`⌘O`) > Sync.kmz
 2. My Places > right click > Delete Contents
 3. Drag folder “Sync” to My Places
 4. Temporary Places > right click > Delete Contents
