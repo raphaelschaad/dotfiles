@@ -17,4 +17,23 @@
   // HTML
   // Setting html.format.wrapLineLength to 0 disables the strange hard wrapping at 120 characters by default.
   "html.format.wrapLineLength": 0,
+  // Extension: ESLint
+  "eslint.autoFixOnSave": true,
+  "eslint.validate": [
+    {
+      "language": "javascript",
+      "autoFix": true,
+    },
+    {
+      "language": "vue",
+      "autoFix": true,
+    },
+  ],
+  // Extension: Vetur
+  // Turn Vetur validation off for Vue <template> and <script> to use ESLint via eslint-plugin-vue instead.
+  // Leave Vetur validation on (default) for Vue <style>.
+  "vetur.validation.template": false,
+  "vetur.validation.script": false,
+  // Turn Vetur formatting (through prettier, prettyhtml, stylus, TS, etc.) off entirely.
+  "vetur.format.enable": false,
 }
