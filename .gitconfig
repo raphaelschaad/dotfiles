@@ -19,7 +19,7 @@
 	b = for-each-ref --sort='-committerdate' refs/heads/ --format='%(committerdate:short) %(refname:short)'
 	rb = for-each-ref --sort='committerdate' refs/remotes/ --format='%(committerdate:short) %(refname:short) (%(authorname))'
 	pushm = push origin master
-	pullm = !git fetch origin && git rebase -p origin/master
+	pullm = !git fetch origin && git rebase --rebase-merges origin/master
 	pullall = !git pull && git submodule update --init --recursive
 [mergetool]
 	keepBackup = false
