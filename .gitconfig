@@ -21,6 +21,10 @@
 	pushm = push origin master
 	pullm = !git fetch origin && git rebase --rebase-merges origin/master
 	pullall = !git pull && git submodule update --init --recursive
+	ri = rebase --interactive
+	rc = rebase --continue
+	sl = stash list
+	sd = stash drop
 [mergetool]
 	keepBackup = false
 [push]
