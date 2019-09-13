@@ -56,14 +56,17 @@ Also see my [.gitconfig](./.gitconfig) and my [.gitignore_global_osx](./.gitigno
 
 ## Stashing
     $ git stash
+    $ git stash save "Content Guide hint animation"
+    $ git stash -p|--patch # stash only specific files; 'd' for skipping 'a' for stashing
+    $ git stash -u|--include-untracked # also stash untracked files
     $ git stash list
+    $ git stash show stash@{0}
+    $ git stash show -p|--patch stash@{0}
     $ git stash pop
     $ git stash pop stash@{1}
-    $ git stash drop stash@{0}
-    $ git stash show stash@{0}
-    $ git stash show -p stash@{0}
-    $ git stash save "Content Guide hint animation"
-    $ git stash --patch # stash only specific files; 'd' for skipping 'a' for stashing
+    $ git stash drop # drops stash@{0}
+    $ git stash drop stash@{1}
+    $ git stash clear # drop all
 
 ## Tagging
     $ git tag -a 1.0 -m "1.0"
