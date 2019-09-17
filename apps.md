@@ -84,3 +84,4 @@ I should look into using HomeBrew Cask and go through this list (e.g. `$ brew ca
 - Alfred 4 ("In the Mac App Store, you'll find an older version of Alfred (1.2) which is no longer updated.")
 - Audacity: Leading open source audio software (Adobe Audition is the leading commercial software)
 - Karabiner: Keyboard customizer for macOS
+- KeyCastr: Keystroke visualizer
