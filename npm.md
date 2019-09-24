@@ -2,7 +2,7 @@
 
 Tools installed with `npm install -g` – for reference when I setup a new machine. Listing only top level packages (like `$ npm -g list --depth=0`), not including all dependencies.
 
-- eslint: JavaScript linter (has Atom integration package)
+- eslint: JavaScript linter (common editors have integration package)
 - shapefile: Shapefile parser, e.g. to convert to GeoJSON (comes with command-line interface shp2json, by @mbostock)
 - d3-geo-projection: geoproject, geo2svg
 - create-react-app: Good way to start building a new React single page application with no build configuration.
