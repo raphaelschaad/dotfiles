@@ -6,4 +6,4 @@ Tools installed with `npm install -g` – for reference when I setup a new machi
 - d3-geo-projection: geoproject, geo2svg
 - eslint: JavaScript linter (common editors have integration package)
 - create-react-app: Good way to start building a new React single page application with no build configuration.
-- vue/cli: Standard Tooling for Vue.js Development (newest version 3.x).
+- @vue/cli: Standard Tooling for Vue.js Development (newest version 3.x).
