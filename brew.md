@@ -17,6 +17,7 @@ Tools installed with `brew` – for reference when I setup a new machine. Listin
 - `ruby`: for jekyll
 - `hugo`: static site generator alternative to jekyll
 - `cloc`: Count Lines of Code
+- `twilio`: Twilio CLI https://www.twilio.com/docs/twilio-cli/quickstart
 
 ## Design
 - `boost-python`: For Antimony. Installed with `--with-python3`.
