@@ -79,3 +79,6 @@ alias vlc='/Applications/VLC.app/Contents/MacOS/VLC'
 writer() {
 	open $1 -a /Applications/iA\ Writer.app/
 }
+
+# twilio autocomplete setup
+TWILIO_AC_BASH_SETUP_PATH=~/.twilio-cli/autocomplete/bash_setup && test -f $TWILIO_AC_BASH_SETUP_PATH && source $TWILIO_AC_BASH_SETUP_PATH;
