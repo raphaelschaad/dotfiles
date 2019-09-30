@@ -6,6 +6,9 @@ export PATH="~/bin:$PATH" # E.g. subl
 export PATH="$(brew --prefix)/bin:$(brew --prefix)/sbin:$PATH" # Prioritize Homebrew's Git over Xcode4's Git, Homebrew's PHP over OS X's PHP etc..
 export PATH="$(brew --prefix)/opt/ruby/bin:$PATH" # Homebrew Ruby gem installed binaries' default path.
 
+# Suppress shell "Warning: Failed to set locale category LC_NUMERIC to en_CH." when macOS' Language & Region settings don't play well with CLI tools.
+export LC_ALL=en_US.UTF-8
+
 # Use Sublime Text as standard editor
 # Setting both standard variables, see: https://unix.stackexchange.com/questions/4859/visual-vs-editor-whats-the-difference
 export VISUAL='subl -w'
