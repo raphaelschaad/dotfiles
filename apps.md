@@ -4,7 +4,7 @@ This doesn't include Homebrew (see `brew.md`) or browser extensions/plug-in's.
 ## From App Store
 - Amphetamine
 - iA Writer
-- 1Password
+- 1Password (browser extensions and CLI tool separate)
 - Divvy
 - Chill
 - CHM Reader
