@@ -4,6 +4,7 @@
   "telemetry.enableTelemetry": false,
   "telemetry.enableCrashReporter": false,
   // Text editing
+  "editor.tabCompletion": "on",
   "editor.tabSize": 2,
   "editor.renderWhitespace": "boundary",
   "editor.wordWrap": "on",
