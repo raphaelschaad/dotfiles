@@ -17,5 +17,18 @@
   // Setting files.autoGuessEncoding to true (false by default) caused simple UTF-8 files to be opened as Windows-1252.
   // HTML
   // Setting html.format.wrapLineLength to 0 disables the strange hard wrapping at 120 characters by default.
-  "html.format.wrapLineLength": 0
+  "html.format.wrapLineLength": 0,
+  // Default language formatters
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  }
 }
