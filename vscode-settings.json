@@ -22,6 +22,9 @@
   "[html]": {
     "editor.defaultFormatter": "vscode.html-language-features"
   },
+  "[css]": {
+    "editor.defaultFormatter": "vscode.css-language-features"
+  },
   "[javascript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
@@ -30,5 +33,11 @@
   },
   "[jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "vscode.markdown-language-features"
+  },
+  "[php]": {
+    "editor.defaultFormatter": "vscode.php-language-features"
   }
 }
