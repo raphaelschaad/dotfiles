@@ -1,10 +1,10 @@
-# Git Cheat Sheet
+GIT CHEAT SHEET
 
-A collection of Git commands I regularly use.
+A collection of useful Git commands and good Git practices.
 
 Also see my [.gitconfig](./.gitconfig) and my [.gitignore_global_osx](./.gitignore_global_osx).
 
-## General
+# General
     $ git fetch origin # update origin remote branches
     $ git rebase -p origin/master # (on master) Pull in changes and preserve feature branch on master, when it could fast-forward
     $ git rebase origin/master # (on feature branch) Prevent feature branch from diverging from master significantly
@@ -47,14 +47,14 @@ Also see my [.gitconfig](./.gitconfig) and my [.gitignore_global_osx](./.gitigno
     $ git clean -xfd # Delete untracked files
     $ git log --all --author="Raphael" # Show commits by author (across all branches)
 
-## Moving local commits from master to feature branch
+# Moving local commits from master to feature branch
     ... local commits on master ...
     $ git checkout -b feature-branch
     $ git checkout master
     $ git reset --hard origin/master
     $ git checkout feature-branch
 
-## Stashing
+# Stashing
     $ git stash
     $ git stash save "Content Guide hint animation"
     $ git stash -p|--patch # stash only specific files; 'd' for skipping 'a' for stashing
@@ -68,7 +68,7 @@ Also see my [.gitconfig](./.gitconfig) and my [.gitignore_global_osx](./.gitigno
     $ git stash drop stash@{1}
     $ git stash clear # drop all
 
-## Tagging
+# Tagging
     $ git tag -a 1.0 -m "1.0"
     $ git tag # list tags
     $ git show-ref --tags # list tags with commit hash (lightweight) or tag hash (annotated)
@@ -77,16 +77,16 @@ Also see my [.gitconfig](./.gitconfig) and my [.gitignore_global_osx](./.gitigno
     $ git tag -d tagname # delete local tag
     $ git push origin :refs/tags/tagname # delete remote tag
 
-## Config
+# Config
     $ git config user.email "raphael@flipboard.com"
     $ git config --global core.excludesfile "~/.gitignore_global_osx"
     $ git config branch.autosetuprebase always # Configure ‘pull --rebase’ as default for new branches
 
-## Visual merge conflict resolving
+# Visual merge conflict resolving
     $ git mergetool # hit enter to start; on OS X defaults to FileMerge.app (pretty good); resolve conflict, save and exit
     $ git config --global mergetool.keepBackup false # no .orig files
 
-## Branch naming convention
+# Branch naming convention
 Use hierarchical branch names to group branches: `<type>/<name>`. Examples for `<type>`:
 1. `feature` Add a new feature.
 2. `bugfix` Address a known issue.
@@ -101,18 +101,18 @@ Use hierarchical branch names to group branches: `<type>/<name>`. Examples for `
 
 For `<name>` be descriptive but keep it short. Use dashed-lowercase-multi-words (kebab case).
 
-## Pull Requests
+# Pull Requests
 Open pull requests with the GitHub web interface. There is the CLI tool `hub` but I think it's rare enough of an action and the web interface is clearer than it would justify to do it in any other way.
 
-## Submodules
-### Add submodule
+# Submodules
+## Add submodule
     $ git submodule add https://github.com/Flipboard/JSONKit.git 3rdPartyUtils/JSONKit
     $ git remote add upstream git://github.com/johnezang/JSONKit.git # in submodule
     $ git commit -m "Added submodule 3rdPartyUtils/JSONKit"
     $ git checkout v1.4
     $ git commit -m "Checkout JSONKit at v1.4"
 
-### Fix/customize submodule
+## Fix/customize submodule
     $ git checkout -b fix # always on separate branch or master, some submodules are in detached HEAD mode (checked out at last stable release)
     ... fix ...
     $ git commit -a -m "fix"
@@ -121,7 +121,7 @@ Open pull requests with the GitHub web interface. There is the CLI tool `hub` bu
     $ git commit -m "Fixed submodule."
     $ git push origin master # to GitHub
 
-### Update submodule (watch original repos on GitHub)
+## Update submodule (watch original repos on GitHub)
     $ git fetch upstream # fetch changes from original to our fork
     $ git merge upstream/master # merge changes in
     $ git push origin master # to GitHub
@@ -132,19 +132,19 @@ Open pull requests with the GitHub web interface. There is the CLI tool `hub` bu
     $ git submodule update --init # usually you just want to register all submodules found in .gitmodules into .git/config and clone repos (and automatically check out in superproject specified commits) in this one step
     $ git submodule update # somebody changed something within a submodule and you want the update (shows up modified:   3rdPartyUtils/MTStatusBarOverlay (new commits))
 
-## Git Subtree
+# Git Subtree
 [Background on subtrees](http://log.pardus.de/2012/08/modular-git-with-git-subtree.html)
 
-### Add subtree
+## Add subtree
     $ git subtree add --prefix=3rdParty/JSONKit --squash https://github.com/johnezang/JSONKit.git stable
 
-### Update subtree
+## Update subtree
     $ git subtree pull --prefix=3rdParty/JSONKit --squash https://github.com/johnezang/JSONKit.git <some-newer-version>
 
-### Update subtree up to a specific commit
+## Update subtree up to a specific commit
     $ git subtree merge --prefix=Momo/3rdParty/GPUImage <commit> --squash
 
 I think git subtree merge doesn't automatically pull the latest, so I did a git subtree pull and cancelled the following merge first.
 
-## Links
+# Links
 - [Understanding the Git Workflow](https://sandofsky.com/blog/git-workflow.html)
