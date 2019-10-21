@@ -7,6 +7,9 @@ Also see my [.gitconfig](./.gitconfig) and my [.gitignore_global_osx](./.gitigno
 # Links
 - [Understanding the Git Workflow](https://sandofsky.com/blog/git-workflow.html)
 
+# Commit message convention
+Blog post [My favourite Git commit](https://fatbusinessman.com/2019/my-favourite-git-commit) and accompanying [HN thread](https://news.ycombinator.com/item?id=21289827).
+
 # Branch naming convention
 Use hierarchical branch names to group branches: `<type>/<name>`. Examples for `<type>`:
 1. `feature` Add a new feature.
