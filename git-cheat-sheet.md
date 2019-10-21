@@ -4,7 +4,28 @@ A collection of useful Git commands and good Git practices.
 
 Also see my [.gitconfig](./.gitconfig) and my [.gitignore_global_osx](./.gitignore_global_osx).
 
-# General
+# Links
+- [Understanding the Git Workflow](https://sandofsky.com/blog/git-workflow.html)
+
+# Branch naming convention
+Use hierarchical branch names to group branches: `<type>/<name>`. Examples for `<type>`:
+1. `feature` Add a new feature.
+2. `bugfix` Address a known issue.
+3. `style` Format (e.g. whitespace), add missing semicolons, etc.
+4. `content` Change content (text, image, etc.).
+5. `documentation` Add comments or documentation.
+6. `test` Add tests.
+7. `performance` Improve performance without changing the function.
+8. `refactor` Restructure or rename code without changing the function.
+9. `chore` Maintain (new syntax, auxiliary tools, etc.)
+10. `experiment` Do not merge.
+
+For `<name>` be descriptive but keep it short. Use dashed-lowercase-multi-words (kebab case).
+
+# Pull Requests
+Open pull requests with the GitHub web interface. There is the CLI tool `hub` but I think it's rare enough of an action and the web interface is clearer than it would justify to do it in any other way.
+
+# General commands
     $ git fetch origin # update origin remote branches
     $ git rebase -p origin/master # (on master) Pull in changes and preserve feature branch on master, when it could fast-forward
     $ git rebase origin/master # (on feature branch) Prevent feature branch from diverging from master significantly
@@ -77,34 +98,10 @@ Also see my [.gitconfig](./.gitconfig) and my [.gitignore_global_osx](./.gitigno
     $ git tag -d tagname # delete local tag
     $ git push origin :refs/tags/tagname # delete remote tag
 
-# Config
-    $ git config user.email "raphael@flipboard.com"
-    $ git config --global core.excludesfile "~/.gitignore_global_osx"
-    $ git config branch.autosetuprebase always # Configure ‘pull --rebase’ as default for new branches
-
-# Visual merge conflict resolving
+# Visual merge conflict resolving (ARCHIVE)
     $ git mergetool # hit enter to start; on OS X defaults to FileMerge.app (pretty good); resolve conflict, save and exit
-    $ git config --global mergetool.keepBackup false # no .orig files
 
-# Branch naming convention
-Use hierarchical branch names to group branches: `<type>/<name>`. Examples for `<type>`:
-1. `feature` Add a new feature.
-2. `bugfix` Address a known issue.
-3. `style` Format (e.g. whitespace), add missing semicolons, etc.
-4. `content` Change content (text, image, etc.).
-5. `documentation` Add comments or documentation.
-6. `test` Add tests.
-7. `performance` Improve performance without changing the function.
-8. `refactor` Restructure or rename code without changing the function.
-9. `chore` Maintain (new syntax, auxiliary tools, etc.)
-10. `experiment` Do not merge.
-
-For `<name>` be descriptive but keep it short. Use dashed-lowercase-multi-words (kebab case).
-
-# Pull Requests
-Open pull requests with the GitHub web interface. There is the CLI tool `hub` but I think it's rare enough of an action and the web interface is clearer than it would justify to do it in any other way.
-
-# Submodules
+# Submodules (ARCHIVE)
 ## Add submodule
     $ git submodule add https://github.com/Flipboard/JSONKit.git 3rdPartyUtils/JSONKit
     $ git remote add upstream git://github.com/johnezang/JSONKit.git # in submodule
@@ -132,7 +129,7 @@ Open pull requests with the GitHub web interface. There is the CLI tool `hub` bu
     $ git submodule update --init # usually you just want to register all submodules found in .gitmodules into .git/config and clone repos (and automatically check out in superproject specified commits) in this one step
     $ git submodule update # somebody changed something within a submodule and you want the update (shows up modified:   3rdPartyUtils/MTStatusBarOverlay (new commits))
 
-# Git Subtree
+# Git Subtree (ARCHIVE)
 [Background on subtrees](http://log.pardus.de/2012/08/modular-git-with-git-subtree.html)
 
 ## Add subtree
@@ -145,6 +142,3 @@ Open pull requests with the GitHub web interface. There is the CLI tool `hub` bu
     $ git subtree merge --prefix=Momo/3rdParty/GPUImage <commit> --squash
 
 I think git subtree merge doesn't automatically pull the latest, so I did a git subtree pull and cancelled the following merge first.
-
-# Links
-- [Understanding the Git Workflow](https://sandofsky.com/blog/git-workflow.html)
