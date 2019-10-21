@@ -26,6 +26,7 @@
 	sl = stash list
 	sd = stash drop
 [mergetool]
+	# No `.orig` files.
 	keepBackup = false
 [push]
 	# So I can't do a bare git push (must specify the origin branch)
