@@ -88,3 +88,4 @@ I should look into using HomeBrew Cask and go through this list (e.g. `$ brew ca
 - KeyCastr: Keystroke visualizer
 - VirtualBox + Extension Pack (for e.g. USB support): open source virtual machine from Oracle (use w/ [free Windows VMs from Microsoft](https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/), downloaded `.ova` file can be deleted after the "appliance" has been imported, VMs are stored in `~/VirtualBox VMs/`)
 - MineTime: ETHZ research calendar
+- SF Symbols: Apple icons for developers
