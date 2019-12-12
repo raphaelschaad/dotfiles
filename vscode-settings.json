@@ -39,5 +39,7 @@
   },
   "[php]": {
     "editor.defaultFormatter": "vscode.php-language-features"
-  }
+  },
+  // Only run Prettier in folders with a config file to avoid reformatting "non-Prettier projects." https://prettier.io/docs/en/configuration.html
+  "prettier.requireConfig": true
 }
