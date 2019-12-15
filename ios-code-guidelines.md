@@ -325,8 +325,8 @@ Also never use vanilla `-isEqual:` but rather a safer custom function* that *ret
 
         // Short-circuit if they're not of the same class or a subclass of it.
         if (![object isKindOfClass:[self class]]) {
-	        // We know it's already equal to super, so trust that.
-	        return YES;
+            // We know it's already equal to super, so trust that.
+            return YES;
         }
 
         // Now test all relevant properties of this class for equality.
@@ -372,11 +372,11 @@ When copying a Foundation collection, consider the depth and mutability of the c
 Support copying in own object by implementing follow:
 
     @implementation
-    
+
     #pragma mark NSCopying
-    
+
     - (instancetype)copyWithZone:(nullable NSZone *)zone { ... }
-    
+
     @end
 
 Note that we need to override `-copyWithZone:` and not `-copy`, even though the `zone` parameter is legacy and unused.
@@ -516,6 +516,7 @@ Minimal AppDelegate that plays nicely with the default project setup/storyboards
 
 ## 4. Misc.
 Not guidelines per se, but snippets that are useful for iOS development.
+
 ### Debugging
 - Print view hierarchy: `(lldb) po [someView recursiveDescription]`
 - Print method name using implicit method selector parameter: `NSLog(@"%@", NSStringFromSelector(_cmd));`
