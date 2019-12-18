@@ -1,10 +1,12 @@
 # Bash Startup Files
 # When a "login shell" starts up, it reads the file "/etc/profile" and then "~/.bash_profile" or "~/.bash_login" or "~/.profile" (whichever one exists but only one of these, checking for them in the listed order).
 
+HOMEBREW=$(brew --prefix)
+
 # Add paths to the PATH variable
 export PATH="~/bin:$PATH" # E.g. subl
-export PATH="$(brew --prefix)/bin:$(brew --prefix)/sbin:$PATH" # Prioritize Homebrew's Git over Xcode4's Git, Homebrew's PHP over OS X's PHP etc..
-export PATH="$(brew --prefix)/opt/ruby/bin:$PATH" # Homebrew Ruby gem installed binaries' default path.
+export PATH="$HOMEBREW/bin:$HOMEBREW/sbin:$PATH" # Prioritize Homebrew's Git over Xcode4's Git, Homebrew's PHP over OS X's PHP etc..
+export PATH="$HOMEBREW/opt/ruby/bin:$PATH" # Homebrew Ruby gem installed binaries' default path.
 
 # Suppress shell "Warning: Failed to set locale category LC_NUMERIC to en_CH." when macOS' Language & Region settings don't play well with CLI tools.
 export LC_ALL=en_US.UTF-8
@@ -17,9 +19,9 @@ export EDITOR="$VISUAL"
 # Homebrew's own Git, bash, and hub completion
 # Not to be confused with the system bundled one /Applications/Xcode.app/Contents/Developer/usr/share/git-core/
 # Also no need to `$ brew install bash-completion`
-. $(brew --prefix)/etc/bash_completion.d/git-completion.bash
-. $(brew --prefix)/etc/bash_completion.d/git-prompt.sh
-. $(brew --prefix)/etc/bash_completion.d/hub.bash_completion.sh
+. $HOMEBREW/etc/bash_completion.d/git-completion.bash
+. $HOMEBREW/etc/bash_completion.d/git-prompt.sh
+. $HOMEBREW/etc/bash_completion.d/hub.bash_completion.sh
 
 # Customize the prompt via PS1 variable
 
