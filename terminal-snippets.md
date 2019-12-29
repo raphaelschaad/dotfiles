@@ -26,9 +26,9 @@ A collection of useful terminal snippets.
 
     $ ls | sed s/REGEX/SUBSTITUTION/g
 
-`s` substitute  
-`g` all non-overlapping matches, not just first one  
-Escape spaces in REGEX or SUBSTITUTION with backslash or wrapping pattern in single or double quotes.  
+`s` substitute
+`g` all non-overlapping matches, not just first one
+Escape spaces in REGEX or SUBSTITUTION with backslash or wrapping pattern in single or double quotes.
 
 
 **Count characters in a string**
@@ -55,8 +55,8 @@ Escape spaces in REGEX or SUBSTITUTION with backslash or wrapping pattern in sin
 
     $ grep -r -i foo *
 
-`-r` recursively (same as `-R`)  
-`-i` ignore case (default is case sensitive)  
+`-r` recursively (same as `-R`)
+`-i` ignore case (default is case sensitive)
 
 
 **Search for "foo" in contents of .txt-files only (ignore "Permission denied" output)**
@@ -88,9 +88,9 @@ Don’t forget to reset!
 
     $ wget -S -O - http://example.com/webservice 2>&1
 
-`-S` print headers  
-`-O -` concatenate results together and print to standard output  
-`2>&1` wget prints the headers to stderr, redirect to stdout instead  
+`-S` print headers
+`-O -` concatenate results together and print to standard output
+`2>&1` wget prints the headers to stderr, redirect to stdout instead
 
 Enclose the URL with quotes if it contains ampersands.
 
@@ -109,15 +109,15 @@ Enclose the URL with quotes if it contains ampersands.
 
     $ zip -re archive.zip dir/
 
-`-r` recursive (for folders)  
-`-e` encrypt (prompts for password)  
+`-r` recursive (for folders)
+`-e` encrypt (prompts for password)
 
 
 **Unpack ZIP-file in folder (gets created)**
 
     $ unzip archive.zip -d new_dir
 
-If unzip and The Unarchiver.app fail, try `tar` or `jar` (same options as `tar`).  
+If unzip and The Unarchiver.app fail, try `tar` or `jar` (same options as `tar`).
 
 
 **Create tarball of folder**
@@ -149,9 +149,9 @@ If unzip and The Unarchiver.app fail, try `tar` or `jar` (same options as `tar`)
 
     $ ffmpeg -i ScreenFlow.mp4 -r 10 %4d.png
 
-FFmpeg direct GIF export is dithered as hell, so go via PNG  
-`-r` for lower FPS  
-`%4d` for leading zeros because Gifsicle needs that  
+FFmpeg direct GIF export is dithered as hell, so go via PNG
+`-r` for lower FPS
+`%4d` for leading zeros because Gifsicle needs that
 
     $ for i in *.png; do convert $i $i.gif; done
     $ gifsicle --delay=100 *.gif --loop > animated.gif
@@ -173,6 +173,11 @@ FFmpeg direct GIF export is dithered as hell, so go via PNG
 `PTS` to change the presentation timestamp for each video frame (<1.0=speed up, >1.0=slow down).
 
 
+**Encode WiFi password into a QR code**
+
+    $ qrencode -o wifi.png "WIFI:T:WPA;S:<SSID>;P:<PASSWORD>;;"
+
+
 **Convert any image into a 1-bit black/white PNG**
 
     $ convert -monochrome -colors 2 in.jpg out.png
@@ -188,7 +193,7 @@ FFmpeg direct GIF export is dithered as hell, so go via PNG
     $ identify -verbose -units pixelsperinch in.png | grep Resolution
       Resolution: 600x600
 
-If it doesn't print a line like this, then it doesn't specify a resolution.  
+If it doesn't print a line like this, then it doesn't specify a resolution.
 
 
 **Using the bundled webserver (OS X El Capitan 10.11)**
@@ -196,15 +201,15 @@ If it doesn't print a line like this, then it doesn't specify a resolution.
     $ sudo apachectl start
     $ sudo ln -s ~/dir-to-be-served/ /Library/WebServer/Documents/dir-to-be-served
 
-Ensure parent directory is drwxr-xr-x (if needed, change: # chmod 755 parent-directory)  
-Now browse to http://localhost/dir-to-be-served/  
+Ensure parent directory is drwxr-xr-x (if needed, change: # chmod 755 parent-directory)
+Now browse to http://localhost/dir-to-be-served/
 
 
 **Use the Python webserver**
 
     $ python -m SimpleHTTPServer
 
-The working directory becomes the document root.  
+The working directory becomes the document root.
 Now browse to http://localhost:8000
 
 
@@ -223,7 +228,7 @@ Now browse to http://localhost:8000
     $ defaults write com.apple.finder CreateDesktop false
     $ killall Finder
 
-Show again with `CreateDesktop true` and restarting Finder  
+Show again with `CreateDesktop true` and restarting Finder
 
 
 **Copy terminal output to system clipboard**
@@ -249,8 +254,8 @@ Show again with `CreateDesktop true` and restarting Finder
     $ launchctl stop com.raphaelschaad.test
     $ launchctl unload com.raphaelschaad.test.plist
 
-launchd PList files go in ~/Library/LaunchAgents.  
-launchd is the preferred way of scheduling such processes on macOS (not cron jobs). User agents are similar to daemons but user-specific and execute only when the user is logged in and the computer is not asleep.  
+launchd PList files go in ~/Library/LaunchAgents.
+launchd is the preferred way of scheduling such processes on macOS (not cron jobs). User agents are similar to daemons but user-specific and execute only when the user is logged in and the computer is not asleep.
 
 
 **Send Mac to sleep if it stays infinitely**
@@ -258,5 +263,5 @@ launchd is the preferred way of scheduling such processes on macOS (not cron job
     $ pmset -g assertions | grep PreventUserIdleDisplaySleep
     $ kill <pid>
 
-A common scenario is that AirPlayUIAgent disables user idle display sleep for AirPlay screen.   
+A common scenario is that AirPlayUIAgent disables user idle display sleep for AirPlay screen.
 PreventUserIdleSystemSleep (Handoff etc.) does not have the same effect.
