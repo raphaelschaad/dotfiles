@@ -35,3 +35,4 @@ Opt-out of anonymous analytics: `> brew analytics off`
 - `ffmpeg`
 - `libass`: Fonts to add subtitles with ffmpeg, see `.profile`.
 - `gdal`: Convert shapefiles to JSON (CLI tool `ogr2ogr`)
+- `qrencode`: Generate QR codes
