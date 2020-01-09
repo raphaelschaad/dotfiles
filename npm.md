@@ -1,5 +1,7 @@
 # Installed Node modules
 
+To install Node, install the Node Version Manager [nvm](https://github.com/nvm-sh/nvm#installing-and-updating) first (don't brew nvm nor node). Then, use `nvm` to install node (npm is bundled with node). Install/update with `> nvm install node -g`/`npm install -g npm@latest`. http://stackoverflow.com/a/28025834/251440 (don't add `source $(brew --prefix nvm)/nvm.sh` to `.profile` as it slows down shell startup)
+
 Tools installed with `npm install -g` – for reference when I setup a new machine. Listing only top level packages (like `> npm -g list --depth=0`), not including all dependencies.
 
 - `shapefile`: Shapefile parser, e.g. to convert to GeoJSON (comes with command-line interface shp2json, by @mbostock)

@@ -56,8 +56,8 @@ export FONTCONFIG_FILE=/usr/local/etc/fonts/fonts.conf
 export HOMEBREW_GITHUB_API_TOKEN=$(git config github.token)
 
 # node.js nvm
-export NVM_DIR=~/.nvm
-. $(brew --prefix nvm)/nvm.sh
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 # Aliases
 ## Xcode

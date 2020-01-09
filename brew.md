@@ -16,7 +16,6 @@ Opt-out of anonymous analytics: `> brew analytics off`
 - `python3`: OS X El Cap only comes with 2.x stock. Python3 comes with pip by default.
 - `opencv`: first tap homebrew/science
 - `opencv3`: also from homebrew/science; installed `--with-python3`; used `brew unlink opencv` + `brew link --force opencv3` (can be reverted by `brew unlink opencv3` + `brew link opencv` + `brew link --overwrite numpy`)
-- `nvm`: only brew nvm, not node; use nvm to install node (npm is bundled with node), install/update with `> nvm install node -g`/`npm install -g npm@latest`. http://stackoverflow.com/a/28025834/251440
 - `ruby`: for jekyll
 - `hugo`: static site generator alternative to jekyll
 - `cloc`: Count Lines of Code
