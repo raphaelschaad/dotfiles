@@ -35,14 +35,8 @@ fi
 # Customize the prompt.
 if [ -n "$ZSH_VERSION" ]; then
   export PROMPT='%B%1~%b > '
-  # Show current Git branch name in Git repositories on the right side.
-  autoload -Uz vcs_info
-  precmd_vcs_info() { vcs_info }
-  precmd_functions+=( precmd_vcs_info )
-  setopt prompt_subst
-  export RPROMPT=%B%F{green}\$vcs_info_msg_0_%b%f
-  zstyle ':vcs_info:git:*' formats '%b'
 
+  # The line `precmd_vcs_info { vcs_info }` in the snippet to show current Git branch name from the "Git-in-Zsh"-link above errors in bash.
   # There doesn't seem to be an easy way to show changes next to the branch w/o messing with git-completion.zsh etc.
 elif [ -n "$BASH_VERSION" ]; then
   # Show current Git branch name in Git repositories.
