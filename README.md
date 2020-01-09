@@ -10,6 +10,8 @@ IMPORTANT: Ensure the presence of a `.gitignore` in this repo ignoring `.gitconf
 3. `> git clone https://github.com/raphaelschaad/SystemConfig.git`
 4. Copy files `gitconfig.local` and `gitcookies` stored in 1Password into locally cloned `SystemConfig/` folder each with a dot prefix.
 5. `> ln -s $(pwd)/SystemConfig/{.profile,.gitconfig,.gitignore_global_osx,.gitconfig.local,.gitcookies} ~`
+6. If using zsh, `> ln -s ~/.profile ~/.zshrc`.
+7. Restart Terminal.app.
 
 # Linking/Importing app-specific config file
 ## From `SystemConfig`
