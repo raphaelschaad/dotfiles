@@ -37,7 +37,7 @@ IMPORTANT: Ensure the presence of a `.gitignore` in this repo ignoring `.gitconf
 
 ### From `<CLOUD>/Synced\ App\ Files`
 #### macOS Spelling Dictionary
-When linking (hard or soft) `~/Library/Spelling/LocalDictionary` to cloud folder, the links eventually get overwritten. Instead, manually copy/sync/merge (opendiff) the file periodically.
+When linking (hard or soft) `~/Library/Spelling/LocalDictionary` to cloud folder, the links eventually get overwritten. Instead, manually copy/sync/merge (`opendiff`) the file periodically.
 
 #### Google Earth Pro
 1. File > Open… (`⌘O`) > Sync.kmz
