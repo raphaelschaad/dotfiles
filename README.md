@@ -13,12 +13,12 @@ IMPORTANT: Ensure the presence of a `.gitignore` in this repo ignoring `.gitconf
 
 # Linking/Importing app-specific config file
 ## From `SystemConfig`
-`$ cd ~/Code/GitHub/raphaelschaad/SystemConfig/`
+`> cd ~/Code/GitHub/raphaelschaad/SystemConfig/`
 
 ### Visual Studio Code
-`$ ln -s $(pwd)/vscode-settings.json ~/Library/Application\ Support/Code/User/settings.json` for [User Preferences](./vscode-settings.json) (easily accessible with `⌘,` from within VS Code)
+`> ln -s $(pwd)/vscode-settings.json ~/Library/Application\ Support/Code/User/settings.json` for [User Preferences](./vscode-settings.json) (easily accessible with `⌘,` from within VS Code)
 
-`$ ln -s $(pwd)/vscode-keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json` for [User Keyboard Shortcuts](./vscode-keybindings.json) (easily accessible with `[⌘K ⌘S]` from within VS Code)
+`> ln -s $(pwd)/vscode-keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json` for [User Keyboard Shortcuts](./vscode-keybindings.json) (easily accessible with `[⌘K ⌘S]` from within VS Code)
 
 ## From `<CLOUD>/Synced\ App\ Files`
 ### macOS Spelling Dictionary
