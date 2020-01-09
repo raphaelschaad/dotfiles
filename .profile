@@ -23,10 +23,9 @@ export VISUAL='code --wait'
 export EDITOR="$VISUAL"
 
 # Configure Git autocomplete
-if [ -n "$ZSH_VERSION" ]; then
-  # Zsh ships with a tab-completion library for Git: https://git-scm.com/book/en/v2/Appendix-A%3A-Git-in-Other-Environments-Git-in-Zsh
-  # The shell seems to already autocomplete, though, and running `autoload -Uz compinit && compinit` seems to slow down shell startup.
-elif [ -n "$BASH_VERSION" ]; then
+# Zsh ships with a tab-completion library for Git: https://git-scm.com/book/en/v2/Appendix-A%3A-Git-in-Other-Environments-Git-in-Zsh
+# The shell seems to already autocomplete, though, and running `autoload -Uz compinit && compinit` seems to slow down shell startup.
+if [ -n "$BASH_VERSION" ]; then
   # Use Homebrew's bundled Git bash completions over the OS-bundled ones (no need to `> brew install bash-completion`).
   source $HOMEBREW/etc/bash_completion.d/git-completion.bash
   source $HOMEBREW/etc/bash_completion.d/git-prompt.sh
