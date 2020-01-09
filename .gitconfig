@@ -2,7 +2,7 @@
 	# Kept in 1Password. Contains GitHub username, token, etc., inspired by http://stackoverflow.com/questions/8505335/hiding-github-token-in-gitconfig
 	path = ~/.gitconfig.local
 [core]
-	excludesfile = ~/.gitignore_global_osx
+	excludesfile = ~/.gitignore_global_macos
 	editor = code -w
 [color]
 	ui = auto
