@@ -1,4 +1,4 @@
-dotfiles
+DOTFILES
 
 IMPORTANT: Ensure the presence of a `.gitignore` in this repo ignoring `.gitconfig.local` and `.gitcookies` (stored in 1Password), which contain the GitHub username, token, access credentials, etc.
 
