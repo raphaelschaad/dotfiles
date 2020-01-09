@@ -5,15 +5,15 @@ IMPORTANT: Ensure the presence of a `.gitignore` in this repo ignoring `.gitconf
 # Setting up a new machine
 1. Install essential Apps like Xcode, Homebrew, and visual-studio-code (see Notes.app → Software).
 2. `> mkdir -p ~/Code/GitHub/raphaelschaad && cd $_`
-3. `> git clone https://github.com/raphaelschaad/SystemConfig.git`
-4. Copy files `gitconfig.local` and `gitcookies` stored in 1Password into locally cloned `SystemConfig/` folder each with a dot prefix.
-5. `> ln -s $(pwd)/SystemConfig/{.profile,.gitconfig,.gitignore_global_macos,.gitconfig.local,.gitcookies} ~`
+3. `> git clone https://github.com/raphaelschaad/dotfiles.git`
+4. Copy files `gitconfig.local` and `gitcookies` stored in 1Password into locally cloned `dotfiles/` folder each with a dot prefix.
+5. `> ln -s $(pwd)/dotfiles/{.profile,.gitconfig,.gitignore_global_macos,.gitconfig.local,.gitcookies} ~`
 6. When using Zsh, `> ln -s ~/.profile ~/.zshrc`.
 7. Restart Terminal.app.
 
 # Linking/Importing app-specific config file
-## From `SystemConfig`
-`> cd ~/Code/GitHub/raphaelschaad/SystemConfig/`
+## From `dotfiles`
+`> cd ~/Code/GitHub/raphaelschaad/dotfiles/`
 
 ### Visual Studio Code
 `> ln -s $(pwd)/vscode-settings.json ~/Library/Application\ Support/Code/User/settings.json` for [User Preferences](./vscode-settings.json) (easily accessible with `⌘,` from within VS Code)
