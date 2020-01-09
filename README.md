@@ -35,9 +35,9 @@ IMPORTANT: Ensure the presence of a `.gitignore` in this repo ignoring `.gitconf
 
 `$ ln -s $(pwd)/vscode-keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json` for [User Keyboard Shortcuts](./vscode-keybindings.json) (easily accessible with `[⌘K ⌘S]` from within VS Code)
 
-### From `Dropbox/Synced\ App\ Files`
+### From `<CLOUD>/Synced\ App\ Files`
 #### macOS Spelling Dictionary
-If linking (hard or soft) `~/Library/Spelling/LocalDictionary` to Dropbox, the links eventually get overwritten. Instead, manually copy/sync/merge (opendiff) the file periodically.
+When linking (hard or soft) `~/Library/Spelling/LocalDictionary` to cloud folder, the links eventually get overwritten. Instead, manually copy/sync/merge (opendiff) the file periodically.
 
 #### Google Earth Pro
 1. File > Open… (`⌘O`) > Sync.kmz
