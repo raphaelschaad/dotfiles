@@ -47,5 +47,6 @@
 	# Kept in 1Password.
 	cookiefile = ~/.gitcookies
 [user]
+	# Default. To override in a repo: `> git config user.email test@example.com`.
 	name = Raphael Schaad
 	email = raphael.schaad@gmail.com
