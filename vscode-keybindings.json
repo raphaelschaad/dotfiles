@@ -3,46 +3,46 @@
   // Integrated terminal navigation whether terminal is focused or not (no need for this to be included in user setting "terminal.integrated.commandsToSkipShell".)
   {
     "key": "ctrl+shift+cmd+]",
-    "command": "workbench.action.terminal.focusNext",
+    "command": "workbench.action.terminal.focusNext"
   },
   {
     "key": "ctrl+shift+cmd+[",
-    "command": "workbench.action.terminal.focusPrevious",
+    "command": "workbench.action.terminal.focusPrevious"
   },
   {
     "key": "ctrl+cmd+1",
-    "command": "workbench.action.terminal.focusAtIndex1",
+    "command": "workbench.action.terminal.focusAtIndex1"
   },
   {
     "key": "ctrl+cmd+2",
-    "command": "workbench.action.terminal.focusAtIndex2",
+    "command": "workbench.action.terminal.focusAtIndex2"
   },
   {
     "key": "ctrl+cmd+3",
-    "command": "workbench.action.terminal.focusAtIndex3",
+    "command": "workbench.action.terminal.focusAtIndex3"
   },
   {
     "key": "ctrl+cmd+4",
-    "command": "workbench.action.terminal.focusAtIndex4",
+    "command": "workbench.action.terminal.focusAtIndex4"
   },
   {
     "key": "ctrl+cmd+5",
-    "command": "workbench.action.terminal.focusAtIndex5",
+    "command": "workbench.action.terminal.focusAtIndex5"
   },
   {
     "key": "ctrl+cmd+6",
-    "command": "workbench.action.terminal.focusAtIndex6",
+    "command": "workbench.action.terminal.focusAtIndex6"
   },
   {
     "key": "ctrl+cmd+7",
-    "command": "workbench.action.terminal.focusAtIndex7",
+    "command": "workbench.action.terminal.focusAtIndex7"
   },
   {
     "key": "ctrl+cmd+8",
-    "command": "workbench.action.terminal.focusAtIndex8",
+    "command": "workbench.action.terminal.focusAtIndex8"
   },
   {
     "key": "ctrl+cmd+9",
-    "command": "workbench.action.terminal.focusAtIndex9",
-  },
+    "command": "workbench.action.terminal.focusAtIndex9"
+  }
 ]
