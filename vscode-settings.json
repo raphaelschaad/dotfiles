@@ -3,6 +3,8 @@
   // Disable usage data collection and crash reporting
   "telemetry.enableTelemetry": false,
   "telemetry.enableCrashReporter": false,
+  // Open to a new file instead of welcome page
+  "workbench.startupEditor": "newUntitledFile",
   // Text editing
   "editor.tabCompletion": "on",
   "editor.tabSize": 2,
