@@ -5,6 +5,7 @@
   "telemetry.enableCrashReporter": false,
   // Open to a new file instead of welcome page
   "workbench.startupEditor": "newUntitledFile",
+  "explorer.confirmDragAndDrop": false,
   // Text editing
   "editor.tabCompletion": "on",
   "editor.tabSize": 2,
@@ -12,6 +13,8 @@
   "editor.wordWrap": "on",
   "editor.formatOnSave": true,
   "editor.minimap.enabled": false,
+  // Show brief animation on page up/down
+  "editor.smoothScrolling": true,
   // Files
   "files.trimTrailingWhitespace": true,
   // Setting files.insertFinalNewline to true also covers what html.format.endWithNewline would do for HTML.
