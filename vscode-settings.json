@@ -6,6 +6,7 @@
   // Open to a new file instead of welcome page
   "workbench.startupEditor": "newUntitledFile",
   "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false,
   // Text editing
   "editor.tabCompletion": "on",
   "editor.tabSize": 2,
@@ -45,7 +46,6 @@
   "[php]": {
     "editor.defaultFormatter": "vscode.php-language-features"
   },
-  // Only run Prettier in folders with a config file to avoid reformatting "non-Prettier projects." https://prettier.io/docs/en/configuration.html
+  // Extension: Prettier -- only run in folders with a config file to avoid reformatting "non-Prettier projects." https://prettier.io/docs/en/configuration.html
   "prettier.requireConfig": true,
-  "explorer.confirmDelete": false
 }
