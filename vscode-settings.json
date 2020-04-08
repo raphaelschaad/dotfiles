@@ -5,6 +5,7 @@
   "telemetry.enableCrashReporter": false,
   // Open to a new file instead of welcome page
   "workbench.startupEditor": "newUntitledFile",
+  "workbench.colorTheme": "Default Light+",
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmDelete": false,
   // Text editing
@@ -48,4 +49,8 @@
   },
   // Extension: Prettier -- only run in folders with a config file to avoid reformatting "non-Prettier projects." https://prettier.io/docs/en/configuration.html
   "prettier.requireConfig": true,
+  // Extension: NightSwitch-lite -- configure day/night theme and set location (Switzerland: 46.83,8.33 / San Francisco: 37.78,-122.42).
+  "nightswitch.themeDay": "Default Light+",
+  "nightswitch.themeNight": "Default Dark+",
+  "nightswitch.location": "46.83,8.33"
 }
