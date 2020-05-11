@@ -5,9 +5,11 @@
   "telemetry.enableCrashReporter": false,
   // Follow system preference for light/dark theme/appearance.
   "window.autoDetectColorScheme": true,
+  "workbench.colorTheme": "Atom One Light",
+  "workbench.preferredDarkColorTheme": "Atom One Dark",
+  "workbench.preferredLightColorTheme": "Atom One Light",
   // Open to a new file instead of welcome page
   "workbench.startupEditor": "newUntitledFile",
-  "workbench.colorTheme": "Default Light+",
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmDelete": false,
   // Text editing
