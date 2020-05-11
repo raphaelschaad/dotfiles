@@ -8,6 +8,8 @@
   "workbench.colorTheme": "Atom One Light",
   "workbench.preferredDarkColorTheme": "Atom One Dark",
   "workbench.preferredLightColorTheme": "Atom One Light",
+  // Keep tabs open
+  "workbench.editor.enablePreviewFromQuickOpen": false,
   // Open to a new file instead of welcome page
   "workbench.startupEditor": "newUntitledFile",
   "explorer.confirmDragAndDrop": false,
