@@ -21,6 +21,7 @@
   "editor.wordWrap": "on",
   "editor.formatOnSave": true,
   "editor.minimap.enabled": false,
+  "editor.fontSize": 11,
   // Show brief animation on page up/down
   "editor.smoothScrolling": true,
   // Files
