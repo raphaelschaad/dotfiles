@@ -18,8 +18,8 @@
 	lall = log --graph --pretty='%h  %ad%Cgreen%d%Creset %Cred%an%Creset %s' --decorate=short --date=relative --all
 	b = for-each-ref --sort='-committerdate' refs/heads/ --format='%(committerdate:short) %(refname:short)'
 	rb = for-each-ref --sort='committerdate' refs/remotes/ --format='%(committerdate:short) %(refname:short) (%(authorname))'
-	pushm = push origin master
-	pullm = !git fetch origin && git rebase --rebase-merges origin/master
+	pushm = push origin main
+	pullm = !git fetch origin && git rebase --rebase-merges origin/main
 	pullall = !git pull && git submodule update --init --recursive
 	ri = rebase --interactive
 	rc = rebase --continue
