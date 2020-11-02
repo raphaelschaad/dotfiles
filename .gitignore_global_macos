@@ -1,7 +1,6 @@
 .DS_Store
-# Don't change the whitespace after the next line up to the next line with a comment. https://stackoverflow.com/questions/17556250/how-to-ignore-icon-in-git
-Icon
-
+# https://stackoverflow.com/a/33974028/251440
+"Icon[\r]"
 
 # Thumbnails
 ._*
