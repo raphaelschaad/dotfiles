@@ -10,6 +10,8 @@
   "workbench.preferredLightColorTheme": "Atom One Light",
   // Keep tabs open
   "workbench.editor.enablePreviewFromQuickOpen": false,
+  // Close tabs left-to-right
+  "workbench.editor.focusRecentEditorAfterClose": false,
   // Open to a new file instead of welcome page
   "workbench.startupEditor": "newUntitledFile",
   "explorer.confirmDragAndDrop": false,
