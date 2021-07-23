@@ -1,5 +1,6 @@
 // VS Code user settings (defaults are an empty file)
 {
+  "security.workspace.trust.untrustedFiles": "open",
   // Disable usage data collection and crash reporting
   "telemetry.enableTelemetry": false,
   "telemetry.enableCrashReporter": false,
