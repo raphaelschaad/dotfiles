@@ -24,9 +24,14 @@
   "editor.wordWrap": "on",
   "editor.formatOnSave": true,
   "editor.minimap.enabled": false,
+  "editor.suggest.showWords": false,
   "editor.fontSize": 11,
   // Show brief animation on page up/down
   "editor.smoothScrolling": true,
+  // Zen Mode
+  "zenMode.fullScreen": false,
+  "zenMode.restore": false,
+  "zenMode.centerLayout": false,
   // Files
   "files.trimTrailingWhitespace": true,
   // Setting files.insertFinalNewline to true also covers what html.format.endWithNewline would do for HTML.
