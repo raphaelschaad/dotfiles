@@ -6,10 +6,12 @@
 # Environment Variables
 #
 
-HOMEBREW=$(brew --prefix)
-
 # Add paths to the PATH variable
-export PATH="~/bin:$PATH" # E.g. op (1Password), subl (Sublime Text).
+if [[ "$(uname -m)" == "arm64" ]]; then
+  export PATH="/opt/homebrew/bin:$PATH" # Path for Homebrew on Apple Silicon.
+fi
+HOMEBREW=$(brew --prefix)
+export PATH="~/bin:$PATH" # E.g., op (1Password), code (Visual Studio Code).
 export PATH="$HOMEBREW/bin:$HOMEBREW/sbin:$PATH" # Prioritize Homebrew's Git etc. over the OS-bundled ones.
 export PATH="$HOMEBREW/opt/ruby/bin:$PATH" # Homebrew Ruby gem installed binaries' default path.
 
