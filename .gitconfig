@@ -1,6 +1,9 @@
 [include]
-	# Kept in 1Password. Contains GitHub username, token, etc., inspired by http://stackoverflow.com/questions/8505335/hiding-github-token-in-gitconfig
+	# Kept in 1Password. Contains default email, GitHub username, token, etc., inspired by http://stackoverflow.com/questions/8505335/hiding-github-token-in-gitconfig
 	path = ~/.gitconfig.local
+[http]
+	# Kept in 1Password.
+	cookiefile = ~/.gitcookies
 [core]
 	excludesfile = ~/.gitignore_global_macos
 	editor = code -w
@@ -43,10 +46,3 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-[http]
-	# Kept in 1Password.
-	cookiefile = ~/.gitcookies
-[user]
-	# Default. To override in a repo: `> git config user.email test@example.com`.
-	name = Raphael Schaad
-	email = raphael.schaad@gmail.com

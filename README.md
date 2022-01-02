@@ -1,9 +1,9 @@
 DOTFILES
 
-IMPORTANT: Ensure the presence of a `.gitignore` in this repo ignoring `.gitconfig.local` and `.gitcookies` (stored in 1Password), which contain the GitHub username, token, access credentials, etc.
+IMPORTANT: Ensure the presence of a `.gitignore` in this repo ignoring `.gitconfig.local` and `.gitcookies` (stored in 1Password), which contain the default email, GitHub username, token, etc.
 
 # Setting up a new machine
-1. Install essential Apps like Xcode, Homebrew, and visual-studio-code (see Notes.app → Software).
+1. Install essential Apps like Xcode, Homebrew, and visual-studio-code (see Notion / Software).
 2. `> mkdir -p ~/Code/GitHub/raphaelschaad && cd $_`
 3. `> git clone https://github.com/raphaelschaad/dotfiles.git`
 4. Copy files `gitconfig.local` and `gitcookies` stored in 1Password into locally cloned `dotfiles/` folder each with a dot prefix.
