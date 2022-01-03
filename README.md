@@ -27,5 +27,5 @@ When linking (hard or soft) `~/Library/Spelling/LocalDictionary` to cloud folder
 ### Google Earth Pro
 1. File > Open… (`⌘O`) > Sync.kmz
 2. My Places > right click > Delete Contents
-3. Drag folder “Sync” to My Places
+3. Drag folder "Sync" to My Places
 4. Temporary Places > right click > Delete Contents
