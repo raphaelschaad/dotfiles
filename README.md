@@ -21,6 +21,9 @@ IMPORTANT: Ensure the presence of a `.gitignore` in this repo ignoring `.gitconf
 `> ln -s $(pwd)/vscode-keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json` for [User Keyboard Shortcuts](./vscode-keybindings.json) (easily accessible with `[⌘K ⌘S]` from within VS Code)
 
 ## From `<CLOUD>/Synced\ App\ Files`
+### Divvy Preferences
+Replace `~/Library/Preferences/com.mizage.Divvy.plist` with backed-up file to get single-letter non-global keyboard shortcuts working [under macOS version 12+ Monterey](https://apple.stackexchange.com/questions/430314/cant-assign-normal-keyboard-shortcuts-on-monterey-because-its-already-used-by).
+
 ### macOS Spelling Dictionary
 When linking (hard or soft) `~/Library/Spelling/LocalDictionary` to cloud folder, the links eventually get overwritten. Instead, manually copy/sync/merge (`> opendiff file1 file2`) the file periodically.
 
