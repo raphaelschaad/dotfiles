@@ -67,7 +67,7 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 
 # `> twilio` autocomplete setup added via `> twilio autocomplete <bash|zsh>`
 if [ -n "$ZSH_VERSION" ]; then
-  TWILIO_AC_ZSH_SETUP_PATH=/Users/schaad/.twilio-cli/autocomplete/zsh_setup && test -f $TWILIO_AC_ZSH_SETUP_PATH && source $TWILIO_AC_ZSH_SETUP_PATH;
+  TWILIO_AC_ZSH_SETUP_PATH=~/.twilio-cli/autocomplete/zsh_setup && test -f $TWILIO_AC_ZSH_SETUP_PATH && source $TWILIO_AC_ZSH_SETUP_PATH;
 elif [ -n "$BASH_VERSION" ]; then
   TWILIO_AC_BASH_SETUP_PATH=~/.twilio-cli/autocomplete/bash_setup && test -f $TWILIO_AC_BASH_SETUP_PATH && source $TWILIO_AC_BASH_SETUP_PATH;
 fi
