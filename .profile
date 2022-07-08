@@ -72,6 +72,11 @@ elif [ -n "$BASH_VERSION" ]; then
   TWILIO_AC_BASH_SETUP_PATH=~/.twilio-cli/autocomplete/bash_setup && test -f $TWILIO_AC_BASH_SETUP_PATH && source $TWILIO_AC_BASH_SETUP_PATH;
 fi
 
+# `> heroku` autocomplete setup added via `> heroku autocomplete`
+if [ -n "$ZSH_VERSION" ]; then
+  HEROKU_AC_ZSH_SETUP_PATH=~/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
+fi
+
 #
 # Aliases
 #
